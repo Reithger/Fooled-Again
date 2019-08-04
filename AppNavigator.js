@@ -6,6 +6,11 @@ import Solve from './screens/Solve';
 import End from './screens/End';
 
 const AppNavigator = createStackNavigator({
+    Test: {
+        screen: Junction
+    },
+
+
     Home: {
         screen: Home
     }, 
