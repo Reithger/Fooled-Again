@@ -2,14 +2,14 @@ import { createStackNavigator, createAppContainer } from 'react-navigation';
 import Home from './screens/Home';
 import Junction from './screens/Junction';
 import Sleuth from './screens/Sleuth';
+import SleuthDescription from './screens/SleuthDescription';
 import Solve from './screens/Solve';
 import End from './screens/End';
 
 const AppNavigator = createStackNavigator({
-    Test: {
+    Junction: {
         screen: Junction
     },
-
 
     Home: {
         screen: Home
@@ -19,6 +19,9 @@ const AppNavigator = createStackNavigator({
     },
     Sleuth: {
         screen: Sleuth
+    },
+    SleuthDescription: {
+        screen: SleuthDescription
     },
     Solve: {
         screen: Solve

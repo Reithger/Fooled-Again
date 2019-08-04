@@ -1,0 +1,20 @@
+[
+  {
+    "char_1": {
+      "portrait_path": "../assets/art/face_1.png",
+      "description": "Character 1 is an odd sort who might know something useful.",
+    },
+    "char_2": {
+      "portrait_path": "../assets/art/face_2.png",
+      "description": "Character 2 may not always be reliable, but they always know more than they ought.",
+    },
+    "char_3": {
+      "portrait_path": "../assets/art/face_3.png",
+      "description": "Character 3? Who even are they?",
+    },
+    "Error": {
+      "portrait_path": "../assets/art/blank_image.png",
+      "description": "Whoops."
+    }
+  }
+]
