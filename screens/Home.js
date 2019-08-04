@@ -19,7 +19,7 @@ export default class Home extends React.Component {
                 <View style={Styles.container_medium}>
                     <Button
                         title="Start"
-                        onPress={() => navigate('Second', { name: 'Second' })}
+                        onPress={() => navigate('Junction', { name: 'Junction' })}
                     />
                 </View>
             </View>

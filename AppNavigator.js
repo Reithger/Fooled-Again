@@ -1,13 +1,25 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import Home from './screens/Home';
-import Second from './screens/Second';
+import Junction from './screens/Junction';
+import Sleuth from './screens/Sleuth';
+import Solve from './screens/Solve';
+import End from './screens/End';
 
 const AppNavigator = createStackNavigator({
     Home: {
         screen: Home
     }, 
-    Second: {
-        screen: Second
+    Junction: {
+        screen: Junction
+    },
+    Sleuth: {
+        screen: Sleuth
+    },
+    Solve: {
+        screen: Solve
+    },
+    End: {
+        screen: End
     }
 });
 
