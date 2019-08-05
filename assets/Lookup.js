@@ -1,4 +1,4 @@
-[
+export default
   {
     "char_1": {
       "portrait_path": "../assets/art/face_1.png",
@@ -17,4 +17,3 @@
       "description": "Whoops."
     }
   }
-]
