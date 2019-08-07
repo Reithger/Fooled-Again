@@ -7,8 +7,8 @@ import Solve from './screens/Solve';
 import End from './screens/End';
 
 const AppNavigator = createStackNavigator({
-    Junction: {
-        screen: Junction
+    SleuthDescription: {
+        screen: SleuthDescription
     },
 
     Home: {

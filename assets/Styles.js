@@ -13,10 +13,13 @@ battleship = "#848482";
 title_border_color = beaver;
 title_background_color = buff;
 
-junction_sleuth_border_color = pine;
-junction_sleuth_background_color = pale;
-junction_solve_border_color = black;
-junction_solve_background_color = battleship;
+junction_sleuth_border_color = beaver;
+junction_sleuth_background_color = buff;
+junction_solve_border_color = beaver;
+junction_solve_background_color = buff;
+
+sleuthDescription_border_color = beaver;
+sleuthDescription_background_color = buff;
 
 export default StyleSheet.create({
     home: {
@@ -121,4 +124,67 @@ export default StyleSheet.create({
     junction_solve_button_text: {
         fontSize: 32
     },
+
+    sleuthDescription: {
+        flex: 1
+    },
+    sleuthDescription_profile: {
+        flex: 3,
+        backgroundColor: '#bbb',
+        borderWidth: 6,
+        borderBottomWidth: 4,
+        borderColor: sleuthDescription_border_color,
+    },
+    sleuthDescription_profile_image: {
+        borderWidth: 6,
+        borderColor: '#333',
+        width: '100%',
+        height: '100%',
+        resizeMode : 'contain'
+    },
+    sleuthDescription_description: {
+        flex: 2,
+        backgroundColor: '#ddd',
+        borderWidth: 6,
+        borderColor: sleuthDescription_border_color,
+        borderBottomWidth: 4,
+    },
+    sleuthDescription_description_title: {
+        alignItems: 'center',
+        borderBottomWidth: 3,
+        borderBottomColor: '#000',
+        borderTopWidth: 3,
+        borderTopColor:'#000',
+    },
+    sleuthDescription_description_title_text: {
+        fontSize: 26,
+    },
+    sleuthDescription_description_body: {
+        alignItems: 'flex-start',
+    },
+    sleuthDescription_description_body_text: {
+        fontSize: 14,
+        justifyContent: 'center'
+    },
+    sleuthDescription_interact: {
+        flex: 1,
+        backgroundColor: sleuthDescription_background_color,
+        alignItems: 'center',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        borderWidth: 6,
+        borderTopWidth: 4,
+        borderColor: sleuthDescription_border_color
+
+    },
+    sleuthDescription_interact_back: {
+        alignItems: 'flex-start',
+        borderWidth : 6,
+        borderColor : sleuthDescription_border_color,
+    },
+    sleuthDescription_interact_interrogate: {
+        alignItems: 'flex-end',
+        borderWidth: 6,
+        borderColor: sleuthDescription_border_color,
+    }
 });

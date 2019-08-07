@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Button, View, Text, TouchableOpacity, Image } from 'react-native';
 import Styles from '../assets/Styles';
 
-characters = ["char_1", "char_2", "char_3", "char_4", "char_5", "char_6", "char_7", "char_8"];
+characters = ["char_1", "char_2", "char_3", "default", "default", "default", "default", "default"];
 
 export default class Junction extends React.Component {
     static navigationOptions = {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, View, Text } from 'react-native';
+import { Button, View, Text, Image } from 'react-native';
 import Lookup from '../assets/Lookup';
 import Styles from '../assets/Styles';
 
@@ -10,25 +10,28 @@ export default class SleuthDescription extends React.Component {
     };
     render() {
         const { navigate } = this.props.navigation;
-        id = this.props.navigation.getParam("character", "Error");
-        descrip = Lookup[id].description;
+        id = this.props.navigation.getParam("character", "default");
         return (
-            <View style={{ flex: 1 }}>
-                <View style={{ flex: 1, backgroundColor: '#bbb' }}>
-
+            <View style={Styles.sleuthDescription}> 
+                <View style={Styles.sleuthDescription_profile}>
+                    <Image style={Styles.sleuthDescription_profile_image} source={Lookup[id].portrait_path}/>
                 </View>
-                <View style={{ flex: 1, backgroundColor: '#ddd' }}>
-                    <Text>Sleuth Description for {id} : {descrip}</Text>
-                    
+                <View style={Styles.sleuthDescription_description}> 
+                    <View style={Styles.sleuthDescription_description_title}>
+                        <Text style={Styles.sleuthDescription_description_title_text}>{Lookup[id].name}</Text>       
+                    </View>
+                    <View style={Styles.sleuthDescription_description_body}>
+                        <Text style={Styles.sleuthDescription_description_body_text}>{Lookup[id].description}</Text>
+                    </View>
                 </View>
-                <View style={{ flex: 1, backgroundColor: '#222', flexDirection: 'row', justifyContent: 'space-around' }}>
-                    <View style={{alignItems: 'flex-start'}}>
+                <View style={Styles.sleuthDescription_interact}>
+                    <View style={Styles.sleuthDescription_interact_back}>
                         <Button
                             title="Back"
                             onPress={() => navigate('Junction', { name: 'Junction' })}
                             />
                     </View>
-                    <View style={{alignItems:'flex-end'}}>
+                    <View style={Styles.sleuthDescription_interact_interrogate}>
                         <Button
                             title="Interrogate"
                             onPress={() => navigate('Sleuth', { character: id })}
