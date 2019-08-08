@@ -2,9 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\assets",
+    "\\assets\\art",
     "\\assets\\text",
     "\\screens"
   ],
-  "SelectedNode": "\\README.md",
+  "SelectedNode": "\\assets\\art",
   "PreviewInSolutionExplorer": false
 }

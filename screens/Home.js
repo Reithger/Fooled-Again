@@ -5,7 +5,12 @@ import Styles from '../assets/Styles';
 export default class Home extends React.Component {
     static navigationOptions = {
         title: 'Welcome',
-        headerLeft: null,
+        headerStyle: {
+            height: 0,
+        },
+        headerTitleStyle: {
+            fontSize: 0,
+        }
     };
     render() {
         const { navigate } = this.props.navigation;

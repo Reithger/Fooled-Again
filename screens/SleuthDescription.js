@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
-import { Button, View, Text, Image } from 'react-native';
+import { TouchableOpacity, View, Text, Image } from 'react-native';
 import Lookup from '../assets/Lookup';
 import Styles from '../assets/Styles';
 
 export default class SleuthDescription extends React.Component {
     static navigationOptions = {
         title: 'Welcome',
-        headerLeft: null,
+        headerStyle: {
+            height: 0,
+        },
+        headerTitleStyle: {
+            fontSize: 0,
+        }
     };
     render() {
         const { navigate } = this.props.navigation;
         id = this.props.navigation.getParam("character", "default");
+        back_button_text = "Back";
+        interrogate_button_text = "Interrogate";
         return (
             <View style={Styles.sleuthDescription}> 
                 <View style={Styles.sleuthDescription_profile}>
@@ -26,20 +33,18 @@ export default class SleuthDescription extends React.Component {
                 </View>
                 <View style={Styles.sleuthDescription_interact}>
                     <View style={Styles.sleuthDescription_interact_back}>
-                        <Button
-                            title="Back"
-                            onPress={() => navigate('Junction', { name: 'Junction' })}
-                            />
+                        <TouchableOpacity style={{}} onPress={() => navigate('Junction', {})}>
+                            <Text style={Styles.sleuthDescription_interact_back_text}>{back_button_text}</Text>
+                        </TouchableOpacity>
                     </View>
                     <View style={Styles.sleuthDescription_interact_interrogate}>
-                        <Button
-                            title="Interrogate"
-                            onPress={() => navigate('Sleuth', { character: id })}
-                        />
+                        <TouchableOpacity style={{}} onPress={() => navigate('Sleuth', {character:id, script: Lookup[id].script_path})}>
+                            <Text style={Styles.sleuthDescription_interact_interrogate_text}>{interrogate_button_text}</Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
 
-            </View>
+                </View>
         );
     }
 }
