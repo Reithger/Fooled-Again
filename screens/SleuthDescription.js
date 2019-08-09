@@ -32,19 +32,14 @@ export default class SleuthDescription extends React.Component {
                     </View>
                 </View>
                 <View style={Styles.sleuthDescription_interact}>
-                    <View style={Styles.sleuthDescription_interact_back}>
-                        <TouchableOpacity style={{}} onPress={() => navigate('Junction', {})}>
-                            <Text style={Styles.sleuthDescription_interact_back_text}>{back_button_text}</Text>
-                        </TouchableOpacity>
-                    </View>
-                    <View style={Styles.sleuthDescription_interact_interrogate}>
-                        <TouchableOpacity style={{}} onPress={() => navigate('Sleuth', {character:id, script: Lookup[id].script_path})}>
-                            <Text style={Styles.sleuthDescription_interact_interrogate_text}>{interrogate_button_text}</Text>
-                        </TouchableOpacity>
-                    </View>
+                    <TouchableOpacity style={Styles.sleuthDescription_interact_back} onPress={() => navigate('Junction', {})}>
+                        <Text style={Styles.sleuthDescription_interact_back_text}>{back_button_text}</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={Styles.sleuthDescription_interact_interrogate} onPress={() => navigate('SleuthConversation', {character:id, script: "screen_1"})}>
+                        <Text style={Styles.sleuthDescription_interact_interrogate_text}>{interrogate_button_text}</Text>
+                    </TouchableOpacity>
                 </View>
-
-                </View>
+            </View>
         );
     }
 }

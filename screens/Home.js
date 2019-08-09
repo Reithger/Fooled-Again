@@ -17,14 +17,16 @@ export default class Home extends React.Component {
         return (
             <View style={Styles.home}>
                 <View style={Styles.home_title}>
-                    <Text style={Styles.home_title_text}>
-                        Won't Get Fooled Again
-                    </Text>
+                    <View style={Styles.home_title_space}>
+                        <Text style={Styles.home_title_space_text}>
+                            Won't Get Fooled Again
+                        </Text>
+                    </View>
                 </View >
                 <View style={Styles.home_image}>
                     <Image style={Styles.home_image_style} source={require('../assets/art/newspapers.png')} />
                 </View>
-                <TouchableOpacity style={Styles.home_start_button} onPress={() => navigate('Junction', {})}>
+                <TouchableOpacity style={Styles.home_start_button} onPress={() => navigate('Intro', {})}>
                     <Text style={Styles.home_start_button_text}> Start </Text>
                 </TouchableOpacity>
             </View>

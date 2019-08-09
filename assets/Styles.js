@@ -8,20 +8,30 @@ pale = "#98fb98";
 avocado = "#568203";
 
 black = "#000";
+white = "#fff";
+red = "#f00";
 battleship = "#848482";
 
-title_border_color = beaver;
-title_background_color = buff;
+title_border_color = red;
+title_border_color_2 = black;
+title_background_color = white;
 
-junction_sleuth_border_color = beaver;
-junction_sleuth_background_color = buff;
-junction_solve_border_color = beaver;
-junction_solve_background_color = buff;
+intro_border_color = red;
+intro_border_color_2 = black;
+intro_background_color = white;
 
-sleuthDescription_border_color = beaver;
-sleuthDescription_background_color = buff;
-sleuthDescription_image_background_color = '#bbb';
-sleuthDescription_image_border_color = black;
+junction_sleuth_border_color = black;
+junction_sleuth_background_color = white;
+junction_solve_border_color = black;
+junction_solve_background_color = white;
+
+sleuthDescription_border_color = black;
+sleuthDescription_border_color_2 = red;
+sleuthDescription_background_color = white;
+
+sleuthConversation_border_color = black;
+sleuthConversation_border_color_2 = red;
+sleuthConversation_background_color = white;
 
 export default StyleSheet.create({
     home: {
@@ -35,15 +45,22 @@ export default StyleSheet.create({
             borderColor: title_border_color,
             borderWidth: 6
         },
-            home_title_text: {
-                fontSize: 32
+            home_title_space: {
+                borderTopWidth: 6,
+                borderBottomWidth: 6,
+                borderColor: title_border_color_2,
             },
+                home_title_space_text: {
+                    fontSize: 32,
+                },
         home_image: {
             flex: 2
         },
             home_image_style: {
                 flex: 1,
                 resizeMode: 'cover',
+                borderWidth: 6,
+                borderColor: title_border_color,
                 width: null,
                 height: null
             },
@@ -58,6 +75,52 @@ export default StyleSheet.create({
             home_start_button_text: {
                 fontSize: 26
             },
+
+    intro: {
+        flex:1
+    },
+        placeholder: {
+            flex: 1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            borderWidth: 6,
+            borderColor: intro_border_color
+        },
+            placeholder_text:{
+                fontSize: 26,
+            },
+        navigation: {
+            flex: 1,
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'space-around',
+            borderWidth: 6,
+            borderColor: intro_border_color,
+        },
+            navigation_back :{
+                flex: 1,
+                borderWidth: 4,
+                borderColor: intro_border_color_2,
+                width: '100%',
+                height: '100%',
+                alignItems: 'center',
+                justifyContent: 'center'
+            },
+                navigation_back_text : {
+                    fontSize: 26,
+                },
+            navigation_junction: {
+                flex: 1,
+                borderWidth: 4,
+                borderColor: intro_border_color_2,
+                width: '100%',
+                height: '100%',
+                alignItems: 'center',
+                justifyContent: 'center'
+            },
+                navigation_junction_text : {
+                    fontSize: 26,
+                },
 
     junction: { 
         flex: 1,
@@ -132,14 +195,14 @@ export default StyleSheet.create({
     },
         sleuthDescription_profile: {
             flex: 3,
-            backgroundColor: sleuthDescription_image_background_color,
+            backgroundColor: sleuthDescription_background_color,
             borderWidth: 6,
             borderBottomWidth: 4,
-            borderColor: sleuthDescription_border_color,
+            borderColor: sleuthDescription_border_color_2,
         },
             sleuthDescription_profile_image: {
                 borderWidth: 6,
-                borderColor: sleuthDescription_image_border_color,
+                borderColor: sleuthDescription_border_color,
                 width: '100%',
                 height: '100%',
                 resizeMode : 'contain'
@@ -154,9 +217,8 @@ export default StyleSheet.create({
             sleuthDescription_description_title: {
                 alignItems: 'center',
                 borderBottomWidth: 3,
-                borderBottomColor: '#000',
+                borderColor: sleuthDescription_border_color_2,
                 borderTopWidth: 3,
-                borderTopColor:'#000',
             },
                 sleuthDescription_description_title_text: {
                     fontSize: 26,
@@ -176,22 +238,90 @@ export default StyleSheet.create({
             justifyContent: 'space-around',
             borderWidth: 6,
             borderTopWidth: 4,
-            borderColor: sleuthDescription_border_color
+            borderColor: sleuthDescription_border_color_2
         },
             sleuthDescription_interact_back: {
-                alignItems: 'flex-start',
-                borderWidth : 6,
-                borderColor : sleuthDescription_border_color,
+                borderWidth : 4,
+                borderColor: sleuthDescription_border_color,
+                width: '40%',
+                alignItems: 'center'
             },
                 sleuthDescription_interact_back_text: {
-
+                    fontSize: 24,
                 },
             sleuthDescription_interact_interrogate: {
-                alignItems: 'flex-end',
-                borderWidth: 6,
+                borderWidth: 4,
                 borderColor: sleuthDescription_border_color,
+                width: '40%',
+                alignItems: 'center',
             },
                 sleuthDescription_interact_interrogate_text: {
-
+                    fontSize: 24,
                 },
+
+
+    sleuthConversation: {
+        flex: 1,
+    },
+        sleuthConversation_profile: {
+            flex: 1,
+            backgroundColor: sleuthConversation_background_color,
+            borderWidth: 6,
+            borderBottomWidth: 4,
+            borderColor: sleuthConversation_border_color_2,
+        },
+            sleuthConversation_profile_image: {
+                borderWidth: 6,
+                borderColor: sleuthConversation_border_color,
+                width: '100%',
+                height: '100%',
+                resizeMode: 'contain'
+            },
+        sleuthConversation_Conversation: {
+            flex: 1,
+            backgroundColor: sleuthConversation_background_color,
+            borderWidth: 6,
+            borderColor: sleuthConversation_border_color,
+            borderBottomWidth: 4,
+        },
+            sleuthConversation_Conversation_title: {
+                alignItems: 'center',
+                borderBottomWidth: 3,
+                borderColor: sleuthConversation_border_color_2,
+                borderTopWidth: 3,
+            },
+                sleuthConversation_Conversation_title_text: {
+                    fontSize: 26,
+                },
+        sleuthConversation_Conversation_body: {
+            alignItems: 'flex-start',
+        },
+            sleuthConversation_Conversation_body_text: {
+                fontSize: 14,
+                justifyContent: 'center'
+            },
+        sleuthConversation_interact: {
+            flex: 1,
+            backgroundColor: sleuthConversation_background_color,
+            alignItems: 'center',
+            flexDirection: 'column',
+            justifyContent: 'space-around',
+            borderWidth: 6,
+            borderTopWidth: 4,
+            borderColor: sleuthConversation_border_color_2
+        },
+            sleuthConversation_interact_button: {
+                borderWidth: 3,
+                borderColor: sleuthConversation_border_color,
+                width: '90%',
+                alignItems: 'center',
+                justifyContent: 'center'
+            },
+                sleuthConversation_interact_button_format : {
+                    alignItems: 'center',
+                    justifyContent: 'center'
+                },
+                    sleuthConversation_interact_button_text: {
+                        fontSize: 18,
+                    },
 });
