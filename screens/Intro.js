@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { TouchableOpacity, Button, View, Text } from 'react-native';
 import Styles from '../assets/Styles';
+import Memory from '../assets/Memory';
 
 export default class Junction extends React.Component {
     static navigationOptions = {
@@ -14,6 +15,12 @@ export default class Junction extends React.Component {
     };
     render() {
         const { navigate } = this.props.navigation;
+        var data = new Memory();
+        data.storeData("a", "c");
+        data.retrieveData("a").then((value) => console.log(value));
+        data.storeData("b", "c");
+        data.retrieveData("b").then((value) => console.log(value));
+
         return (
             <View style={Styles.intro}>
                 <View style={Styles.placeholder}>

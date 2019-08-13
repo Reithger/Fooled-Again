@@ -80,7 +80,7 @@ export default StyleSheet.create({
         flex:1
     },
         placeholder: {
-            flex: 1,
+            flex: 3,
             justifyContent: 'center',
             alignItems: 'center',
             borderWidth: 6,

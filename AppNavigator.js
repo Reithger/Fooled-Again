@@ -9,9 +9,8 @@ import Intro from './screens/Intro';
 
 const AppNavigator = createStackNavigator({
 
-
-    SleuthConversation: {
-        screen: SleuthConversation
+    Junction: {
+        screen: Junction
     },
     Home: {
         screen: Home
