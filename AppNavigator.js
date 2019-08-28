@@ -9,12 +9,9 @@ import Intro from './screens/Intro';
 
 const AppNavigator = createStackNavigator({
 
-    Junction: {
-        screen: Junction
-    },
     Home: {
         screen: Home
-    }, 
+    },
     Intro: {
         screen: Intro
     },

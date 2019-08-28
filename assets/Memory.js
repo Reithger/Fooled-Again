@@ -2,8 +2,6 @@ import { AsyncStorage } from "react-native";
 
 export default class Memory{
 
-    
-
     async storeData(field, key){
         try {
             await AsyncStorage.setItem(field, key);

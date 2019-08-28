@@ -6,7 +6,7 @@ export default {
             "directory": ["screen_2", "screen_3", "screen_3"],
             "image": require("../art/source_image_1.png"),
         },
-        "screen_2": {   
+        "screen_2": {
             "dialogue": "If the user did one option, they may get this screen",
             "responses": ["And say this", "Or this"],
             "directory": ["screen_3", "screen_4"],

@@ -15,22 +15,18 @@ export default class Junction extends React.Component {
     };
     render() {
         const { navigate } = this.props.navigation;
-        var data = new Memory();
-        data.storeData("a", "c");
-        data.retrieveData("a").then((value) => console.log(value));
-        data.storeData("b", "c");
-        data.retrieveData("b").then((value) => console.log(value));
-
+        var memory = this.props.navigation.getParam("memory", {"initialized": true, "progress": {}});
+        console.log(memory);
         return (
             <View style={Styles.intro}>
                 <View style={Styles.placeholder}>
                     <Text style={Styles.placeholder_text}>Introductory Scene Here</Text>
                 </View>
                 <View style={Styles.navigation}>
-                    <TouchableOpacity style={Styles.navigation_back} onPress={() => navigate('Home', {})}>
+                    <TouchableOpacity style={Styles.navigation_back} onPress={() => navigate('Home', {memory: memory})}>
                         <Text style={Styles.navigation_back_text}>Back</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={Styles.navigation_junction} onPress={() => navigate('Junction', {})}>
+                    <TouchableOpacity style={Styles.navigation_junction} onPress={() => navigate('Junction', {memory: memory})}>
                         <Text style={Styles.navigation_junction_text}>Junction</Text>
                     </TouchableOpacity>
                 </View>

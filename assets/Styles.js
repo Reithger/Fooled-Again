@@ -122,7 +122,7 @@ export default StyleSheet.create({
                     fontSize: 26,
                 },
 
-    junction: { 
+    junction: {
         flex: 1,
     },
         junction_sleuth: {
@@ -181,14 +181,32 @@ export default StyleSheet.create({
                     marginLeft: '3%',
                     marginTop: '5%',
                 },
-            junction_solve_button: {
-                flex: 2,
-                alignItems: 'flex-end',
-                justifyContent: 'flex-end',
+            junction_solve_body : {
+              flexDirection: "column",
+              justifyContent : "space-between",
+              flex: 3
             },
-                junction_solve_button_text: {
-                    fontSize: 32
+                junction_solve_body_scroll : {
+                  flex : 2,
+                  flexDirection: "row",
+                  alignItems: "center",
+                  justifyContent: "space-around",
                 },
+                    junction_solve_body_scroll_image : {
+                        width: 50,
+                        height: 50,
+                    },
+                junction_solve_body_button: {
+                    flex: 1,
+                    alignItems: 'flex-end',
+                    justifyContent: 'flex-end',
+                },
+                    junction_solve_body_button_touchable : {
+
+                    },
+                        junction_solve_body_button_touchable_text: {
+                            fontSize: 32
+                        },
 
     sleuthDescription: {
         flex: 1,

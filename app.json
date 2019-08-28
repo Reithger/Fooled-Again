@@ -1,13 +1,11 @@
 {
   "expo": {
-    "name": "Test_2",
-    "slug": "Test_2",
+    "name": "Won't Get Fooled Again",
+    "slug": "wontgetfooledagain",
     "privacy": "public",
     "sdkVersion": "34.0.0",
     "platforms": [
       "ios",
-      "android",
-      "web"
     ],
     "version": "1.0.0",
     "orientation": "portrait",
@@ -25,6 +23,7 @@
     ],
     "ios": {
       "supportsTablet": true
-    }
+    },
+    "description": "A gripping tale of deceit and investigation into the truth behind the news we take for granted."
   }
 }
