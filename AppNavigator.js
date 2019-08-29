@@ -8,9 +8,7 @@ import End from './screens/End';
 import Intro from './screens/Intro';
 
 const AppNavigator = createStackNavigator({
-  End: {
-      screen: End
-  },
+
     Home: {
         screen: Home
     },
