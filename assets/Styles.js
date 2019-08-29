@@ -138,6 +138,8 @@ export default StyleSheet.create({
                 borderColor: junction_sleuth_border_color,
                 borderStyle: 'solid',
                 borderBottomWidth: 4,
+                flexDirection : 'row',
+                justifyContent: 'space-between',
             },
                 junction_sleuth_title_text: {
                     fontSize: 48,
@@ -145,22 +147,35 @@ export default StyleSheet.create({
                     marginRight: '3%',
                     marginTop: '5%',
                 },
-            junction_sleuth_selection: {
-                flex: 1,
-                justifyContent: 'space-around',
-                flexDirection: 'row',
-                alignItems: 'center',
+                junction_sleuth_title_back : {
+                    alignSelf : 'flex-start',
+                    justifyContent: 'center',
+                    marginTop: '2%',
+                    marginLeft : '2%',
                 },
-                junction_sleuth_image: {
-                    width: 50,
-                    height: 50,
-                    borderRadius: 50 / 2,
-                    backgroundColor: 'red',
-                },
-                    junction_sleuth_image_profile: {
-                        width: 50,
-                        height: 50,
+                    junction_sleuth_title_back_text : {
+                      fontSize: 26,
+
                     },
+            junction_sleuth_body : {
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              flex: 3
+            },
+                junction_sleuth_body_selection: {
+                    flex: 2,
+                    justifyContent: 'space-around',
+                    flexDirection: 'row',
+                    alignItems: 'center',
+                    },
+                        junction_sleuth_body_selection_image: {
+                            width: 50,
+                            height: 50,
+                        },
+                            junction_sleuth_body_selection_image_profile: {
+                                width: 50,
+                                height: 50,
+                            },
         junction_solve: {
             flex: 1,
             backgroundColor: junction_solve_background_color,
@@ -342,4 +357,91 @@ export default StyleSheet.create({
                     sleuthConversation_interact_button_text: {
                         fontSize: 18,
                     },
+
+    solve : {
+      flex : 1
+    },
+        solve_puzzle : {
+          flex : 5,
+          borderWidth : 8,
+          alignItems: 'center',
+          justifyContent : 'center',
+        },
+            solve_puzzle_image : {
+              width : 200,
+              height : 200,
+            },
+        solve_interact : {
+          flex : 1,
+          flexDirection : 'row',
+          justifyContent : 'space-around',
+          borderWidth : 4,
+          borderTopWidth : 0,
+          alignItems: 'center',
+        },
+            solve_interact_back : {
+              borderWidth : 4,
+              width : '40%',
+              alignItems : 'center',
+            },
+                solve_interact_back_text : {
+                  fontSize : 32
+                },
+            solve_interact_solve : {
+              borderWidth : 4,
+              width : '40%',
+              alignItems : 'center',
+            },
+                solve_interact_solve_text : {
+                  fontSize: 32
+                },
+
+
+    end : {
+      flex : 1,
+    },
+        end_image : {
+          borderWidth : 6,
+          flex: 3,
+        },
+          end_image_profile : {
+            resizeMode : 'cover',
+            width : null,
+            height : null,
+            flex: 1,
+          },
+      end_body : {
+        alignItems: 'center',
+        justifyContent : 'center',
+        flex: 2,
+        borderWidth : 4,
+        borderTopWidth : 0,
+      },
+          end_body_text : {
+            fontSize : 32,
+          },
+      end_interact : {
+        flexDirection : 'row',
+        justifyContent: 'space-around',
+        alignItems : 'center',
+        flex: 1,
+        borderWidth : 4,
+        borderTopWidth : 0,
+      },
+          end_interact_back : {
+            width : '40%',
+            borderWidth : 4,
+            alignItems : 'center'
+          },
+              end_interact_back_text : {
+                fontSize : 26
+              },
+          end_interact_end : {
+            width : '40%',
+            borderWidth : 4,
+            alignItems : 'center'
+          },
+              end_interact_end_text : {
+                fontSize : 26
+              },
 });

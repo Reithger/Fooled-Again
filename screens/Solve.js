@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, View, Text } from 'react-native';
+import { Button, View, Text, TouchableOpacity, Image } from 'react-native';
 import Styles from '../assets/Styles';
 
 export default class Solve extends React.Component {
@@ -14,17 +14,24 @@ export default class Solve extends React.Component {
     };
     render() {
         const { navigate } = this.props.navigation;
+        var memory = this.props.navigation.getParam("memory", {"initialized": true, "progress": {"char_1" : "success"}});
         return (
-            <View style={Styles.container_small}>
-                <Text>Solve</Text>
-                <Button
-                    title="Back"
-                    onPress={() => navigate('Junction', { name: 'Junction' })}
-                />
-                <Button
-                    title="End"
-                    onPress={() => navigate('End', { name: 'End' })}
-                />
+            <View style={Styles.solve}>
+                <View style = {Styles.solve_puzzle}>
+                    <Image style = {Styles.solve_puzzle_image} source = {require('../assets/art/scroll.png')} />
+                </View>
+                <View style = {Styles.solve_interact}>
+                    <TouchableOpacity style = {Styles.solve_interact_back} onPress={() => navigate('Junction', {memory:memory})}>
+                        <Text style = {Styles.solve_interact_back_text}>
+                          Back
+                        </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style = {Styles.solve_interact_solve} onPress={() => navigate('End', {memory:memory})}>
+                        <Text style = {Styles.solve_interact_solve_text}>
+                          Solve
+                        </Text>
+                    </TouchableOpacity>
+                </View>
             </View>
         );
     }

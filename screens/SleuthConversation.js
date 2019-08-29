@@ -17,8 +17,9 @@ export default class SleuthConversation extends React.Component {
     };
     render() {
         const { navigate } = this.props.navigation;
-        id = this.props.navigation.getParam("character", "default");
-        script = Lookup_Interrogate[id][this.props.navigation.getParam("script", "screen_1")];
+        var id = this.props.navigation.getParam("character", "default");
+        var memory = this.props.navigation.getParam("memory",  {"initialized": true, "progress": {}});
+        var script = Lookup_Interrogate[id][this.props.navigation.getParam("script", "screen_1")];
 
         return (
             <View style={Styles.sleuthConversation}>
@@ -40,26 +41,20 @@ export default class SleuthConversation extends React.Component {
                             var next = script.directory[script.responses.indexOf(response)];
                             if (next == "exit_success") {
                                 var data = new Memory();
-                                data.retrieveData("DATA").then((value) => {
-                                    value = JSON.parse(value);
-                                    value["progress"][id] = "success";
-                                    data.storeData("DATA", JSON.stringify(value));
-                                });
-                                navigate('Junction', {});
+                                memory["progress"][id] = "success";
+                                data.storeData("DATA", JSON.stringify(memory));
+                                navigate('Junction', {memory : memory});
                             }
                             else if (next == "exit_failure") {
-                                var data = new Memory();
-                                data.retrieveData("DATA").then((value) => {
-                                    value = JSON.parse(value);
-                                    value["progress"][id] = "failure";
-                                    data.storeData("DATA", JSON.stringify(value));
-                                });
-                                navigate('Junction', {});
+                              var data = new Memory();
+                              memory["progress"][id] = "failure";
+                              data.storeData("DATA", JSON.stringify(memory));
+                              navigate('Junction', {memory : memory});
                             }
                             else {
-                                navigate('SleuthConversation', { character: id, script: next })
+                                navigate('SleuthConversation', { character: id, script: next, memory : memory })
                             }
-                        }
+                          }
                         }>
                             <View style={Styles.sleuthConversation_interact_button_format}>
                                 <Text key={response} style={Styles.sleuthConversation_interact_button_text}>{response}</Text>

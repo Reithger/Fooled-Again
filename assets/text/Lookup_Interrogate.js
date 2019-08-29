@@ -44,14 +44,14 @@ export default {
 
     "char_2": {
         "screen_1": {
-            "dialogue": "",
-            "responses": "",
-            "directory": ["screen_2"],
+            "dialogue": "Words",
+            "responses": ["(Exit)"],
+            "directory": ["exit_success"],
             "image": require("../art/source_image_1.png"),
         },
         "screen_2": {
             "dialogue": "",
-            "responses": "",
+            "responses": [""],
             "directory": [],
             "image": require("../art/source_image_1.png"),
         }
@@ -60,13 +60,13 @@ export default {
     "char_3": {
         "screen_1": {
             "dialogue": "",
-            "responses": "",
+            "responses": [""],
             "directory": ["screen_2"],
             "image": require("../art/source_image_1.png"),
         },
         "screen_2": {
             "dialogue": "",
-            "responses": "",
+            "responses": [""],
             "directory": [],
             "image": require("../art/source_image_1.png"),
         }
@@ -75,13 +75,13 @@ export default {
     "char_4": {
         "screen_1": {
             "dialogue": "",
-            "responses": "",
+            "responses": [""],
             "directory": ["screen_2"],
             "image": require("../art/source_image_1.png"),
         },
         "screen_2": {
             "dialogue": "",
-            "responses": "",
+            "responses": [""],
             "directory": [],
             "image": require("../art/source_image_1.png"),
         }
@@ -90,13 +90,13 @@ export default {
     "char_5": {
         "screen_1": {
             "dialogue": "",
-            "responses": "",
+            "responses": [""],
             "directory": ["screen_2"],
             "image": require("../art/source_image_1.png"),
         },
         "screen_2": {
             "dialogue": "",
-            "responses": "",
+            "responses": [""],
             "directory": [],
             "image": require("../art/source_image_1.png"),
         }
@@ -105,13 +105,13 @@ export default {
     "char_6": {
         "screen_1": {
             "dialogue": "",
-            "responses": "",
+            "responses": [""],
             "directory": ["screen_2"],
             "image": require("../art/source_image_1.png"),
         },
         "screen_2": {
             "dialogue": "",
-            "responses": "",
+            "responses": [""],
             "directory": [],
             "image": require("../art/source_image_1.png"),
         }
@@ -120,13 +120,13 @@ export default {
     "char_7": {
         "screen_1": {
             "dialogue": "",
-            "responses": "",
+            "responses": [""],
             "directory": ["screen_2"],
             "image": require("../art/source_image_1.png"),
         },
         "screen_2": {
             "dialogue": "",
-            "responses": "",
+            "responses": [""],
             "directory": [],
             "image": require("../art/source_image_1.png"),
         }
@@ -135,13 +135,13 @@ export default {
     "char_8": {
         "screen_1": {
             "dialogue": "",
-            "responses": "",
+            "responses": [""],
             "directory": ["screen_2"],
             "image": require("../art/source_image_1.png"),
         },
         "screen_2": {
             "dialogue": "",
-            "responses": "",
+            "responses": [""],
             "directory": [],
             "image": require("../art/source_image_1.png"),
         }
@@ -150,13 +150,13 @@ export default {
     "char_9": {
         "screen_1": {
             "dialogue": "",
-            "responses": "",
+            "responses": [""],
             "directory": ["screen_2"],
             "image": require("../art/source_image_1.png"),
         },
         "screen_2": {
             "dialogue": "",
-            "responses": "",
+            "responses": [""],
             "directory": [],
             "image": require("../art/source_image_1.png"),
         }
@@ -165,13 +165,13 @@ export default {
     "char_10": {
         "screen_1": {
             "dialogue": "",
-            "responses": "",
+            "responses": [""],
             "directory": ["screen_2"],
             "image": require("../art/source_image_1.png"),
         },
         "screen_2": {
             "dialogue": "",
-            "responses": "",
+            "responses": [""],
             "directory": [],
             "image": require("../art/source_image_1.png"),
         }
@@ -180,13 +180,13 @@ export default {
     "char_11": {
         "screen_1": {
             "dialogue": "",
-            "responses": "",
+            "responses": [""],
             "directory": ["screen_2"],
             "image": require("../art/source_image_1.png"),
         },
         "screen_2": {
             "dialogue": "",
-            "responses": "",
+            "responses": [""],
             "directory": [],
             "image": require("../art/source_image_1.png"),
         }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, View, Text } from 'react-native';
+import { Button, View, Text, Image, TouchableOpacity } from 'react-native';
 import Styles from '../assets/Styles';
 
 export default class Junction extends React.Component {
@@ -14,13 +14,26 @@ export default class Junction extends React.Component {
     };
     render() {
         const { navigate } = this.props.navigation;
+        var memory = this.props.navigation.getParam("memory", {"initialized" : true, "progress" : {"char_1" : "success"}});
+
         return (
-            <View style={Styles.container_small}>
-                <Text>End</Text>
-                <Button
-                    title="Back"
-                    onPress={() => navigate('Solve', { name: 'Solve' })}
-                />
+            <View style={Styles.end}>
+                <View style = {Styles.end_image}>
+                    <Image style = {Styles.end_image_profile} source = {require('../assets/art/newspapers.png')} />
+                </View>
+                <View style = {Styles.end_body}>
+                    <Text style = {Styles.end_body_text}>
+                      Something happened!
+                    </Text>
+                </View>
+                <View style = {Styles.end_interact}>
+                    <TouchableOpacity style = {Styles.end_interact_back} onPress={() => navigate('Solve', {memory : memory})}>
+                        <Text style = {Styles.end_interact_back_text}> Back </Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style = {Styles.end_interact_end} onPress={() => navigate('Home', {memory : memory})}>
+                        <Text style = {Styles.end_interact_end_text}> End </Text>
+                    </TouchableOpacity>
+                </View>
             </View>
         );
     }

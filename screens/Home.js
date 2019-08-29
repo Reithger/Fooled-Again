@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, View, Text, TouchableOpacity, Image } from 'react-native';
 import Styles from '../assets/Styles';
+import Memory from '../assets/Memory';
 
 export default class Home extends React.Component {
     static navigationOptions = {
@@ -19,14 +20,13 @@ export default class Home extends React.Component {
         data.retrieveData("DATA").then((value) => {
             if (value == null) {
                 value = {
-                    "initialized": true, "progress": {}
+                    "initialized": false, "progress": {}
                 };
                 value = JSON.stringify(value);
                 data.storeData("DATA", value);
             }
             memory = JSON.parse(value);
         });
-        console.log(memory);
         return (
             <View style={Styles.home}>
                 <View style={Styles.home_title}>
