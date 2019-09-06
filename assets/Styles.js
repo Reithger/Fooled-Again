@@ -330,7 +330,7 @@ export default StyleSheet.create({
             alignItems: 'flex-start',
         },
             sleuthConversation_Conversation_body_text: {
-                fontSize: 14,
+                fontSize: 20,
                 justifyContent: 'center'
             },
         sleuthConversation_interact: {

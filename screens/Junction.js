@@ -71,7 +71,6 @@ export default class Junction extends React.Component {
                             {line_one.map(index => (
                               <TouchableOpacity key = {index} style={Styles.junction_sleuth_body_selection_image} onPress={() => navigate('SleuthDescription', {character: characters[index], memory: memory})}>
                                   <Image style={Styles.junction_sleuth_body_selection_image_profile} source={images[index]} />
-                                  <Text> {characters[index]} </Text>
                               </TouchableOpacity>
                             ))}
                         </View>
@@ -79,7 +78,6 @@ export default class Junction extends React.Component {
                             {line_two.map(index => (
                               <TouchableOpacity key = {index} style={Styles.junction_sleuth_body_selection_image} onPress={() => navigate('SleuthDescription', {character: characters[index], memory: memory})}>
                                   <Image style={Styles.junction_sleuth_body_selection_image_profile} source={images[index]} />
-                                  <Text> {characters[index]} </Text>
                               </TouchableOpacity>
                             ))}
                         </View>
