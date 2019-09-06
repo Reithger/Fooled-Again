@@ -1,2 +1,4 @@
-# Test_2
- Getting to grips with React Native expo in a test project that roughly models a game I'm working on.
+# Won't Get Fooled Again
+ A React-Native Javascript based Mobile Application I was hired to develop by a Sociology professor; the project is a game about Fake News Media that puts you, the player, in the role of someone who is trying to validate a number of claims about the local refugee population that have been circling in the run-up to a national election.
+ I've worked with React-Native before, but this project finally gave me the impetus to dig in deep and make a fairly thorough project; you can find it on expo here: https://expo.io/@reithger/wontgetfooledagain and run it on your own mobile device if it's an Android (iOS doesn't like sharing their app distribution network, sadly.)
+ Feel free to take pointers from the code or message me if you're interested in how I made this, it's surprisingly easy to get a mobile app started with the technologies that exist today.
