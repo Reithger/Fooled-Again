@@ -16,7 +16,7 @@ export default {
       "text" : "Anti-immigration protests rocked the city today "+
 		"as a result of a fake news story that falsely "+
 		"claimed refugees were causing violence.",
-      "image" : "require("../art/stand_in.png"),
+      "image" : require("../art/stand_in.png"),
     },
     "failure" : {
       "text" : "Fact checkers saved the city from potential riots today when "+
