@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, View, Text, Image, TouchableOpacity } from 'react-native';
 import Styles from '../assets/Styles';
+import Memory from '../assets/Memory';
 
 export default class Junction extends React.Component {
     static navigationOptions = {
@@ -27,10 +28,10 @@ export default class Junction extends React.Component {
                     </Text>
                 </View>
                 <View style = {Styles.end_interact}>
-                    <TouchableOpacity style = {Styles.end_interact_back} onPress={() => navigate('Solve', {memory : memory})}>
+                    <TouchableOpacity style = {Styles.end_interact_back} onPress={() => {navigate('Solve', {memory : memory});}}>
                         <Text style = {Styles.end_interact_back_text}> Back </Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style = {Styles.end_interact_end} onPress={() => navigate('Home', {memory : memory})}>
+                    <TouchableOpacity style = {Styles.end_interact_end} onPress={() => navigate('Home', {memory : memory, new : true})}>
                         <Text style = {Styles.end_interact_end_text}> End </Text>
                     </TouchableOpacity>
                 </View>

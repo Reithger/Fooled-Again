@@ -18,7 +18,7 @@ export default class Home extends React.Component {
         var data = new Memory();
         var memory = {};
         data.retrieveData("DATA").then((value) => {
-            if (value == null) {
+            if (value == null || this.props.navigation.getParam("new", false)) {
                 value = {
                     "initialized": false, "progress": {}
                 };
