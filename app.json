@@ -24,6 +24,7 @@
     "ios": {
       "supportsTablet": true
     },
-    "description": "A gripping tale of deceit and investigation into the truth behind the news we take for granted."
+    "description": "A gripping tale of deceit and investigation into the truth behind the news we take for granted.",
+    "githubUrl": "https://github.com/Reithger/Fooled-Again"
   }
 }
