@@ -79,46 +79,101 @@ export default StyleSheet.create({
     intro: {
         flex:1
     },
-        placeholder: {
+        intro_body: {
             flex: 3,
-            justifyContent: 'center',
-            alignItems: 'center',
             borderWidth: 6,
             borderColor: intro_border_color
         },
-            placeholder_text:{
-                fontSize: 26,
+            intro_body_headline : {
+              flex : 1,
             },
-        navigation: {
+                intro_body_headline_text : {
+                    fontSize : 26,
+                    fontWeight : 'bold',
+                },
+            intro_body_subhead : {
+              flex : 1,
+            },
+                intro_body_subhead_text : {
+                  fontSize : 20,
+                  fontWeight : 'bold',
+                },
+            intro_body_body : {
+              flex : 2
+            },
+                intro_body_body_text : {
+                    fontSize : 18
+                },
+            intro_body_image : {
+              flex : 3,
+            },
+                intro_body_image_format : {
+                  flex: 1,
+                  resizeMode: 'cover',
+                  borderWidth: 3,
+                  borderColor: intro_border_color_2,
+                  width: null,
+                  height: null,
+                  margin : "5%",
+                },
+            intro_body_tab : {
+              flexDirection : "row",
+              flex : 1,
+              justifyContent : 'space-between',
+              alignItems : 'flex-end',
+            },
+                intro_body_tab_left : {
+                  borderWidth : 2,
+                  width : "20%",
+                  height : "50%",
+                  alignItems: 'center',
+                  justifyContent : 'center',
+                },
+                    intro_body_tab_left_text : {
+                      fontSize : 16,
+                    },
+                intro_body_tab_right : {
+                  borderWidth : 2,
+                  width : "20%",
+                  height : "50%",
+                  alignItems: 'center',
+                  justifyContent : 'center',
+                },
+                    intro_body_tab_right_text : {
+                      fontSize : 16,
+                    },
+
+
+        intro_navigation: {
             flex: 1,
-            flexDirection: 'column',
+            flexDirection: 'row',
             alignItems: 'center',
             justifyContent: 'space-around',
             borderWidth: 6,
             borderColor: intro_border_color,
         },
-            navigation_back :{
+            intro_navigation_back :{
                 flex: 1,
                 borderWidth: 4,
                 borderColor: intro_border_color_2,
-                width: '100%',
-                height: '100%',
+                width: '30%',
+                height: '30%',
                 alignItems: 'center',
                 justifyContent: 'center'
             },
-                navigation_back_text : {
+                intro_navigation_back_text : {
                     fontSize: 26,
                 },
-            navigation_junction: {
+            intro_navigation_junction: {
                 flex: 1,
                 borderWidth: 4,
                 borderColor: intro_border_color_2,
-                width: '100%',
-                height: '100%',
+                width: '30%',
+                height: '30%',
                 alignItems: 'center',
                 justifyContent: 'center'
             },
-                navigation_junction_text : {
+                intro_navigation_junction_text : {
                     fontSize: 26,
                 },
 
