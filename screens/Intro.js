@@ -51,7 +51,7 @@ export default class Junction extends React.Component {
         if(format == "headline"){
           top = <View style={Styles.intro_body}>
                     <View style = {Styles.intro_body_headline}>
-                        <Text style = {Styles.intro_body_headline_text}> {text} </Text>
+                        <Text style = {Styles.intro_body_headline_text}>{text}</Text>
                     </View>
                     <View style = {Styles.intro_body_image}>
                         <Image style = {Styles.intro_body_image_format} source = {pic}/>
@@ -65,7 +65,7 @@ export default class Junction extends React.Component {
                         <Image style = {Styles.intro_body_image_format} source = {pic}/>
                     </View>
                     <View style = {Styles.intro_body_subhead}>
-                        <Text style = {Styles.intro_body_subhead_text}> {text} </Text>
+                        <Text style = {Styles.intro_body_subhead_text}>{text}</Text>
                     </View>
                     {internal}
                 </View>;
@@ -76,7 +76,7 @@ export default class Junction extends React.Component {
                         <Image style = {Styles.intro_body_image_format} source = {pic}/>
                     </View>
                     <View style = {Styles.intro_body_body}>
-                        <Text style = {Styles.intro_body_body_text}> {text} </Text>
+                        <Text style = {Styles.intro_body_body_text}>{text}</Text>
                     </View>
                     {internal}
                 </View>;

@@ -86,32 +86,45 @@ export default StyleSheet.create({
         },
             intro_body_headline : {
               flex : 1,
+              alignItems: 'flex-start',
+              justifyContent: 'center',
+              margin : '2%',
+              marginRight : '4%',
+              borderRightWidth : 3,
             },
                 intro_body_headline_text : {
-                    fontSize : 26,
+                    fontSize : 22,
                     fontWeight : 'bold',
                 },
             intro_body_subhead : {
               flex : 1,
+              margin: '3%',
             },
                 intro_body_subhead_text : {
                   fontSize : 20,
                   fontWeight : 'bold',
                 },
             intro_body_body : {
-              flex : 2
+              flex : 2,
+              margin : '3%',
+              borderTopWidth : 2,
+              borderBottomWidth : 2,
+              justifyContent: 'center',
             },
                 intro_body_body_text : {
                     fontSize : 18
                 },
             intro_body_image : {
               flex : 3,
+              borderWidth: 3,
+              borderLeftWidth : 0,
+              borderRightWidth : 0,
+              borderColor: intro_border_color_2,
+              margin: '3%',
             },
                 intro_body_image_format : {
                   flex: 1,
-                  resizeMode: 'cover',
-                  borderWidth: 3,
-                  borderColor: intro_border_color_2,
+                  resizeMode: 'contain',
                   width: null,
                   height: null,
                   margin : "5%",
@@ -142,36 +155,32 @@ export default StyleSheet.create({
                     intro_body_tab_right_text : {
                       fontSize : 16,
                     },
-
-
         intro_navigation: {
             flex: 1,
             flexDirection: 'row',
             alignItems: 'center',
-            justifyContent: 'space-around',
+            justifyContent : 'space-around',
             borderWidth: 6,
             borderColor: intro_border_color,
         },
             intro_navigation_back :{
-                flex: 1,
                 borderWidth: 4,
                 borderColor: intro_border_color_2,
-                width: '30%',
-                height: '30%',
                 alignItems: 'center',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                height: '30%',
+                width : '40%',
             },
                 intro_navigation_back_text : {
                     fontSize: 26,
                 },
             intro_navigation_junction: {
-                flex: 1,
                 borderWidth: 4,
                 borderColor: intro_border_color_2,
-                width: '30%',
-                height: '30%',
                 alignItems: 'center',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                height: '30%',
+                width : '40%',
             },
                 intro_navigation_junction_text : {
                     fontSize: 26,
@@ -312,10 +321,11 @@ export default StyleSheet.create({
                     fontSize: 26,
                 },
         sleuthDescription_description_body: {
-            alignItems: 'flex-start',
+            alignItems: 'center',
+            margin : '2%',
         },
             sleuthDescription_description_body_text: {
-                fontSize: 14,
+                fontSize: 16,
                 justifyContent: 'center'
             },
         sleuthDescription_interact: {
@@ -373,7 +383,9 @@ export default StyleSheet.create({
             borderBottomWidth: 4,
         },
             sleuthConversation_Conversation_title: {
+                flex: 1,
                 alignItems: 'center',
+                justifyContent : 'center',
                 borderBottomWidth: 3,
                 borderColor: sleuthConversation_border_color_2,
                 borderTopWidth: 3,
@@ -381,13 +393,14 @@ export default StyleSheet.create({
                 sleuthConversation_Conversation_title_text: {
                     fontSize: 26,
                 },
-        sleuthConversation_Conversation_body: {
-            alignItems: 'flex-start',
-        },
-            sleuthConversation_Conversation_body_text: {
-                fontSize: 20,
-                justifyContent: 'center'
+            sleuthConversation_Conversation_body: {
+                flex: 3,
+                justifyContent : 'center',
+                alignItems : 'center',
             },
+                sleuthConversation_Conversation_body_text: {
+                    fontSize: 20,
+                },
         sleuthConversation_interact: {
             flex: 1,
             backgroundColor: sleuthConversation_background_color,
@@ -402,16 +415,13 @@ export default StyleSheet.create({
                 borderWidth: 3,
                 borderColor: sleuthConversation_border_color,
                 width: '90%',
+                height : '25%',
                 alignItems: 'center',
-                justifyContent: 'center'
+                justifyContent: 'center',
             },
-                sleuthConversation_interact_button_format : {
-                    alignItems: 'center',
-                    justifyContent: 'center'
+                sleuthConversation_interact_button_text: {
+                    fontSize: 18,
                 },
-                    sleuthConversation_interact_button_text: {
-                        fontSize: 18,
-                    },
 
     solve : {
       flex : 1

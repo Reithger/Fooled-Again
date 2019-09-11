@@ -56,9 +56,7 @@ export default class SleuthConversation extends React.Component {
                             }
                           }
                         }>
-                            <View style={Styles.sleuthConversation_interact_button_format}>
-                                <Text key={response} style={Styles.sleuthConversation_interact_button_text}>{response}</Text>
-                            </View>
+                            <Text key={response} style={Styles.sleuthConversation_interact_button_text}>{response}</Text>
                         </TouchableOpacity>
                         )
                       )
