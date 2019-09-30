@@ -1,7 +1,7 @@
 export default {
     "default": {
       "text" : ["Canadian authorities ignoring hazards of costly refugee system"],
-      "image" : require('../art/source_image_1.png'),
+      "image" : require('../art/profiles/source_image_1.png'),
     },
 
     "present" : {

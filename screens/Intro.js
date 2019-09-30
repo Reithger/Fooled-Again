@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { TouchableOpacity, Button, View, Text, Image } from 'react-native';
 import Styles from '../assets/Styles';
-import Lookup_Intro from '../assets/text/Lookup_Intro.js';
+import Lookup_Intro from '../assets/Lookup/Lookup_Intro.js';
 
 export default class Junction extends React.Component {
     static navigationOptions = {

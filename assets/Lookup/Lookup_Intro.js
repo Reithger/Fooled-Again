@@ -2,7 +2,7 @@ export default {
     "default": {
       "text" : ["Canadian authorities ignoring hazards of costly refugee system"],
       "format": ["headline"],
-      "image" : require('../art/source_image_1.png'),
+      "image" : require('../art/profiles/source_image_1.png'),
     },
 
     "screen" :
@@ -16,7 +16,7 @@ export default {
                "Morning News that a refugee student posted an Arabic message on Facebook threatening to hurt "+
                "his classmates."],
       "format" : ["headline", "body", "body"],
-      "image" : require('../art/source_image_1.png'),
+      "image" : require('../art/profiles/source_image_1.png'),
      },
      {"text" : ["Failed refugee policy sows “culture of violence” - expert",
 
@@ -28,7 +28,7 @@ export default {
               " harm to the citizens who are expected to foot the bill,\" a former Canadian diplomat said during a"+
               " Montreal public policy forum on the links between terrorism and immigration."],
       "format" : ["headline", "body", "body"],
-      "image" : require("../art/stand_in.png"),
+      "image" : require('../art/profiles/source_image_2.png'),
      },
      {"text" : ["Canada seeking one million immigrants from Africa",
 
@@ -38,7 +38,7 @@ export default {
           		"The plan to increase immigration levels worries experts who warn of inevitable clashes"+
           		" between traditional Canadian values and the cultural practices of foreign newcomers."],
       "format" : ["headline", "body", "body"],
-      "image" : require("../art/stand_in.png"),
+      "image" : require('../art/profiles/source_image_3.png'),
      },
      {"text" : ["Refugees slaughtering animals in hotel bathrooms",
 
@@ -46,7 +46,7 @@ export default {
                " that refugees were slaughtering animals in its public bathrooms. Nearly 200 refugees live in"+
                " the hotel at government expense as they await permanent housing."],
       "format" : ["headline", "body"],
-      "image" : require("../art/stand_in.png"),
+      "image" : require('../art/profiles/source_image_4.png'),
      },
      {"text" : ["Arson attack at refugee hotel",
 
@@ -55,7 +55,7 @@ export default {
                 " third floor. The fire set off the smoke alarms and alerted a hotel employee, who was able to "+
                 "kick the gas canister into a stairwell before the fire could spread."],
       "format" : ["headline", "body"],
-      "image" : require("../art/stand_in.png"),
+      "image" : require('../art/profiles/source_image_5.png'),
      },
      {"text" : ["Muslims celebrate ISIS-inspired shooting in Toronto",
 
@@ -63,7 +63,7 @@ export default {
           		" claimed responsibility for the deadly mass shooting in Toronto last summer in which"+
           		" multiple people were killed and injured."],
       "format" : ["headline", "body"],
-      "image" : require("../art/stand_in.png"),
+      "image" : require('../art/profiles/source_image_6.png'),
      },
      {"text" : ["Politicians call for end to multiculturalism",
 
@@ -75,7 +75,7 @@ export default {
             		" resentment over the generous government subsidies available to refugees compared to"+
             		" meagre allowances for old-age pensioners and disabled Canadians."],
       "format" : ["headline", "body", "body"],
-      "image" : require("../art/stand_in.png"),
+      "image" : require('../art/profiles/source_image_7.png'),
      },
      {"text" : ["Refugees get bigger pension than needy Canadians",
 
@@ -88,7 +88,7 @@ export default {
           		"\"They say refugees deserve our sympathy and compassion, but what about my mother? What"+
           		" does she deserve?\""],
       "format" : ["headline", "body", "body", "body"],
-      "image" : require("../art/stand_in.png"),
+      "image" : require('../art/profiles/source_image_8.png'),
      },
   ]
 }

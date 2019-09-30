@@ -18,7 +18,7 @@ export default class Solve extends React.Component {
         return (
             <View style={Styles.solve}>
                 <View style = {Styles.solve_puzzle}>
-                    <Image style = {Styles.solve_puzzle_image} source = {require('../assets/art/scroll.png')} />
+                    <Image style = {Styles.solve_puzzle_image} source = {require('../assets/art/solve_type/scroll.png')} />
                 </View>
                 <View style = {Styles.solve_interact}>
                     <TouchableOpacity style = {Styles.solve_interact_back} onPress={() => navigate('Junction', {memory:memory})}>

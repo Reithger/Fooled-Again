@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { TouchableOpacity, View, Text, Image } from 'react-native';
-import Lookup from '../assets/Lookup';
+import Lookup from '../assets/Lookup/Lookup';
 import Styles from '../assets/Styles';
 import Memory from '../assets/Memory';
 

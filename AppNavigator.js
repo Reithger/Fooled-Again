@@ -15,9 +15,9 @@ const AppNavigator = createStackNavigator({
     Intro: {
         screen: Intro
     },
-    Junction: {
-        screen: Junction
-    },
+      Junction: {
+          screen: Junction
+      },
     SleuthDescription: {
         screen: SleuthDescription
     },

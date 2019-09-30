@@ -1,23 +1,12 @@
 import React, { Component } from 'react';
 import { Button, View, Text, TouchableOpacity, Image } from 'react-native';
 import Styles from '../assets/Styles';
+import Lookup from '../assets/Lookup/Lookup';
+import Lookup_Solve_Type from '../assets/Lookup/Lookup_Solve_Type';
 
 characters = ["char_1", "char_2", "char_3", "char_4", "char_5", "char_6", "char_7", "char_8", "char_9", "char_10", "char_11"];
-images = [require("../assets/art/source_image_1.png"),
-          require("../assets/art/source_image_2.png"),
-          require("../assets/art/source_image_3.png"),
-          require("../assets/art/source_image_4.png"),
-          require("../assets/art/source_image_5.png"),
-          require("../assets/art/source_image_6.png"),
-          require("../assets/art/source_image_1.png"),
-          require("../assets/art/source_image_2.png"),
-          require("../assets/art/source_image_3.png"),
-          require("../assets/art/source_image_4.png"),
-          require("../assets/art/source_image_5.png")]
-line_one = [0, 1, 2, 3, 4, 5];
-line_two = [6, 7, 8, 9, 10];
 
-
+lines = [[0, 1, 2, 3, 4, 5], [6, 7, 8, 9, 10]];
 
 export default class Junction extends React.Component {
     static navigationOptions = {
@@ -48,10 +37,6 @@ export default class Junction extends React.Component {
             scrolls[characters.indexOf(name)] = true;
           }
         }
-        console.log(scrolls);
-
-        var reg_scroll = require("../assets/art/scroll.png");
-        var grey_scroll = require("../assets/art/scroll_grey.png");
 
         return (
             <View style={Styles.junction}>
@@ -67,20 +52,17 @@ export default class Junction extends React.Component {
                         </Text>
                     </View>
                     <View style = {Styles.junction_sleuth_body}>
-                        <View style={Styles.junction_sleuth_body_selection}>
-                            {line_one.map(index => (
-                              <TouchableOpacity key = {index} style={Styles.junction_sleuth_body_selection_image} onPress={() => navigate('SleuthDescription', {character: characters[index], memory: memory})}>
-                                  <Image style={Styles.junction_sleuth_body_selection_image_profile} source={images[index]} />
-                              </TouchableOpacity>
-                            ))}
-                        </View>
-                        <View style={Styles.junction_sleuth_body_selection}>
-                            {line_two.map(index => (
-                              <TouchableOpacity key = {index} style={Styles.junction_sleuth_body_selection_image} onPress={() => navigate('SleuthDescription', {character: characters[index], memory: memory})}>
-                                  <Image style={Styles.junction_sleuth_body_selection_image_profile} source={images[index]} />
-                              </TouchableOpacity>
-                            ))}
-                        </View>
+
+                        {lines.map(arr => (
+                          <View key = {arr[0]} style={Styles.junction_sleuth_body_selection}>
+                              {arr.map(index => (
+                                <TouchableOpacity key = {characters[index]} style={Styles.junction_sleuth_body_selection_image} onPress={() => navigate('SleuthDescription', {character: characters[index], memory: memory})}>
+                                    <Image style={Styles.junction_sleuth_body_selection_image_profile} source={Lookup[characters[index]].portrait_path} />
+                                </TouchableOpacity>
+                              ))}
+                          </View>
+                        ))}
+
                       </View>
                 </View>
 
@@ -91,16 +73,15 @@ export default class Junction extends React.Component {
                         </Text>
                     </View>
                     <View style = {Styles.junction_solve_body}>
-                      <View style = {Styles.junction_solve_body_scroll}>
-                        {line_one.map(index => (
-                              <Image key = {index} style = {Styles.junction_solve_body_scroll_image} source = {scrolls[index] === true ? reg_scroll : grey_scroll}/>
-                        ))}
-                      </View>
-                      <View style = {Styles.junction_solve_body_scroll}>
-                        {line_two.map(index => (
-                            <Image key = {index} style = {Styles.junction_solve_body_scroll_image} source = {scrolls[index] ? reg_scroll : grey_scroll}/>
-                        ))}
-                      </View>
+
+                      {lines.map(arr => (
+                        <View key = {arr[0]} style = {Styles.junction_solve_body_scroll}>
+                          {arr.map(index => (
+                                <Image key = {index} style = {Styles.junction_solve_body_scroll_image} source = {scrolls[index] ? Lookup_Solve_Type[Lookup[characters[index]].solve_type].solved_image : Lookup_Solve_Type[Lookup[characters[index]].solve_type].unsolved_image}/>
+                          ))}
+                        </View>
+                      ))}
+
                       <View style = {Styles.junction_solve_body_button}>
                         <TouchableOpacity style={Styles.junction_solve_body_button_touchable} onPress={() => navigate('Solve', { memory: memory })}>
                           <Text style={Styles.junction_solve_body_button_touchable_text}>

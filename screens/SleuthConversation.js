@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { TouchableOpacity, View, Text, Image } from 'react-native';
-import Lookup_Interrogate from '../assets/text/Lookup_Interrogate';
-import Lookup from '../assets/Lookup';
+import Lookup_Interrogate from '../assets/Lookup/Lookup_Interrogate';
+import Lookup from '../assets/Lookup/Lookup';
 import Styles from '../assets/Styles';
 import Memory from '../assets/Memory';
 
