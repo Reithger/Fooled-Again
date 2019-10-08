@@ -25,9 +25,11 @@ export default {
           		"violence\" in communities across the country.",
 
           		"\"Canadian politicians are doling out billions for a failed refugee system that is causing direct"+
-              " harm to the citizens who are expected to foot the bill,\" a former Canadian diplomat said during a"+
-              " Montreal public policy forum on the links between terrorism and immigration."],
-      "format" : ["headline", "body", "body"],
+              " harm to the citizens who are expected to foot the bill,\"",
+
+              "This claim was made by a former Canadian diplomat said during a Montreal public policy forum on"+
+              " the links between terrorism and immigration."],
+      "format" : ["headline", "body", "body", "body"],
       "image" : require('../art/profiles/source_image_2.png'),
      },
      {"text" : ["Canada seeking one million immigrants from Africa",
@@ -43,18 +45,21 @@ export default {
      {"text" : ["Refugees slaughtering animals in hotel bathrooms",
 
                "Hundreds of travelers cancelled their room bookings at a posh Toronto hotel after reports"+
-               " that refugees were slaughtering animals in its public bathrooms. Nearly 200 refugees live in"+
-               " the hotel at government expense as they await permanent housing."],
-      "format" : ["headline", "body"],
+               " that refugees were slaughtering animals in its public bathrooms.",
+
+               "Nearly 200 refugees live in the hotel at government expense as they await permanent housing."],
+      "format" : ["headline", "body", "body"],
       "image" : require('../art/profiles/source_image_4.png'),
      },
      {"text" : ["Arson attack at refugee hotel",
 
             		"Firefighters were called to the scene when a fire was set at the hotel in an apparent arson"+
                 " attack. A woman has been charged for placing  a burning gas canister in the hallway on the"+
-                " third floor. The fire set off the smoke alarms and alerted a hotel employee, who was able to "+
+                " third floor.",
+
+                "The fire set off the smoke alarms and alerted a hotel employee, who was able to "+
                 "kick the gas canister into a stairwell before the fire could spread."],
-      "format" : ["headline", "body"],
+      "format" : ["headline", "body", "body"],
       "image" : require('../art/profiles/source_image_5.png'),
      },
      {"text" : ["Muslims celebrate ISIS-inspired shooting in Toronto",
@@ -72,9 +77,10 @@ export default {
             		"immigrants that do not share Canadian values.",
 
             		"The announcement garnered loud applause and cheers from the crowd who expressed"+
-            		" resentment over the generous government subsidies available to refugees compared to"+
-            		" meagre allowances for old-age pensioners and disabled Canadians."],
-      "format" : ["headline", "body", "body"],
+            		" resentment over the generous government subsidies available to refugees.",
+
+                "This being compared to \"the meagre allowances for old-age pensioners and disabled Canadians.\""],
+      "format" : ["headline", "body", "body", "body"],
       "image" : require('../art/profiles/source_image_7.png'),
      },
      {"text" : ["Refugees get bigger pension than needy Canadians",
@@ -88,7 +94,7 @@ export default {
           		"\"They say refugees deserve our sympathy and compassion, but what about my mother? What"+
           		" does she deserve?\""],
       "format" : ["headline", "body", "body", "body"],
-      "image" : require('../art/profiles/source_image_8.png'),
+      "image" : require('../art/profiles/source_image_9.png'),
      },
   ]
 }

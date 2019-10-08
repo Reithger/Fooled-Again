@@ -59,13 +59,13 @@ export default {
             "dialogue" : "You: They didn't interview anyone, and are basing their claims entirely on an online review?",
             "responses" : ["(Has the hotel put out a statement?)"],
             "directory" : ["screen_4"],
-            "image" : require("../art/stand_in.png")
+            "image": require("../art/newspapers.png"),
         },
         "screen_4" : {
             "dialogue" : "You: And according to this press release from the hotel, the whole thing is a hoax.",
             "responses" : ["(Whelp, glad we checked that)"],
             "directory" : ["exit_success"],
-            "image" : require("../art/stand_in.png")
+            "image": require("../art/newspapers.png"),
         },
     },
 
@@ -80,7 +80,7 @@ export default {
             "dialogue": "Char_3: It's been terrible! I don't know if my kids are safe anymore going to school of all places.",
             "responses": ["So what happened?"],
             "directory": ["screen_3"],
-            "image": require("../art/profiles/source_image_1.png"),
+            "image": require("../art/profiles/source_image_3.png"),
         },
         "screen_3" : {
             "dialogue" : "Char_3: You can read the story yourself! Those refugee children just attacked those poor, innocent children. What " +
@@ -93,7 +93,7 @@ export default {
             "dialogue" : "Char_3: Please do! People need to know about the dangers that these refugees pose to our kids.",
             "responses" : ["Thanks."],
             "directory" : ["exit_success"],
-            "image" : require("../art/stand_in.png")
+            "image": require("../art/profiles/source_image_3.png"),
         },
     },
 
@@ -138,20 +138,20 @@ export default {
             "into this, it can't be right.",
             "responses": ["(Use the internet)"],
             "directory": ["screen_2"],
-            "image": require("../art/profiles/source_image_1.png"),
+            "image": require("../art/profiles/source_image_5.png"),
         },
         "screen_2": {
             "dialogue": "You: According to this, the article's been... retracted! They cite unreliable sources as the reason; some "+
             "unnamed mothers and a grandparent alleged bullying and threatening behaviours, but had nothing to back that up.",
             "responses": ["(So what does this mean?)"],
             "directory": ["screen_3"],
-            "image": require("../art/profiles/source_image_1.png"),
+            "image": require("../art/profiles/source_image_5.png"),
         },
         "screen_3": {
             "dialogue": "You: I'll have to show this to Character 3 and remind them not to spread this kind of gossip.",
             "responses": ["(Like that'll stop them)"],
             "directory": ["exit_success"],
-            "image": require("../art/profiles/source_image_1.png"),
+            "image": require("../art/profiles/source_image_5.png"),
         }
     },
 
@@ -191,34 +191,34 @@ export default {
             "dialogue": "You: I'm seeing this claim all over the place, but where did it first come from? Is it true?",
             "responses": ["(Dig deeper)"],
             "directory": ["screen_2"],
-            "image": require("../art/profiles/source_image_1.png"),
+            "image": require("../art/profiles/source_image_7.png"),
         },
         "screen_2": {
             "dialogue": "You: I'm getting conflicting reports on this from several fact-checking sites; it seems like "+
             "the story started from an email about monthly payments.",
             "responses": ["(Who do I believe)"],
             "directory": ["screen_3"],
-            "image": require("../art/profiles/source_image_1.png"),
+            "image": require("../art/profiles/source_image_7.png"),
         },
         "screen_3": {
             "dialogue": "You: Alright, this website looks trustworthy: it's a library research page, so that's pretty reliable. "+
             "Now what does it say?",
             "responses": ["(Continue)"],
             "directory": ["screen_4"],
-            "image": require("../art/profiles/source_image_1.png"),
+            "image": require("../art/profiles/source_image_7.png"),
         },
         "screen_4": {
             "dialogue": "You: Okay, an email went around and... it incorrectly calculated the monthly payments, counting a one-time "+
             "payment as being continuing.",
             "responses": ["(Continue)"],
             "directory": ["screen_5"],
-            "image": require("../art/profiles/source_image_1.png"),
+            "image": require("../art/profiles/source_image_7.png"),
         },
         "screen_5": {
             "dialogue": "You: So these claims are wrong and widespread... that's troubling.",
             "responses": ["(Exit)"],
             "directory": ["exit_success"],
-            "image": require("../art/profiles/source_image_1.png"),
+            "image": require("../art/profiles/source_image_7.png"),
         }
     },
 
@@ -227,26 +227,26 @@ export default {
             "dialogue": "Friend: Have you seen this? Sometime tried to burn down the hotel that the refugees are staying in!",
             "responses": ["For real? That's... not good."],
             "directory": ["screen_2"],
-            "image": require("../art/profiles/source_image_1.png"),
+            "image": require("../art/profiles/source_image_8.png"),
         },
         "screen_2": {
             "dialogue": "Friend: The police put out a report about it, you can read it yourself.",
             "responses": ["Why did someone do that?"],
             "directory": ["screen_3"],
-            "image": require("../art/profiles/source_image_1.png"),
+            "image": require("../art/profiles/source_image_8.png"),
         },
         "screen_3": {
             "dialogue": "Friend: They're saying it was motivated by a recent news story about refugees... slaughtering animals "+
             "in the bathroom of the hotel?",
             "responses": ["But that story was fake!"],
             "directory": ["screen_4"],
-            "image": require("../art/profiles/source_image_1.png"),
+            "image": require("../art/profiles/source_image_8.png"),
         },
         "screen_4": {
             "dialogue": "Friend: I know, but it was still on the front page of the website for days; the correction? Not so much.",
             "responses": ["(Exit)"],
             "directory": ["exit_success"],
-            "image": require("../art/profiles/source_image_1.png"),
+            "image": require("../art/profiles/source_image_8.png"),
         }
     },
 
@@ -255,27 +255,27 @@ export default {
             "dialogue": "You: So, first of all, what is Canada's actual stance here?",
             "responses": ["(Check their website)"],
             "directory": ["screen_2"],
-            "image": require("../art/profiles/source_image_1.png"),
+            "image": require("../art/profiles/source_image_9.png"),
         },
         "screen_2": {
             "dialogue": "You: According to the Government website, they have a three year global goal to... recruit one "+
             "million immigrants from any assortment of countries.",
             "responses": ["(Who misrepresented this?)"],
             "directory": ["screen_3"],
-            "image": require("../art/profiles/source_image_1.png"),
+            "image": require("../art/profiles/source_image_9.png"),
         },
         "screen_3": {
             "dialogue": "You: Hmm... looking at the other stories this site has put out, it's no wonder they posed a recruitment "+
             "drive as an 'invasion'.",
             "responses": ["(Yikes!)"],
             "directory": ["screen_4"],
-            "image": require("../art/profiles/source_image_1.png"),
+            "image": require("../art/profiles/source_image_9.png"),
         },
         "screen_4": {
             "dialogue": "You: This 'news site' is filled with islamaphobia and fear mongering; how many people are reading this?",
             "responses": ["(Exit)"],
             "directory": ["exit_success"],
-            "image": require("../art/profiles/source_image_1.png"),
+            "image": require("../art/profiles/source_image_9.png"),
         }
     },
 
@@ -284,14 +284,14 @@ export default {
             "dialogue": "You: Is this a legitimate news site? I don't remember them having this kind of material. Maybe it's...",
             "responses": ["(Doubt)"],
             "directory": ["screen_2"],
-            "image": require("../art/profiles/source_image_7.png"),
+            "image": require("../art/profiles/source_image_10.png"),
         },
         "screen_2": {
             "dialogue": "You: Hang on... the url is wrong. It's almost the same, but they added '.co' to the end? They're pretending "+
             "to be someone they're not for authenticity!",
             "responses": ["(It's a clone!)"],
             "directory": ["exit_success"],
-            "image": require("../art/profiles/source_image_7.png"),
+            "image": require("../art/profiles/source_image_10.png"),
         }
     },
 

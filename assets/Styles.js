@@ -155,6 +155,17 @@ export default StyleSheet.create({
                     intro_body_tab_right_text : {
                       fontSize : 16,
                     },
+                intro_body_tab_null : {
+                  width : '20%',
+                  height : '50%',
+                },
+                intro_body_tab_page : {
+                  alignItems : 'center',
+                  justifyContent: 'center',
+                },
+                    intro_body_tab_page_text : {
+                      fontSize: 16,
+                    },
         intro_navigation: {
             flex: 1,
             flexDirection: 'row',
@@ -233,12 +244,15 @@ export default StyleSheet.create({
                     alignItems: 'center',
                     },
                         junction_sleuth_body_selection_image: {
-                            width: 50,
-                            height: 50,
+                            width: '15%',
+                            aspectRatio : 1,
+                            borderWidth : 2,
                         },
                             junction_sleuth_body_selection_image_profile: {
-                                width: 50,
-                                height: 50,
+                              flex : 1,
+                              resizeMode : 'cover',
+                              width : null,
+                              height : null,
                             },
         junction_solve: {
             flex: 1,
@@ -272,9 +286,15 @@ export default StyleSheet.create({
                   justifyContent: "space-around",
                 },
                     junction_solve_body_scroll_image : {
-                        width: 50,
-                        height: 50,
+                        width: '12%',
+                        aspectRatio : 1,
                     },
+                      junction_solve_body_scroll_image_format : {
+                        resizeMode : 'cover',
+                        width : null,
+                        height : null,
+                        flex : 1,
+                      },
                 junction_solve_body_button: {
                     flex: 1,
                     alignItems: 'flex-end',
@@ -397,6 +417,7 @@ export default StyleSheet.create({
                 flex: 3,
                 justifyContent : 'center',
                 alignItems : 'center',
+                margin : '2%',
             },
                 sleuthConversation_Conversation_body_text: {
                     fontSize: 20,
@@ -422,6 +443,64 @@ export default StyleSheet.create({
                 sleuthConversation_interact_button_text: {
                     fontSize: 18,
                 },
+
+    solveIntro : {
+      flex : 1
+    },
+      solveIntro_image : {
+        borderWidth : 8,
+        borderBottomWidth : 4,
+        flex : 3,
+        width : '100%',
+        height : '100%',
+      },
+        solveIntro_image_format : {
+          flex : 1,
+          resizeMode : 'contain',
+          width : null,
+          height : null,
+        },
+      solveIntro_description : {
+        flex : 5,
+        borderWidth: 8,
+        borderTopWidth : 4,
+        alignItems: 'flex-start',
+        justifyContent : 'space-around',
+        flexDirection : 'column',
+      },
+        solveIntro_description_line : {
+          height : '20%',
+          margin: '3%',
+          borderLeftWidth : 3,
+        },
+          solveIntro_description_line_text : {
+            marginLeft : '3%',
+            fontSize : 18,
+          },
+      solveIntro_interact : {
+        flex : 1,
+        flexDirection : 'row',
+        justifyContent : 'space-around',
+        borderWidth : 4,
+        borderTopWidth : 0,
+        alignItems: 'center',
+      },
+        solveIntro_interact_back : {
+          borderWidth : 4,
+          width : '40%',
+          alignItems : 'center',
+        },
+          solveIntro_interact_back_text : {
+            fontSize : 32
+          },
+        solveIntro_interact_next : {
+          borderWidth : 4,
+          width : '40%',
+          alignItems : 'center',
+        },
+          solveIntro_interact_next_text : {
+            fontSize : 32
+          },
 
     solve : {
       flex : 1

@@ -29,23 +29,35 @@ export default class Junction extends React.Component {
 
         var top = undefined;
 
+        var back = tab == 0 ? <View style = {Styles.intro_body_tab_null}/> : <TouchableOpacity style = {Styles.intro_body_tab_left} onPress = {() => {
+                                            if(tab != 0){
+                                                this.props.navigation.setParams({tab : tab - 1});
+                                            }}}>
+                                            <Text style = {Styles.intro_body_tab_left_text}>
+                                                Back
+                                            </Text>
+                                        </TouchableOpacity>;
+
+
+        var next = (tab + 1 == script[page].text.length) ? <View style = {Styles.intro_body_tab_null}/> :  <TouchableOpacity style = {Styles.intro_body_tab_right} onPress = {() => {
+                                                                          if(tab + 1 != script[page].text.length){
+                                                                              this.props.navigation.setParams({tab : tab + 1});
+                                                                          }}}>
+                                                                          <Text style = {Styles.intro_body_tab_left_text}>
+                                                                              Next
+                                                                          </Text>
+                                                                      </TouchableOpacity>
+
+
+
         var internal =    <View style = {Styles.intro_body_tab}>
-                              <TouchableOpacity style = {Styles.intro_body_tab_left} onPress = {() => {
-                                  if(tab != 0){
-                                      this.props.navigation.setParams({tab : tab - 1});
-                                  }}}>
-                                  <Text style = {Styles.intro_body_tab_left_text}>
-                                      Back
-                                  </Text>
-                              </TouchableOpacity>
-                              <TouchableOpacity style = {Styles.intro_body_tab_right} onPress = {() => {
-                                  if(tab + 1 != script[page].text.length){
-                                      this.props.navigation.setParams({tab : tab + 1});
-                                  }}}>
-                                  <Text style = {Styles.intro_body_tab_left_text}>
-                                      Next
-                                  </Text>
-                              </TouchableOpacity>
+                            {back}
+                            <View style = {Styles.intro_body_tab_page}>
+                              <Text style = {Styles.intro_body_tab_page_text}>
+                                {tab + 1}/{script[page].text.length}
+                              </Text>
+                            </View>
+                            {next}
                           </View>;
 
         if(format == "headline"){

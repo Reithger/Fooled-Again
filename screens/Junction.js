@@ -21,9 +21,10 @@ export default class Junction extends React.Component {
 
     render() {
         const { navigate } = this.props.navigation;
-        var scrolls = new Array(characters.length).fill(false);
-        var memory = this.props.navigation.getParam("memory", {"initialized": true, "progress": {"char_1" : "success"}});
+        var memory = this.props.navigation.getParam("memory", {"initialized": true, "progress": {"char_1" : "success", "char_2" : "failure"}});
         var progress = memory["progress"];
+
+        var scrolls = new Array(characters.length).fill(false);
 
         var title_text_top = "Sleuth";
 
@@ -77,13 +78,15 @@ export default class Junction extends React.Component {
                       {lines.map(arr => (
                         <View key = {arr[0]} style = {Styles.junction_solve_body_scroll}>
                           {arr.map(index => (
-                                <Image key = {index} style = {Styles.junction_solve_body_scroll_image} source = {scrolls[index] ? Lookup_Solve_Type[Lookup[characters[index]].solve_type].solved_image : Lookup_Solve_Type[Lookup[characters[index]].solve_type].unsolved_image}/>
+                              <View key = {characters[index]} style = {Styles.junction_solve_body_scroll_image}>
+                                <Image key = {index} style = {Styles.junction_solve_body_scroll_image_format} source = {scrolls[index] ? Lookup_Solve_Type[Lookup[characters[index]].solve_type].solved_image : Lookup_Solve_Type[Lookup[characters[index]].solve_type].unsolved_image}/>
+                              </View>
                           ))}
                         </View>
                       ))}
 
                       <View style = {Styles.junction_solve_body_button}>
-                        <TouchableOpacity style={Styles.junction_solve_body_button_touchable} onPress={() => navigate('Solve', { memory: memory })}>
+                        <TouchableOpacity style={Styles.junction_solve_body_button_touchable} onPress={() => navigate('SolveIntro', { memory: memory })}>
                           <Text style={Styles.junction_solve_body_button_touchable_text}>
                               Continue
                           </Text>
