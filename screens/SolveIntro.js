@@ -30,8 +30,8 @@ export default class Solve extends React.Component {
         console.log(proceed);
         console.log(progress);
 
-        var display_text = proceed ? LookupEnding.present.text : LookupEnding.unprepared.text;
-        var image = proceed ? LookupEnding.present.image : LookupEnding.unprepared.image;
+        var display_text = proceed ? LookupEnding.prepared.text : LookupEnding.unprepared.text;
+        var image = proceed ? LookupEnding.prepared.image : LookupEnding.unprepared.image;
         var solve_text = proceed ? "Solve" : "-";
 
         return (

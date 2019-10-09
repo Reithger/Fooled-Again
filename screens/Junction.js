@@ -2,11 +2,6 @@ import React, { Component } from 'react';
 import { Button, View, Text, TouchableOpacity, Image } from 'react-native';
 import Styles from '../assets/Styles';
 import Lookup from '../assets/Lookup/Lookup';
-import Lookup_Solve_Type from '../assets/Lookup/Lookup_Solve_Type';
-
-characters = ["char_1", "char_2", "char_3", "char_4", "char_5", "char_6", "char_7", "char_8", "char_9", "char_10", "char_11"];
-
-lines = [[0, 1, 2, 3, 4, 5], [6, 7, 8, 9, 10]];
 
 export default class Junction extends React.Component {
     static navigationOptions = {
@@ -24,20 +19,11 @@ export default class Junction extends React.Component {
         var memory = this.props.navigation.getParam("memory", {"initialized": true, "progress": {"char_1" : "success", "char_2" : "failure"}});
         var progress = memory["progress"];
 
-        var scrolls = new Array(characters.length).fill(false);
-
-        var title_text_top = "Sleuth";
-
-        var i;
-        for(i = 0; i < Object.keys(progress).length; i++){
-          var name = Object.keys(progress)[i];
-          if(progress[name] == "success"){
-            if(characters.indexOf(name) == -1){
-              continue;
-            }
-            scrolls[characters.indexOf(name)] = true;
-          }
-        }
+        var lines = Lookup.lines.map(function(arr){
+          return arr.map(function(index){
+              return Lookup.characters[index];
+          })
+        });
 
         return (
             <View style={Styles.junction}>
@@ -49,16 +35,16 @@ export default class Junction extends React.Component {
                           </Text>
                         </TouchableOpacity>
                         <Text style={Styles.junction_sleuth_title_text}>
-                            {title_text_top}
+                            Sleuth
                         </Text>
                     </View>
                     <View style = {Styles.junction_sleuth_body}>
 
                         {lines.map(arr => (
                           <View key = {arr[0]} style={Styles.junction_sleuth_body_selection}>
-                              {arr.map(index => (
-                                <TouchableOpacity key = {characters[index]} style={Styles.junction_sleuth_body_selection_image} onPress={() => navigate('SleuthDescription', {character: characters[index], memory: memory})}>
-                                    <Image style={Styles.junction_sleuth_body_selection_image_profile} source={Lookup[characters[index]].portrait_path} />
+                              {arr.map(char => (
+                                <TouchableOpacity key = {char} style={Styles.junction_sleuth_body_selection_image} onPress={() => navigate('SleuthDescription', {character: char, memory: memory})}>
+                                    <Image style={Styles.junction_sleuth_body_selection_image_profile} source={Lookup[char].portrait_path} />
                                 </TouchableOpacity>
                               ))}
                           </View>
@@ -77,9 +63,9 @@ export default class Junction extends React.Component {
 
                       {lines.map(arr => (
                         <View key = {arr[0]} style = {Styles.junction_solve_body_scroll}>
-                          {arr.map(index => (
-                              <View key = {characters[index]} style = {Styles.junction_solve_body_scroll_image}>
-                                <Image key = {index} style = {Styles.junction_solve_body_scroll_image_format} source = {scrolls[index] ? Lookup_Solve_Type[Lookup[characters[index]].solve_type].solved_image : Lookup_Solve_Type[Lookup[characters[index]].solve_type].unsolved_image}/>
+                          {arr.map(char => (
+                              <View key = {char} style = {Styles.junction_solve_body_scroll_image}>
+                                <Image key = {char} style = {Styles.junction_solve_body_scroll_image_format} source = {progress[char] == "success" ? Lookup[char].solve_type.solved_image : Lookup[char].solve_type.unsolved_image}/>
                               </View>
                           ))}
                         </View>

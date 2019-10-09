@@ -16,7 +16,7 @@ export default class Junction extends React.Component {
     render() {
         const { navigate } = this.props.navigation;
         var memory = this.props.navigation.getParam("memory", {"initialized" : true, "progress" : {"char_1" : "success"}});
-
+        var victory = this.props.navigation.getParam("pass", false);
         return (
             <View style={Styles.end}>
                 <View style = {Styles.end_image}>

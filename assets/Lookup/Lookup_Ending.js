@@ -4,7 +4,7 @@ export default {
       "image" : require('../art/profiles/source_image_1.png'),
     },
 
-    "present" : {
+    "prepared" : {
       "text" : ["Hey friends, I saw that people were getting worked up about this"+
 		            " news story circulating on social media so I talked to a few folks"+
                 " and did some fact checking.",
@@ -16,6 +16,7 @@ export default {
                 "Don’t get fooled by fake news!"],
       "image" : require("../art/newspapers.png"),
     },
+
     "unprepared" : {
       "text" : ["Hmm...",
 
@@ -25,17 +26,32 @@ export default {
       "image" : require("../art/newspapers.png"),
     },
 
+    "recall" : [
+        "Remember this?",
+        "And this one.",
+        "Memories abound!",
+        "Oh, this was fun.",
+        "This one was nasty.",
+        "Why even bother with this?",
+        "This'll jog the memory.",
+        "Hey, that guy!",
+        "And that old newstory.",
+        "Love this chestnut",
+        "Good times, friend.",
+    ],
+
     "failure" : {
       "text" : "Anti-immigration protests rocked the city today "+
 		"as a result of a fake news story that falsely "+
 		"claimed refugees were causing violence.",
       "image" : require("../art/stand_in.png"),
     },
+
     "success" : {
       "text" : "Fact checkers saved the city from potential riots today when "+
-		"they exposed a viral anti-immigrant story as Fake News.",
+		    "they exposed a viral anti-immigrant story as Fake News.",
       "image" : require("../art/stand_in.png"),
     },
 
-    "answer" : [false, false, true, true, true, true, false, false, true, false, true],
+    "answer" : [false, false, false, true, false, false, false, true, false, false, false],
 }

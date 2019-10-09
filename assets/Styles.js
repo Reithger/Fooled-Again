@@ -507,15 +507,42 @@ export default StyleSheet.create({
     },
         solve_puzzle : {
           flex : 5,
-          borderWidth : 8,
-          alignItems: 'center',
-          justifyContent : 'center',
         },
-            solve_puzzle_image : {
-              width : 200,
-              height : 200,
+            solve_puzzle_scroll : {
+              flex : 1,
+              borderWidth : 4
             },
-        solve_interact : {
+                solve_puzzle_scroll_line : {
+                  width : '100%',
+                  aspectRatio : 5,
+                  flexDirection : 'row',
+                  justifyContent : 'space-around',
+                  alignItems : 'center',
+                  borderWidth : 2
+                },
+                    solve_puzzle_scroll_line_interact : {
+                      alignItems : 'center',
+                      justifyContent : 'center',
+                      width : '20%',
+                      aspectRatio : 2,
+                      backgroundColor : '#f2f2f2'
+                    },
+                        solve_puzzle_scroll_line_interact_text : {
+                          fontSize : 16,
+                        },
+                    solve_puzzle_scroll_line_image : {
+                      width : '15%',
+                      aspectRatio : 1,
+                      flexDirection : 'column',
+                      justifyContent : 'center'
+                    },
+                        solve_puzzle_scroll_line_image_format : {
+                          width : null,
+                          height: null,
+                          flex: 1,
+                          resizeMode : 'contain',
+                        },
+        solve_navigate : {
           flex : 1,
           flexDirection : 'row',
           justifyContent : 'space-around',
@@ -523,20 +550,20 @@ export default StyleSheet.create({
           borderTopWidth : 0,
           alignItems: 'center',
         },
-            solve_interact_back : {
-              borderWidth : 4,
+            solve_navigate_back : {
+              borderWidth : 3,
               width : '40%',
               alignItems : 'center',
             },
-                solve_interact_back_text : {
+                solve_navigate_back_text : {
                   fontSize : 32
                 },
-            solve_interact_solve : {
-              borderWidth : 4,
+            solve_navigate_solve : {
+              borderWidth : 3,
               width : '40%',
               alignItems : 'center',
             },
-                solve_interact_solve_text : {
+                solve_navigate_solve_text : {
                   fontSize: 32
                 },
 
