@@ -10,6 +10,7 @@
   "dependencies": {
     "braces": "^3.0.2",
     "expo": "^34.0.4",
+    "expo-blur": "^6.0.0",
     "mem": "^5.1.1",
     "react": "16.8.3",
     "react-dom": "^16.9.0",

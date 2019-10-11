@@ -35,7 +35,7 @@ export default class Junction extends React.Component {
         return (
             <View style={Styles.end}>
                 {Methods.article_header(back, forward)}
-                <ScrollView style = {{}}>
+                <ScrollView style = {Styles.end_scroll}>
                     {Methods.article(victory ? LookupEnding.success : LookupEnding.failure)}
                 </ScrollView>
             </View>

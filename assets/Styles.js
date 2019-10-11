@@ -34,132 +34,200 @@ sleuthConversation_border_color_2 = red;
 sleuthConversation_background_color = white;
 
 export default StyleSheet.create({
+  news_header : {
+    height: '0%',
+    backgroundColor : '#e60505',
+    borderBottomWidth : 0,
+  },
+
+
+  architecture : {
+
+  },
+    architecture_header : {
+      backgroundColor : '#e60505',
+      height : '7%',
+      alignItems : 'center',
+      justifyContent : 'space-around',
+      flexDirection : 'row'
+    },
+        architecture_header_interact : {
+          width : '8%',
+          aspectRatio : 1,
+          backgroundColor : 'transparent',
+        },
+            architecture_header_interact_format : {
+              flex: 1,
+              resizeMode: 'contain',
+              width: null,
+              height: null,
+              backgroundColor : 'transparent',
+            },
+        architecture_header_text : {
+          fontSize : 20,
+          fontWeight : 'bold',
+          color : '#fff',
+        },
+    architecture_frame : {
+      flexDirection : 'row',
+      justifyContent : 'space-around',
+      paddingTop : '3%',
+      paddingBottom : '3%',
+      marginLeft : '3%',
+      marginRight : '3%',
+    },
+        architecture_frame_image : {
+          width : '100%',
+          aspectRatio : 6/5,
+          borderWidth : 1,
+          flexDirection : 'row',
+          justifyContent : 'space-around',
+          marginLeft : '3%',
+          marginRight : '3%',
+        },
+            architecture_frame_image_format : {
+              flex: 1,
+              resizeMode: 'contain',
+              width: null,
+              height: null,
+            },
+    architecture_headline : {
+      alignItems: 'flex-start',
+      justifyContent: 'center',
+    },
+        architecture_headline_text : {
+            fontSize : 26,
+            fontWeight : 'bold',
+            paddingTop : '3%',
+            marginLeft : '3%',
+            marginRight : '3%',
+        },
+    architecture_body : {
+      justifyContent: 'center',
+      alignItems : 'flex-start',
+    },
+        architecture_body_text : {
+            fontSize : 18,
+            marginLeft : '3%',
+            marginRight : '3%',
+            paddingTop : '3%',
+        },
+    architecture_tag : {
+      alignItems : 'flex-start',
+    },
+        architecture_tag_text : {
+              fontSize : 14,
+              color : '#111',
+              marginLeft : '3%',
+            },
+    architecture_descriptor : {
+      flexDirection : 'row',
+      justifyContent : 'space-between',
+      borderWidth : 2,
+    },
+        architecture_descriptor_image : {
+          width : '30%',
+          aspectRatio : 1,
+          borderRightWidth : 2,
+        },
+            architecture_descriptor_image_format : {
+              width : null,
+              height : null,
+              resizeMode : 'contain',
+              flex : 1,
+            },
+        architecture_descriptor_headline : {
+
+        },
+            architecture_descriptor_headline_text : {
+              fontSize : 24,
+            },
+
     home: {
         flex: 1,
     },
-        home_title: {
-            flex: 3,
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: title_background_color,
-            borderColor: title_border_color,
-            borderWidth: 6
+        home_background : {
+          width : '100%',
+          height : '100%',
+          position : 'absolute',
         },
-            home_title_space: {
-                borderTopWidth: 6,
-                borderBottomWidth: 6,
-                borderColor: title_border_color_2,
+        home_login : {
+          backgroundColor : '#e60505bb',
+          borderRadius : 10,
+          marginTop : '20%',
+          marginBottom : '15%',
+          marginLeft : '4%',
+          marginRight : '4%',
+          height : '60%',
+          flexDirection : 'column',
+          flex : 1,
+          borderWidth : 2,
+        },
+            home_login_top : {
+              flex : 3,
+              alignItems : 'center',
+              justifyContent : 'center',
             },
-                home_title_space_text: {
-                    fontSize: 32,
+                home_login_top_title : {
+                  alignItems : 'center',
+                  justifyContent : 'center',
+                  borderTopWidth : 4,
+                  borderBottomWidth : 4,
+                  marginLeft : '3%',
+                  marginRight : '3%',
+                  borderColor : '#fff',
+                  backgroundColor : '#e60505',
+                  borderRadius : 10,
+                  width : '95%',
                 },
-        home_image: {
-            flex: 2
-        },
-            home_image_style: {
-                flex: 1,
-                resizeMode: 'cover',
-                borderWidth: 6,
-                borderColor: title_border_color,
-                width: null,
-                height: null
+                    home_login_top_title_text : {
+                      fontSize : 32,
+                      color : '#fff',
+                    },
+            home_login_entry : {
+              alignItems : 'center',
+              justifyContent : 'center',
+              flex : 1,
             },
-        home_start_button: {
-            flex: 1,
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: title_background_color,
-            borderColor: title_border_color,
-            borderWidth: 6
-        },
-            home_start_button_text: {
-                fontSize: 26
+                home_login_entry_text : {
+                  fontSize : 16,
+                },
+                home_login_entry_textbox : {
+                  backgroundColor : '#eee',
+                  borderColor : '#000',
+                  borderWidth : 1,
+                  width : '70%',
+                  borderRadius : 10,
+                },
+                    home_login_entry_textbox_text : {
+                      fontSize : 22,
+                      margin : '1%',
+                    },
+            home_login_interact : {
+              alignItems : 'center',
+              justifyContent : 'center',
+              flex : 1,
             },
+                home_login_interact_press : {
+                  alignItems : 'center',
+                  justifyContent : 'center',
+                  backgroundColor : '#fff',
+                  borderRadius : 30,
+                  borderWidth : 1,
+                  width : '80%',
+                  height : '60%',
+                },
+                    home_login_interact_press_text : {
+                  fontSize : 22,
+                },
+
 
     intro: {
         flex:1
     },
-        intro_header : {
-          backgroundColor : '#f22',
-          height : '10%',
-          alignItems : 'center',
-          justifyContent : 'space-around',
-          flexDirection : 'row'
+        intro_body : {
+          flex : 1,
         },
-            intro_header_interact : {
-              width : '8%',
-              aspectRatio : 1,
-              backgroundColor : 'transparent',
-            },
-                intro_header_interact_format : {
-                  flex: 1,
-                  resizeMode: 'contain',
-                  width: null,
-                  height: null,
-                  backgroundColor : 'transparent',
-                },
-            intro_header_text : {
-              fontSize : 22,
-              fontWeight : 'bold',
-              color : '#fff',
-            },
-            intro_body : {
-              flex : 1,
-            },
-                intro_body_frame : {
-                  flexDirection : 'row',
-                  justifyContent : 'space-around',
-                  paddingTop : '3%',
-                  paddingBottom : '3%',
-                  marginLeft : '3%',
-                  marginRight : '3%',
-                },
-                    intro_body_frame_image : {
-                      width : '100%',
-                      aspectRatio : 6/5,
-                      borderWidth : 3,
-                      flexDirection : 'row',
-                      justifyContent : 'space-around',
-                      marginLeft : '3%',
-                      marginRight : '3%',
-                    },
-                        intro_body_frame_image_format : {
-                          flex: 1,
-                          resizeMode: 'contain',
-                          width: null,
-                          height: null,
-                        },
-                intro_body_headline : {
-                  flexGrow : 2,
-                  alignItems: 'flex-start',
-                  justifyContent: 'center',
-                  borderBottomWidth : 3,
-                  marginLeft : '2%',
-                  marginRight : '4%',
-                },
-                    intro_body_headline_text : {
-                        fontSize : 26,
-                        fontWeight : 'bold',
-                    },
-                intro_body_body : {
-                  flexGrow : 4,
-                  justifyContent: 'center',
-                  alignItems : 'flex-start',
-                  marginLeft : '3%',
-                  marginRight : '3%',
-                  paddingBottom : '3%',
-                },
-                    intro_body_body_text : {
-                        fontSize : 18,
-                    },
-                intro_body_tag : {
-                  alignItems : 'flex-start',
-                  marginLeft : '3%',
-                },
-                    intro_body_tag_text : {
-                      fontSize : 14,
-                      color : '#111'
-                    },
 
     junction: {
         flex: 1,
@@ -535,48 +603,7 @@ export default StyleSheet.create({
     end : {
       flex : 1,
     },
-        end_image : {
-          borderWidth : 6,
-          width : '100%',
-          aspectRatio : 1,
-        },
-          end_image_profile : {
-            resizeMode : 'contain',
-            width : null,
-            height : null,
-            flex: 1,
-          },
-        end_body : {
-          alignItems: 'center',
-          justifyContent : 'center',
-          borderWidth : 4,
-          borderTopWidth : 0,
-        },
-          end_body_text : {
-            fontSize : 32,
-          },
-      end_interact : {
-        flexDirection : 'row',
-        justifyContent: 'space-around',
-        alignItems : 'center',
-        flex: 1,
-        borderWidth : 4,
-        borderTopWidth : 0,
+      end_scroll : {
+
       },
-          end_interact_back : {
-            width : '40%',
-            borderWidth : 4,
-            alignItems : 'center'
-          },
-              end_interact_back_text : {
-                fontSize : 26
-              },
-          end_interact_end : {
-            width : '40%',
-            borderWidth : 4,
-            alignItems : 'center'
-          },
-              end_interact_end_text : {
-                fontSize : 26
-              },
 });

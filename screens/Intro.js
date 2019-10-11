@@ -7,9 +7,7 @@ import Lookup_Intro from '../assets/Lookup/Lookup_Intro.js';
 export default class Junction extends React.Component {
     static navigationOptions = {
         title: 'Welcome',
-        headerStyle: {
-            height: 0,
-        },
+        headerStyle: Styles.news_header,
         headerTitleStyle: {
             fontSize: 0,
         }
