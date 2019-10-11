@@ -79,123 +79,87 @@ export default StyleSheet.create({
     intro: {
         flex:1
     },
-        intro_body: {
-            flex: 3,
-            borderWidth: 6,
-            borderColor: intro_border_color
+        intro_header : {
+          backgroundColor : '#f22',
+          height : '10%',
+          alignItems : 'center',
+          justifyContent : 'space-around',
+          flexDirection : 'row'
         },
-            intro_body_headline : {
-              flex : 1,
-              alignItems: 'flex-start',
-              justifyContent: 'center',
-              margin : '2%',
-              marginRight : '4%',
-              borderRightWidth : 3,
+            intro_header_interact : {
+              width : '8%',
+              aspectRatio : 1,
+              backgroundColor : 'transparent',
             },
-                intro_body_headline_text : {
-                    fontSize : 22,
-                    fontWeight : 'bold',
-                },
-            intro_body_subhead : {
-              flex : 1,
-              margin: '3%',
-            },
-                intro_body_subhead_text : {
-                  fontSize : 20,
-                  fontWeight : 'bold',
-                },
-            intro_body_body : {
-              flex : 2,
-              margin : '3%',
-              borderTopWidth : 2,
-              borderBottomWidth : 2,
-              justifyContent: 'center',
-            },
-                intro_body_body_text : {
-                    fontSize : 18
-                },
-            intro_body_image : {
-              flex : 3,
-              borderWidth: 3,
-              borderLeftWidth : 0,
-              borderRightWidth : 0,
-              borderColor: intro_border_color_2,
-              margin: '3%',
-            },
-                intro_body_image_format : {
+                intro_header_interact_format : {
                   flex: 1,
                   resizeMode: 'contain',
                   width: null,
                   height: null,
-                  margin : "5%",
+                  backgroundColor : 'transparent',
                 },
-            intro_body_tab : {
-              flexDirection : "row",
+            intro_header_text : {
+              fontSize : 22,
+              fontWeight : 'bold',
+              color : '#fff',
+            },
+            intro_body : {
               flex : 1,
-              justifyContent : 'space-between',
-              alignItems : 'flex-end',
             },
-                intro_body_tab_left : {
-                  borderWidth : 2,
-                  width : "20%",
-                  height : "50%",
-                  alignItems: 'center',
-                  justifyContent : 'center',
+                intro_body_frame : {
+                  flexDirection : 'row',
+                  justifyContent : 'space-around',
+                  paddingTop : '3%',
+                  paddingBottom : '3%',
+                  marginLeft : '3%',
+                  marginRight : '3%',
                 },
-                    intro_body_tab_left_text : {
-                      fontSize : 16,
+                    intro_body_frame_image : {
+                      width : '100%',
+                      aspectRatio : 6/5,
+                      borderWidth : 3,
+                      flexDirection : 'row',
+                      justifyContent : 'space-around',
+                      marginLeft : '3%',
+                      marginRight : '3%',
                     },
-                intro_body_tab_right : {
-                  borderWidth : 2,
-                  width : "20%",
-                  height : "50%",
-                  alignItems: 'center',
-                  justifyContent : 'center',
-                },
-                    intro_body_tab_right_text : {
-                      fontSize : 16,
-                    },
-                intro_body_tab_null : {
-                  width : '20%',
-                  height : '50%',
-                },
-                intro_body_tab_page : {
-                  alignItems : 'center',
+                        intro_body_frame_image_format : {
+                          flex: 1,
+                          resizeMode: 'contain',
+                          width: null,
+                          height: null,
+                        },
+                intro_body_headline : {
+                  flexGrow : 2,
+                  alignItems: 'flex-start',
                   justifyContent: 'center',
+                  borderBottomWidth : 3,
+                  marginLeft : '2%',
+                  marginRight : '4%',
                 },
-                    intro_body_tab_page_text : {
-                      fontSize: 16,
+                    intro_body_headline_text : {
+                        fontSize : 26,
+                        fontWeight : 'bold',
                     },
-        intro_navigation: {
-            flex: 1,
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent : 'space-around',
-            borderWidth: 6,
-            borderColor: intro_border_color,
-        },
-            intro_navigation_back :{
-                borderWidth: 4,
-                borderColor: intro_border_color_2,
-                alignItems: 'center',
-                justifyContent: 'center',
-                height: '30%',
-                width : '40%',
-            },
-                intro_navigation_back_text : {
-                    fontSize: 26,
+                intro_body_body : {
+                  flexGrow : 4,
+                  justifyContent: 'center',
+                  alignItems : 'flex-start',
+                  marginLeft : '3%',
+                  marginRight : '3%',
+                  paddingBottom : '3%',
                 },
-            intro_navigation_junction: {
-                borderWidth: 4,
-                borderColor: intro_border_color_2,
-                alignItems: 'center',
-                justifyContent: 'center',
-                height: '30%',
-                width : '40%',
-            },
-                intro_navigation_junction_text : {
-                    fontSize: 26,
+                    intro_body_body_text : {
+                        fontSize : 18,
+                    },
+                intro_body_tag : {
+                  alignItems : 'flex-start',
+                  marginLeft : '3%',
                 },
+                    intro_body_tag_text : {
+                      fontSize : 14,
+                      color : '#111'
+                    },
 
     junction: {
         flex: 1,
@@ -573,21 +537,21 @@ export default StyleSheet.create({
     },
         end_image : {
           borderWidth : 6,
-          flex: 3,
+          width : '100%',
+          aspectRatio : 1,
         },
           end_image_profile : {
-            resizeMode : 'cover',
+            resizeMode : 'contain',
             width : null,
             height : null,
             flex: 1,
           },
-      end_body : {
-        alignItems: 'center',
-        justifyContent : 'center',
-        flex: 2,
-        borderWidth : 4,
-        borderTopWidth : 0,
-      },
+        end_body : {
+          alignItems: 'center',
+          justifyContent : 'center',
+          borderWidth : 4,
+          borderTopWidth : 0,
+        },
           end_body_text : {
             fontSize : 32,
           },

@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { Button, View, Text, Image, TouchableOpacity } from 'react-native';
+import { ScrollView, Button, View, Text, Image, TouchableOpacity } from 'react-native';
 import Styles from '../assets/Styles';
 import Memory from '../assets/Memory';
+import LookupEnding from '../assets/Lookup/Lookup_Ending';
+import Methods from '../assets/Lookup/Lookup_Architecture';
 
 export default class Junction extends React.Component {
     static navigationOptions = {
@@ -13,28 +15,29 @@ export default class Junction extends React.Component {
             fontSize: 0,
         }
     };
+
     render() {
         const { navigate } = this.props.navigation;
         var memory = this.props.navigation.getParam("memory", {"initialized" : true, "progress" : {"char_1" : "success"}});
         var victory = this.props.navigation.getParam("pass", false);
+        if(this.state == null){
+          this.state = {page : 0};
+        }
+        var page = this.state.page;
+        var script = LookupEnding[victory ? "success" : "failure"];
+
+        var back = function(){
+          page == 0 ? navigate('Solve', {memory : memory}) : this.setState({page : page + 1}).bind(this);
+        }
+        var forward = function(){
+          page + 1 >= script.format.length ? navigate('Home', {memory : memory, new: true}) : this.setState({page : page - 1}).bind(this);
+        }
         return (
             <View style={Styles.end}>
-                <View style = {Styles.end_image}>
-                    <Image style = {Styles.end_image_profile} source = {require('../assets/art/newspapers.png')} />
-                </View>
-                <View style = {Styles.end_body}>
-                    <Text style = {Styles.end_body_text}>
-                      Something happened!
-                    </Text>
-                </View>
-                <View style = {Styles.end_interact}>
-                    <TouchableOpacity style = {Styles.end_interact_back} onPress={() => {navigate('Solve', {memory : memory});}}>
-                        <Text style = {Styles.end_interact_back_text}> Back </Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style = {Styles.end_interact_end} onPress={() => navigate('Home', {memory : memory, new : true})}>
-                        <Text style = {Styles.end_interact_end_text}> End </Text>
-                    </TouchableOpacity>
-                </View>
+                {Methods.article_header(back, forward)}
+                <ScrollView style = {{}}>
+                    {Methods.article(victory ? LookupEnding.success : LookupEnding.failure)}
+                </ScrollView>
             </View>
         );
     }

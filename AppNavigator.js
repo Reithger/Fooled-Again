@@ -10,9 +10,6 @@ import Intro from './screens/Intro';
 
 const AppNavigator = createStackNavigator({
 
-  Solve: {
-      screen: Solve
-  },
 
     Home: {
         screen: Home
@@ -31,6 +28,9 @@ const AppNavigator = createStackNavigator({
     },
    SolveIntro : {
       screen : SolveIntro
+    },
+    Solve: {
+        screen: Solve
     },
     End: {
         screen: End

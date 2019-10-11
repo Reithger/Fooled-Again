@@ -41,16 +41,22 @@ export default {
     ],
 
     "failure" : {
-      "text" : "Anti-immigration protests rocked the city today "+
-		"as a result of a fake news story that falsely "+
-		"claimed refugees were causing violence.",
-      "image" : require("../art/stand_in.png"),
+      "source" : ["Anti-immigration protests rocked the city today "+
+            		  "as a result of a fake news story that falsely "+
+            		  "claimed refugees were causing violence.",
+
+                  require("../art/stand_in.png"),
+                ],
+      "format" : ["header", "frame"],
     },
 
     "success" : {
-      "text" : "Fact checkers saved the city from potential riots today when "+
-		    "they exposed a viral anti-immigrant story as Fake News.",
-      "image" : require("../art/stand_in.png"),
+      "source" : ["Fact checkers saved the city from potential riots today when "+
+		              "they exposed a viral anti-immigrant story as Fake News.",
+
+                  require("../art/stand_in.png"),
+                ],
+      "format" : ["header", "frame"],
     },
 
     "answer" : [false, false, false, true, false, false, false, true, false, false, false],
