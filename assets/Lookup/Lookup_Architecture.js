@@ -42,6 +42,7 @@ module.exports = {
     article_descriptor : function(script, key) {
       var headline = "";
       var image = "";
+      var tag = "";
       var i = 0;
       for(i = 0; i < script.format.length; i++){
         if(script.format[i] == "header" && headline == ""){
@@ -50,16 +51,26 @@ module.exports = {
         if(script.format[i] == "frame" && image == ""){
           image = script.source[i];
         }
+        if(script.format[i] == "tag" && tag == ""){
+          tag = script.source[i];
+        }
       }
       return(
         <View key = {key} style = {Styles.architecture_descriptor}>
           <View style = {Styles.architecture_descriptor_image}>
               <Image source = {image} style = {Styles.architecture_descriptor_image_format}/>
           </View>
-          <View style = {Styles.architecture_descriptor_headline}>
-              <Text style = {Styles.architecture_descriptor_headline_text}>
-                  {headline}
-              </Text>
+          <View style = {Styles.architecture_descriptor_short}>
+              <View style = {Styles.architecture_descriptor_short_headline}>
+                  <Text style = {Styles.architecture_descriptor_short_headline_text}>
+                      {headline}
+                  </Text>
+              </View>
+              <View style = {Styles.architecture_descriptor_short_tag}>
+                  <Text style = {Styles.architecture_descriptor_short_tag_text}>
+                      {tag}
+                  </Text>
+              </View>
           </View>
         </View>
       )
@@ -73,6 +84,7 @@ module.exports = {
     },
 
     article : function(script){
+      console.log(script);
        return [...Array(script.format.length).keys()].map(function(index){
          switch(script.format[index]){
            case "header" : return module.exports.headline(script.source[index], index);
@@ -84,18 +96,24 @@ module.exports = {
        })
      },
 
-     article_header : function(function_back, function_forward){
+     article_header : function(left, right){
        return(
        <View style = {Styles.architecture_header}>
-           <TouchableOpacity style={Styles.architecture_header_interact} onPress={function_back}>
-               <Image style = {Styles.architecture_header_interact_format} source = {require('../../assets/art/meta/left_arrow.png')}/>
-           </TouchableOpacity>
+          {left.map(function(item){
+            var i = 0;
+            return(<TouchableOpacity key = {i++} style={Styles.architecture_header_interact} onPress={item.function}>
+                       <Image style = {Styles.architecture_header_interact_format} source = {item.image}/>
+                   </TouchableOpacity>)
+          })}
            <Text style = {Styles.architecture_header_text}>
                News App
            </Text>
-           <TouchableOpacity style={Styles.architecture_header_interact} onPress={function_forward}>
-               <Image style = {Styles.architecture_header_interact_format} source = {require('../../assets/art/meta/right_arrow.png')}/>
-           </TouchableOpacity>
+           {right.map(function(item){
+             var i = 0;
+             return(<TouchableOpacity key = {i++} style={Styles.architecture_header_interact} onPress={item.function}>
+                        <Image style = {Styles.architecture_header_interact_format} source = {item.image}/>
+                    </TouchableOpacity>)
+           })}
        </View>)
      },
 }

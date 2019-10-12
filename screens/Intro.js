@@ -30,9 +30,19 @@ export default class Junction extends React.Component {
 
         return (
             <View style={Styles.intro}>
-                {Methods.article_header(back.bind(this), forward.bind(this))}
+                {Methods.article_header([{function : back.bind(this), image : require('../assets/art/meta/left_arrow.png')}],
+                                       [{function : forward.bind(this), image : require('../assets/art/meta/right_arrow.png')}])}
                 <ScrollView style = {Styles.intro_body}>
                   {Methods.article(Lookup_Intro["screen"][page])}
+                  <View style = {Styles.intro_body_more}>
+                      <View style = {Styles.intro_body_more_top}>
+                          <Text style = {Styles.intro_body_more_top_text}>
+                              Read More
+                          </Text>
+                      </View>
+                      {Methods.article_descriptor(Lookup_Intro["screen"][(page + 2) % Lookup_Intro["screen"].length])}
+                      {Methods.article_descriptor(Lookup_Intro["screen"][(page + 3) % Lookup_Intro["screen"].length])}
+                  </View>
                 </ScrollView>
             </View>
         );

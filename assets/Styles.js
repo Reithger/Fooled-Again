@@ -1,4 +1,7 @@
 import { StyleSheet } from 'react-native';
+const DeviceInfo = require('react-native-device-detection');
+
+tablet = DeviceInfo.isTablet;
 
 buff = "#f0dc82"
 beaver = "#9f8170";
@@ -40,7 +43,6 @@ export default StyleSheet.create({
     borderBottomWidth : 0,
   },
 
-
   architecture : {
 
   },
@@ -78,7 +80,7 @@ export default StyleSheet.create({
     },
         architecture_frame_image : {
           width : '100%',
-          aspectRatio : 6/5,
+          aspectRatio : 8/5,
           borderWidth : 1,
           flexDirection : 'row',
           justifyContent : 'space-around',
@@ -123,12 +125,14 @@ export default StyleSheet.create({
     architecture_descriptor : {
       flexDirection : 'row',
       justifyContent : 'space-between',
-      borderWidth : 2,
+      marginRight : '7%',
+      marginLeft : '7%',
+      marginTop : '3%',
     },
         architecture_descriptor_image : {
           width : '30%',
-          aspectRatio : 1,
-          borderRightWidth : 2,
+          aspectRatio : 7/5,
+          borderWidth : 2,
         },
             architecture_descriptor_image_format : {
               width : null,
@@ -136,12 +140,28 @@ export default StyleSheet.create({
               resizeMode : 'contain',
               flex : 1,
             },
-        architecture_descriptor_headline : {
-
+        architecture_descriptor_short : {
+          flexDirection : 'column',
+          alignItems : 'flex-start',
         },
-            architecture_descriptor_headline_text : {
-              fontSize : 24,
+            architecture_descriptor_short_headline : {
+              alignItems : 'center',
+              justifyContent : 'center',
             },
+                architecture_descriptor_short_headline_text : {
+                  fontSize : tablet ? 24 : 16,
+                  marginRight : '30%',
+                  marginLeft : '5%',
+                },
+            architecture_descriptor_short_tag : {
+              alignItems : 'center',
+              justifyContent : 'center',
+            },
+                architecture_descriptor_short_tag_text : {
+                  fontSize : tablet ? 16 : 10,
+                  color : '#111',
+                  marginLeft : '5%',
+                },
 
     home: {
         flex: 1,
@@ -151,17 +171,16 @@ export default StyleSheet.create({
           height : '100%',
           position : 'absolute',
         },
-        home_login : {
-          backgroundColor : '#e60505bb',
-          borderRadius : 10,
-          marginTop : '20%',
-          marginBottom : '15%',
-          marginLeft : '4%',
-          marginRight : '4%',
-          height : '60%',
-          flexDirection : 'column',
+        home_buffer : {
           flex : 1,
-          borderWidth : 2,
+        },
+        home_login : {
+          backgroundColor : '#e60505aa',
+          flexDirection : 'column',
+          flex : 4,
+          marginLeft : tablet ? '8%' : '1%',
+          marginRight : tablet ? '8%' : '1%',
+          borderRadius : tablet ? 25 : 10,
         },
             home_login_top : {
               flex : 3,
@@ -173,53 +192,57 @@ export default StyleSheet.create({
                   justifyContent : 'center',
                   borderTopWidth : 4,
                   borderBottomWidth : 4,
-                  marginLeft : '3%',
-                  marginRight : '3%',
                   borderColor : '#fff',
-                  backgroundColor : '#e60505',
                   borderRadius : 10,
                   width : '95%',
+                  backgroundColor : '#e60505',
                 },
                     home_login_top_title_text : {
-                      fontSize : 32,
+                      fontSize : tablet ? 54 : 32,
                       color : '#fff',
                     },
-            home_login_entry : {
-              alignItems : 'center',
-              justifyContent : 'center',
-              flex : 1,
+            home_login_bottom : {
+              flex : 5,
+              flexDirection : 'column',
+              justifyContent : 'space-around',
             },
-                home_login_entry_text : {
-                  fontSize : 16,
-                },
-                home_login_entry_textbox : {
-                  backgroundColor : '#eee',
-                  borderColor : '#000',
-                  borderWidth : 1,
-                  width : '70%',
-                  borderRadius : 10,
-                },
-                    home_login_entry_textbox_text : {
-                      fontSize : 22,
-                      margin : '1%',
-                    },
-            home_login_interact : {
-              alignItems : 'center',
-              justifyContent : 'center',
-              flex : 1,
-            },
-                home_login_interact_press : {
+                home_login_bottom_entry : {
                   alignItems : 'center',
                   justifyContent : 'center',
-                  backgroundColor : '#fff',
-                  borderRadius : 30,
-                  borderWidth : 1,
-                  width : '80%',
-                  height : '60%',
+                  flex : 1,
                 },
-                    home_login_interact_press_text : {
-                  fontSize : 22,
+                    home_login_bottom_entry_text : {
+                      fontSize : 16,
+                    },
+                    home_login_bottom_entry_textbox : {
+                      backgroundColor : '#fff',
+                      borderColor : '#000',
+                      borderWidth : 1,
+                      width : '70%',
+                      borderRadius : 10,
+                    },
+                        home_login_bottom_entry_textbox_text : {
+                          fontSize : tablet ? 32 : 22,
+                          margin : '1%',
+                        },
+                home_login_bottom_interact : {
+                  alignItems : 'center',
+                  justifyContent : 'center',
+                  flex : 1,
+                  marginBottom : '10%',
                 },
+                    home_login_bottom_interact_press : {
+                      alignItems : 'center',
+                      justifyContent : 'center',
+                      backgroundColor : '#fff',
+                      borderRadius : 30,
+                      borderWidth : 1,
+                      width : '80%',
+                      height : '60%',
+                    },
+                        home_login_bottom_interact_press_text : {
+                      fontSize : 22,
+                    },
 
 
     intro: {
@@ -228,6 +251,18 @@ export default StyleSheet.create({
         intro_body : {
           flex : 1,
         },
+            intro_body_more : {
+              alignItems : 'flex-start',
+              marginTop : '1%',
+              marginBottom : '3%',
+            },
+                intro_body_more_top : {
+                  marginLeft : '3%',
+                },
+                    intro_body_more_top_text : {
+                      fontSize : 22,
+                      fontWeight : 'bold',
+                    },
 
     junction: {
         flex: 1,
@@ -479,6 +514,9 @@ export default StyleSheet.create({
     solveIntro : {
       flex : 1
     },
+        solveIntro_body : {
+          flex : 1,
+        },
       solveIntro_image : {
         borderWidth : 8,
         borderBottomWidth : 4,

@@ -5,6 +5,7 @@ import Styles from '../assets/Styles';
 import Memory from '../assets/Memory';
 import Methods from '../assets/Lookup/Lookup_Architecture';
 import LookupIntro from '../assets/Lookup/Lookup_Intro';
+const DeviceInfo = require('react-native-device-detection');
 
 export default class Home extends React.Component {
     static navigationOptions = {
@@ -27,16 +28,18 @@ export default class Home extends React.Component {
             memory = JSON.parse(value);
         });
         var script = LookupIntro.screen[0];
+        var tablet = DeviceInfo.isTablet;
         return (
             <View style={Styles.home}>
                 <View style = {Styles.home_background}>
-                    {Methods.article_header(function(){}, function(){})}
+                    {Methods.article_header([], [])}
                     <ScrollView style = {{}}>
                         {Methods.headline_page(LookupIntro.screen)}
                     </ScrollView>
                 </View>
                 <BlurView style = {Styles.home_background} tint = 'default' intensity = {80}/>
 
+                <View style = {Styles.home_buffer}/>
                 <View style = {Styles.home_login}>
                     <View style = {Styles.home_login_top}>
                         <View style = {Styles.home_login_top_title}>
@@ -45,34 +48,37 @@ export default class Home extends React.Component {
                             </Text>
                         </View>
                     </View>
-                    <View style = {Styles.home_login_entry}>
-                        <Text style = {Styles.home_login_entry_text}>
-                            Username
-                        </Text>
-                        <View style = {Styles.home_login_entry_textbox}>
-                            <Text style = {Styles.home_login_entry_textbox_text}>
-                                Gabby_Phillips
+                    <View style = {Styles.home_login_bottom}>
+                        <View style = {Styles.home_login_bottom_entry}>
+                            <Text style = {Styles.home_login_bottom_entry_text}>
+                                Username
                             </Text>
+                            <View style = {Styles.home_login_bottom_entry_textbox}>
+                                <Text style = {Styles.home_login_bottom_entry_textbox_text}>
+                                    Gabby_Phillips
+                                </Text>
+                            </View>
+                        </View>
+                        <View style = {Styles.home_login_bottom_entry}>
+                            <Text style = {Styles.home_login_bottom_entry_text}>
+                                Password
+                            </Text>
+                            <View style = {Styles.home_login_bottom_entry_textbox}>
+                                <Text style = {Styles.home_login_bottom_entry_textbox_text}>
+                                    ***********
+                                </Text>
+                            </View>
+                        </View>
+                        <View style = {Styles.home_login_bottom_interact}>
+                            <TouchableOpacity style = {Styles.home_login_bottom_interact_press} onPress={()=>(navigate('Intro', {memory : memory}))}>
+                                <Text style = {Styles.home_login_bottom_interact_press_text}>
+                                    Sign In
+                                </Text>
+                            </TouchableOpacity>
                         </View>
                     </View>
-                    <View style = {Styles.home_login_entry}>
-                        <Text style = {Styles.home_login_entry_text}>
-                            Password
-                        </Text>
-                        <View style = {Styles.home_login_entry_textbox}>
-                            <Text style = {Styles.home_login_entry_textbox_text}>
-                                ***********
-                            </Text>
-                        </View>
-                    </View>
-                    <View style = {Styles.home_login_interact}>
-                        <TouchableOpacity style = {Styles.home_login_interact_press} onPress={()=>(navigate('Intro', {memory : memory}))}>
-                            <Text style = {Styles.home_login_interact_press_text}>
-                                Sign In
-                            </Text>
-                        </TouchableOpacity>
-                    </View>
-                </View>
+                  </View>
+                  <View style = {Styles.home_buffer}/>
             </View>
         );
     }

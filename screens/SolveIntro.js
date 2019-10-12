@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
-import { Button, View, Text, TouchableOpacity, Image } from 'react-native';
+import { ScrollView, Button, View, Text, TouchableOpacity, Image } from 'react-native';
 import Styles from '../assets/Styles';
 import LookupEnding from '../assets/Lookup/Lookup_Ending';
+import Methods from '../assets/Lookup/Lookup_Architecture';
 
 export default class Solve extends React.Component {
     static navigationOptions = {
         title: 'Welcome',
-        headerStyle: {
-            height: 0,
-        },
+        headerStyle: Styles.news_header,
         headerTitleStyle: {
             fontSize: 0,
         }
@@ -26,40 +25,25 @@ export default class Solve extends React.Component {
             proceed = false;
           }
         }
+        var script = proceed ? LookupEnding.prepared : LookupEnding.unprepared;
 
-        console.log(proceed);
-        console.log(progress);
+        var back = function(){
+          navigate('Junction', {memory:memory})
+        };
 
-        var display_text = proceed ? LookupEnding.prepared.text : LookupEnding.unprepared.text;
-        var image = proceed ? LookupEnding.prepared.image : LookupEnding.unprepared.image;
-        var solve_text = proceed ? "Solve" : "-";
+        var forward = function(){
+           if(proceed){
+             navigate('Solve', {memory:memory});
+           }
+        };
 
         return (
             <View style={Styles.solveIntro}>
-                <View style = {Styles.solveIntro_image}>
-                  <Image style = {Styles.solveIntro_image_format} source = {image} />
-                </View>
-                <View style = {Styles.solveIntro_description}>
-                    {display_text.map(line => (
-                      <View key = {line.length} style = {Styles.solveIntro_description_line}>
-                        <Text style = {Styles.solveIntro_description_line_text}>
-                          {line}
-                        </Text>
-                      </View>
-                    ))}
-                </View>
-                <View style = {Styles.solveIntro_interact}>
-                    <TouchableOpacity style = {Styles.solveIntro_interact_back} onPress={() => navigate('Junction', {memory:memory})}>
-                        <Text style = {Styles.solveIntro_interact_back_text}>
-                          Back
-                        </Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style = {Styles.solveIntro_interact_next} onPress={() => { if(proceed){ navigate('Solve', {memory:memory});}}}>
-                        <Text style = {Styles.solveIntro_interact_next_text}>
-                          {solve_text}
-                        </Text>
-                    </TouchableOpacity>
-                </View>
+                {Methods.article_header([{function : back.bind(this), image : require('../assets/art/meta/left_arrow.png')}],
+                                       [{function : forward.bind(this), image : proceed ? require('../assets/art/meta/right_arrow.png') : null}])}
+                <ScrollView style = {Styles.solveIntro_body}>
+                  {Methods.article(script)}
+                </ScrollView>
             </View>
         );
     }

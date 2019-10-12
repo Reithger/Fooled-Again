@@ -5,7 +5,13 @@ export default {
     },
 
     "prepared" : {
-      "text" : ["Hey friends, I saw that people were getting worked up about this"+
+      "source" : ["Local News Sources Rife with Errors",
+
+                "11/12/2019 - Gabby Phillips",
+
+                require("../art/newspapers.png"),
+
+                "Hey friends, I saw that people were getting worked up about this"+
 		            " news story circulating on social media so I talked to a few folks"+
                 " and did some fact checking.",
 
@@ -14,16 +20,23 @@ export default {
                 "See below for which parts of the story can be verified.",
 
                 "Don’t get fooled by fake news!"],
-      "image" : require("../art/newspapers.png"),
+
+      "format" : ["header", "tag", "frame", "body", "body", "body", "body"],
     },
 
     "unprepared" : {
-      "text" : ["Hmm...",
+      "source" : ["Other news sites dont... You wont believe what these 11 storys... work on this title",
+
+                "11/11/2019 - Gabey Fillips",
+
+                require("../art/newspapers.png"),
+
+                "Hmm...",
 
                 "I don't think I've quite figured this out yet.",
 
                 "I should make sure that I have tracked down all of the claims that I've heard."],
-      "image" : require("../art/newspapers.png"),
+      "format" : ["header", "tag", "frame", "body", "body", "body"]
     },
 
     "recall" : [
