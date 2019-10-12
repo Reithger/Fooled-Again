@@ -8,9 +8,7 @@ import Methods from '../assets/Lookup/Lookup_Architecture';
 export default class Junction extends React.Component {
     static navigationOptions = {
         title: 'Welcome',
-        headerStyle: {
-            height: 0,
-        },
+        headerStyle: Styles.news_header,
         headerTitleStyle: {
             fontSize: 0,
         }
@@ -23,18 +21,17 @@ export default class Junction extends React.Component {
         if(this.state == null){
           this.state = {page : 0};
         }
-        var page = this.state.page;
         var script = LookupEnding[victory ? "success" : "failure"];
 
         var back = function(){
-          page == 0 ? navigate('Solve', {memory : memory}) : this.setState({page : page + 1}).bind(this);
+          navigate('Solve', {memory : memory});
         }
         var forward = function(){
-          page + 1 >= script.format.length ? navigate('Home', {memory : memory, new: true}) : this.setState({page : page - 1}).bind(this);
+          navigate('Home', {memory : memory, new: true});
         }
         return (
             <View style={Styles.end}>
-                {Methods.article_header(back, forward)}
+                {Methods.article_header([{function : back.bind(this), image : require('../assets/art/meta/left_arrow.png')}], [{function : forward.bind(this), image : require('../assets/art/meta/right_arrow.png')}])}
                 <ScrollView style = {Styles.end_scroll}>
                     {Methods.article(victory ? LookupEnding.success : LookupEnding.failure)}
                 </ScrollView>
