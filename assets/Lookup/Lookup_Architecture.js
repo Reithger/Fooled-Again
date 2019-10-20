@@ -1,5 +1,5 @@
 import React from 'react';
-import {TouchableOpacity, View, Text, Image } from 'react-native';
+import {ScrollView, Animated, TouchableOpacity, View, Text, Image } from 'react-native';
 import Styles from '../../assets/Styles';
 
 module.exports = {
@@ -39,7 +39,7 @@ module.exports = {
       </View>)
     },
 
-    article_descriptor : function(script, key) {
+    article_descriptor : function(script, key, navigate, memory) {
       var headline = "";
       var image = "";
       var tag = "";
@@ -56,7 +56,7 @@ module.exports = {
         }
       }
       return(
-        <View key = {key} style = {Styles.architecture_descriptor}>
+        <TouchableOpacity key = {key} style = {Styles.architecture_descriptor} onPress = {() => {navigate('NewsStory', {memory : memory, script : script})}}>
           <View style = {Styles.architecture_descriptor_image}>
               <Image source = {image} style = {Styles.architecture_descriptor_image_format}/>
           </View>
@@ -72,19 +72,21 @@ module.exports = {
                   </Text>
               </View>
           </View>
-        </View>
+        </TouchableOpacity>
       )
     },
 
-    headline_page : function(stories){
+    headline_page : function(stories, navigate, memory){
       var i = 0;
-      return stories.map(function(source){
-        return module.exports.article_descriptor(source, i++);
-      })
+      return(
+        <ScrollView style = {{}}>
+          {stories.map(function(source){
+            return module.exports.article_descriptor(source, i++, navigate, memory);
+          })}
+        </ScrollView>)
     },
 
     article : function(script){
-      console.log(script);
        return [...Array(script.format.length).keys()].map(function(index){
          switch(script.format[index]){
            case "header" : return module.exports.headline(script.source[index], index);
@@ -115,5 +117,39 @@ module.exports = {
                     </TouchableOpacity>)
            })}
        </View>)
+     },
+
+     app_link_shake : function(animation, action, image, style){
+       const spin = animation.interpolate({
+           inputRange: [0, .05, .075, .125, 1],
+           outputRange: ['0deg', '10deg', '-10deg', '0deg', '0deg']
+       })
+       const scale = animation.interpolate({
+           inputRange: [0, .9, .925, .975, 1],
+           outputRange: [1, 1, 1.3, .8, 1]
+       })
+       if(style == null){
+         return(null);
+       }
+       return(
+         <Animated.View style = {Object.assign({}, style, {transform : [{scale : scale}]})}>
+           <TouchableOpacity style = {{width : '70%', aspectRatio : 1}} onPress = {action}>
+             <Animated.Image style = {Object.assign({}, {transform : [{rotate : spin}]}, Styles.architecture_app_image)} source = {image}/>
+           </TouchableOpacity>
+         </Animated.View>
+       );
+     },
+
+     app_link : function(action, image, style){
+       if(style == null){
+         return(null);
+       }
+       return(
+         <View style = {style}>
+           <TouchableOpacity style = {{width : '70%', aspectRatio : 1}} onPress = {action}>
+             <Image style = {Styles.architecture_app_image} source = {image}/>
+           </TouchableOpacity>
+         </View>
+       );
      },
 }

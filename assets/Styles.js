@@ -42,6 +42,16 @@ export default StyleSheet.create({
     backgroundColor : '#e60505',
     borderBottomWidth : 0,
   },
+  title_header : {
+    height : '0%',
+    backgroundColor : '#f57e20',
+    borderBottomWidth : 0,
+  },
+  messenger_header : {
+    height : '0%',
+    backgroundColor : '#0e1456',
+    borderBottomWidth : 0,
+  },
 
   architecture : {
 
@@ -89,7 +99,7 @@ export default StyleSheet.create({
         },
             architecture_frame_image_format : {
               flex: 1,
-              resizeMode: 'contain',
+              resizeMode: 'cover',
               width: null,
               height: null,
             },
@@ -162,217 +172,98 @@ export default StyleSheet.create({
                   color : '#111',
                   marginLeft : '5%',
                 },
+    architecture_app : {
+      width : '70%',
+      aspectRatio : 1,
+    },
+      architecture_app_image : {
+        flex : 1,
+        width : null,
+        height : null,
+        resizeMode : 'contain'
+      },
 
     home: {
         flex: 1,
     },
-        home_background : {
-          width : '100%',
-          height : '100%',
-          position : 'absolute',
+      home_title : {
+        backgroundColor : '#f57e20',
+        width : '100%',
+        height : '100%',
+         justifyContent : 'center',
+         alignItems : 'center'
+      },
+      home_button : {
+        position : 'absolute',
+        width : '100%',
+        height : '100%',
+        alignItems : 'flex-end',
+        justifyContent : 'flex-end'
+      },
+        home_button_fun : {
+          marginRight : '5%',
+          marginBottom : '5%',
+          width : '15%',
+          aspectRatio : 1,
+          borderRadius : 9999,
+          borderWidth : 1,
+          alignItems : 'center',
+          justifyContent : 'center',
+          backgroundColor : '#e60505',
         },
-        home_buffer : {
-          flex : 1,
-        },
-        home_login : {
-          backgroundColor : '#e60505aa',
-          flexDirection : 'column',
-          flex : 4,
-          marginLeft : tablet ? '8%' : '1%',
-          marginRight : tablet ? '8%' : '1%',
-          borderRadius : tablet ? 25 : 10,
-        },
-            home_login_top : {
-              flex : 3,
-              alignItems : 'center',
-              justifyContent : 'center',
-            },
-                home_login_top_title : {
-                  alignItems : 'center',
-                  justifyContent : 'center',
-                  borderTopWidth : 4,
-                  borderBottomWidth : 4,
-                  borderColor : '#fff',
-                  borderRadius : 10,
-                  width : '95%',
-                  backgroundColor : '#e60505',
-                },
-                    home_login_top_title_text : {
-                      fontSize : tablet ? 54 : 32,
-                      color : '#fff',
-                    },
-            home_login_bottom : {
-              flex : 5,
-              flexDirection : 'column',
-              justifyContent : 'space-around',
-            },
-                home_login_bottom_entry : {
-                  alignItems : 'center',
-                  justifyContent : 'center',
-                  flex : 1,
-                },
-                    home_login_bottom_entry_text : {
-                      fontSize : 16,
-                    },
-                    home_login_bottom_entry_textbox : {
-                      backgroundColor : '#fff',
-                      borderColor : '#000',
-                      borderWidth : 1,
-                      width : '70%',
-                      borderRadius : 10,
-                    },
-                        home_login_bottom_entry_textbox_text : {
-                          fontSize : tablet ? 32 : 22,
-                          margin : '1%',
-                        },
-                home_login_bottom_interact : {
-                  alignItems : 'center',
-                  justifyContent : 'center',
-                  flex : 1,
-                  marginBottom : '10%',
-                },
-                    home_login_bottom_interact_press : {
-                      alignItems : 'center',
-                      justifyContent : 'center',
-                      backgroundColor : '#fff',
-                      borderRadius : 30,
-                      borderWidth : 1,
-                      width : '80%',
-                      height : '60%',
-                    },
-                        home_login_bottom_interact_press_text : {
-                      fontSize : 22,
-                    },
-
 
     intro: {
         flex:1
     },
         intro_body : {
           flex : 1,
+          paddingBottom : '10%',
         },
-            intro_body_more : {
-              alignItems : 'flex-start',
-              marginTop : '1%',
-              marginBottom : '3%',
-            },
-                intro_body_more_top : {
-                  marginLeft : '3%',
-                },
-                    intro_body_more_top_text : {
-                      fontSize : 22,
-                      fontWeight : 'bold',
-                    },
+        intro_buffer : {
+          width : '10%',
+          aspectRatio : 1,
+        },
+        intro_button : {
+          position : 'absolute',
+          width : '100%',
+          height : '100%',
+          alignItems : 'flex-end',
+          justifyContent : 'flex-start',
+          marginRight : '10%',
+          marginTop : '13%',
+        },
+          intro_button_fun : {
+            position : 'absolute',
+            width : '15%',
+            aspectRatio : 1,
+            borderRadius : 9999,
+            borderWidth : 1,
+            alignItems : 'center',
+            justifyContent : 'center',
+            backgroundColor : '#0e1f56',
+          },
 
-    junction: {
+    messenger: {
         flex: 1,
     },
-        junction_sleuth: {
-            flex: 1,
-            backgroundColor: junction_sleuth_background_color,
-            width: '100%',
-            borderColor: junction_sleuth_border_color,
-            borderStyle: 'solid',
-            borderWidth: 4,
+      messenger_button : {
+        position : 'absolute',
+        width : '100%',
+        height : '100%',
+        alignItems : 'flex-start',
+        justifyContent : 'flex-end'
+      },
+        messenger_button_fun : {
+          marginLeft : '5%',
+          marginBottom : '5%',
+          width : '15%',
+          aspectRatio : 1,
+          borderRadius : 9999,
+          borderWidth : 1,
+          alignItems : 'center',
+          justifyContent : 'center',
+          backgroundColor : '#e60505',
         },
-            junction_sleuth_title: {
-                flex: 1,
-                borderColor: junction_sleuth_border_color,
-                borderStyle: 'solid',
-                borderBottomWidth: 4,
-                flexDirection : 'row',
-                justifyContent: 'space-between',
-            },
-                junction_sleuth_title_text: {
-                    fontSize: 48,
-                    alignSelf: 'flex-end',
-                    marginRight: '3%',
-                    marginTop: '5%',
-                },
-                junction_sleuth_title_back : {
-                    alignSelf : 'flex-start',
-                    justifyContent: 'center',
-                    marginTop: '2%',
-                    marginLeft : '2%',
-                },
-                    junction_sleuth_title_back_text : {
-                      fontSize: 26,
-
-                    },
-            junction_sleuth_body : {
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              flex: 3
-            },
-                junction_sleuth_body_selection: {
-                    flex: 2,
-                    justifyContent: 'space-around',
-                    flexDirection: 'row',
-                    alignItems: 'center',
-                    },
-                        junction_sleuth_body_selection_image: {
-                            width: '15%',
-                            aspectRatio : 1,
-                            borderWidth : 2,
-                        },
-                            junction_sleuth_body_selection_image_profile: {
-                              flex : 1,
-                              resizeMode : 'cover',
-                              width : null,
-                              height : null,
-                            },
-        junction_solve: {
-            flex: 1,
-            backgroundColor: junction_solve_background_color,
-            borderColor: junction_solve_border_color,
-            width: '100%',
-            borderStyle: 'solid',
-            borderWidth: 4,
-        },
-            junction_solve_title: {
-                flex: 1,
-                borderColor: junction_solve_border_color,
-                borderStyle: 'solid',
-                borderBottomWidth: 4,
-            },
-                junction_solve_title_text: {
-                    fontSize: 48,
-                    alignSelf: 'flex-start',
-                    marginLeft: '3%',
-                    marginTop: '5%',
-                },
-            junction_solve_body : {
-              flexDirection: "column",
-              justifyContent : "space-between",
-              flex: 3
-            },
-                junction_solve_body_scroll : {
-                  flex : 2,
-                  flexDirection: "row",
-                  alignItems: "center",
-                  justifyContent: "space-around",
-                },
-                    junction_solve_body_scroll_image : {
-                        width: '12%',
-                        aspectRatio : 1,
-                    },
-                      junction_solve_body_scroll_image_format : {
-                        resizeMode : 'cover',
-                        width : null,
-                        height : null,
-                        flex : 1,
-                      },
-                junction_solve_body_button: {
-                    flex: 1,
-                    alignItems: 'flex-end',
-                    justifyContent: 'flex-end',
-                },
-                    junction_solve_body_button_touchable : {
-
-                    },
-                        junction_solve_body_button_touchable_text: {
-                            fontSize: 32
-                        },
 
     sleuthDescription: {
         flex: 1,

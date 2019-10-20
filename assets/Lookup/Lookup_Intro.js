@@ -17,7 +17,7 @@ export default {
 
  			 				   "11/11/2019 - Professional Writer",
 
-							   require('../art/profiles/source_image_1.png'),
+							   require('../art/intro/intro_image_4.png'),
 
                  "A worried parent /Submitted",
 
@@ -34,7 +34,7 @@ export default {
 
  			 				  "11/11/2019 - Professional Writer",
 
-							   require('../art/profiles/source_image_2.png'),
+							   require('../art/intro/intro_image_5.png'),
 
                  "An expert /Submitted",
 
@@ -53,7 +53,7 @@ export default {
      {"source" : ["Canada seeking one million immigrants from Africa",
  			 				  "11/11/2019 - Professional Writer",
 
-							   require('../art/profiles/source_image_3.png'),
+							   require('../art/intro/intro_image_7.png'),
 
                  "An immigrant probably /Submitted",
 
@@ -68,7 +68,7 @@ export default {
      {"source" : ["Refugees slaughtering animals in hotel bathrooms",
  			 				  "11/11/2019 - Professional Writer",
 
-							   require('../art/profiles/source_image_4.png'),
+							   require('../art/intro/intro_image_2.png'),
 
                  "A traveler /Submitted",
 
@@ -82,7 +82,7 @@ export default {
      {"source" : ["Arson attack at refugee hotel",
  			 				  "11/11/2019 - Professional Writer",
 
-							   require('../art/profiles/source_image_5.png'),
+							   require('../art/intro/intro_image_8.png'),
 
                  "The woman. /Submitted",
 
@@ -98,7 +98,7 @@ export default {
      {"source" : ["Muslims celebrate ISIS-inspired shooting in Toronto",
  			 				  "11/11/2019 - Professional Writer",
 
-							   require('../art/profiles/source_image_6.png'),
+							   require('../art/intro/intro_image_3.png'),
 
                  "A celebratory figure. /Submitted",
 
@@ -111,7 +111,7 @@ export default {
      {"source" : ["Politicians call for end to multiculturalism",
  			 				  "11/11/2019 - Professional Writer",
 
-							   require('../art/profiles/source_image_7.png'),
+							   require('../art/intro/intro_image_1.png'),
 
                  "A populist. /Submitted",
 
@@ -129,7 +129,7 @@ export default {
      {"source" : ["Refugees get bigger pension than needy Canadians",
  			 				  "11/11/2019 - Professional Writer",
 
-							   require('../art/profiles/source_image_8.png'),
+							   require('../art/intro/intro_image_6.png'),
 
                  "Brenda. /Submitted",
 

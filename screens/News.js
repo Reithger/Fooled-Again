@@ -50,16 +50,10 @@ export default class Intro extends React.Component {
 
         return (
             <View style={Styles.intro}>
-                {Methods.article_header([{function : function(){}, image : require('../assets/art/meta/left_arrow.png')}],
-                                       [{function : function(){}, image : require('../assets/art/meta/right_arrow.png')}])}
-                <ScrollView style = {Styles.intro_body} onScroll = {spawnMessenger.bind(this)}>
-                  {Lookup_Intro.screen.map(function(item){
-                    return(Methods.article(item));
-                  })}
-                  <View style = {Styles.intro_buffer}/>
-                </ScrollView>
-                <View style = {this.state.messenger ? Styles.intro_button : null}>
-                    {Methods.app_link_shake(this.animate, function(){navigate('Messenger', {memory : memory})}, require('../assets/art/meta/right_arrow.png'), this.state.messenger ? Styles.intro_button_fun : null, true)}
+                {Methods.article_header([], [])}
+                {Methods.headline_page(Lookup_Intro.screen, navigate, memory)}
+                <View style = {Styles.intro_button}>
+                    {Methods.app_link(function(){navigate('Messenger', {memory : memory})}, require('../assets/art/meta/right_arrow.png'), Styles.intro_button_fun)}
                 </View>
             </View>
         );

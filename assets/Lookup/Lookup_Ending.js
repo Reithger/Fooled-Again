@@ -9,7 +9,7 @@ export default {
 
                 "11/12/2019 - Gabby Phillips",
 
-                require("../art/newspapers.png"),
+                require("../art/meta/newspapers.png"),
 
                 "Hey friends, I saw that people were getting worked up about this"+
 		            " news story circulating on social media so I talked to a few folks"+
@@ -29,7 +29,7 @@ export default {
 
                 "11/11/2019 - Gabey Fillips",
 
-                require("../art/newspapers.png"),
+                require("../art/meta/newspapers.png"),
 
                 "Hmm...",
 
@@ -58,7 +58,7 @@ export default {
             		  "as a result of a fake news story that falsely "+
             		  "claimed refugees were causing violence.",
 
-                  require("../art/stand_in.png"),
+                  require("../art/end/bad_ending.png"),
                 ],
       "format" : ["header", "frame"],
     },
@@ -67,7 +67,7 @@ export default {
       "source" : ["Fact checkers saved the city from potential riots today when "+
 		              "they exposed a viral anti-immigrant story as Fake News.",
 
-                  require("../art/stand_in.png"),
+                  require("../art/end/good_ending.png"),
                 ],
       "format" : ["header", "frame"],
     },

@@ -11,7 +11,7 @@
     "orientation": "portrait",
     "icon": "./assets/art/meta/icon.png",
     "splash": {
-      "image": "./assets/art/newspapers.png",
+      "image": "./assets/art/meta/newspapers.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
