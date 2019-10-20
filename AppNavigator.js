@@ -11,16 +11,17 @@ import Intro from './screens/Intro';
 const AppNavigator = createStackNavigator({
 
 
-  Messenger: {
-      screen: Messenger
-  },
+
     Home: {
         screen: Home
     },
     Intro: {
         screen: Intro
     },
-   SolveIntro : {
+    Messenger: {
+        screen: Messenger
+    },
+    SolveIntro : {
       screen : SolveIntro
     },
     Solve: {
