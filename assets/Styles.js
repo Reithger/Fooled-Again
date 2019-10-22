@@ -182,6 +182,95 @@ export default StyleSheet.create({
         height : null,
         resizeMode : 'contain'
       },
+    architecture_scrawl : {
+
+    },
+      architecutre_scrawl_buffer : {
+        width : '100%',
+        aspectRatio : 20,
+      },
+      architecture_scrawl_message : {
+        width : '100%',
+        aspectRatio : 5,
+        flexDirection : 'row'
+      },
+        architecture_scrawl_message_text : {
+          width : '85%',
+          backgroundColor : '#6d84b4',
+          borderRadius : 30,
+          alignItems : 'flex-start',
+          justifyContent : 'center'
+        },
+          architecture_scrawl_message_text_text : {
+            fontSize : 22,
+          },
+        architecture_scrawl_message_profile : {
+          width : '10%',
+          justifyContent : 'center',
+          aspectRatio : 1,
+        },
+          architecture_scrawl_message_profile_format : {
+            height : null,
+            width : null,
+            flex : 1, resizeMode : 'cover',
+            overflow : 'hidden',
+            borderRadius : 9999
+          },
+        architecture_scrawl_message_image : {
+            width : '10%',
+            justifyContent : 'center',
+            aspectRatio : 1,
+        },
+          architecture_scrawl_message_image_format : {
+            height : null,
+            width : null,
+            flex : 1,
+            resizeMode : 'cover',
+            overflow : 'hidden',
+            borderRadius : 9999
+          },
+    architecture_friends : {
+
+    },
+      architecture_friends_entry1 : {
+        width : '100%',
+        aspectRatio : 4,
+        backgroundColor : '#3b5998',
+        flexDirection : 'row',
+        alignItems : 'center'
+      },
+      architecture_friends_entry2 : {
+        width : '100%',
+        aspectRatio : 4,
+        backgroundColor : '#6d84b4',
+        flexDirection : 'row',
+        alignItems : 'center'
+      },
+        architecture_friends_entry_buffer : {
+          width : '5%',
+          aspectRatio : 1
+        },
+        architecture_friends_entry_profile : {
+          width : '20%',
+          justifyContent : 'center',
+          aspectRatio : 1
+        },
+          architecture_friends_entry_profile_format : {
+            height : null,
+            width : null,
+            flex : 1,
+            resizeMode : 'cover',
+            overflow : 'hidden',
+            borderRadius : 9999
+          },
+        architecture_friends_entry_name : {
+          width : '65%',
+          alignItems : 'flex-start',
+          justifyContent : 'center'
+        },
+          architecture_friends_entry_name_text : {
+            fontSize : 22,
+          },
 
     home: {
         flex: 1,
@@ -246,6 +335,51 @@ export default StyleSheet.create({
     messenger: {
         flex: 1,
     },
+      messenger_head : {
+        height : '6%',
+        backgroundColor : '#0e1f56',
+        alignItems : 'center',
+        justifyContent : 'center'
+      },
+        messenger_header_text : {
+          color : 'white',
+          fontSize : 26
+        },
+      messenger_display : {
+        flexDirection : 'row',
+        height : '100%',
+        width : '100%'
+      },
+        messenger_display_friends : {
+          width : '35%',
+          height : '100%',
+          borderRightWidth : 2,
+          borderColor : '#0e1f56',
+          backgroundColor : '#0e1f56'
+        },
+        messenger_display_chat : {
+          width : '65%',
+          height : '100%',
+          flexDirection : 'column'
+        },
+          messenger_display_chat_conversation : {
+            height : '84%',
+            backgroundColor : '#fff'
+          },
+          messenger_display_chat_keyboard : {
+            width : '100%',
+            height : '10%',
+            alignItems : 'center',
+            flexDirection : 'row',
+            justifyContent : 'space-around',
+            backgroundColor : '#3b5998'
+          },
+            messenger_display_chat_keyboard_touch : {
+              width : '15%',
+              aspectRatio : 1,
+              borderRadius : 9999,
+              backgroundColor : '#ddd'
+            },
       messenger_button : {
         position : 'absolute',
         width : '100%',

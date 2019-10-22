@@ -152,4 +152,86 @@ module.exports = {
          </View>
        );
      },
+
+     messenger_scrawl : function(display, identity){
+       return(
+         <ScrollView style = {Styles.architecture_scrawl}>
+           { Array.from(Array(display.length).keys()).map(function(index){
+               return(
+                 <View>
+                   <View key = {index} style = {Styles.architecture_scrawl_message}>
+                      {module.exports.messenger_scrawl_side(display, identity, index)}
+                  </View>
+                  <View style = {Styles.architecture_scrawl_buffer}/>
+                </View>
+              )
+           })}
+         </ScrollView>
+       )
+     },
+
+     messenger_scrawl_side : function(display, identity, index){
+       if(display[index].source == "player"){
+         return(
+          module.exports.messenger_scrawl_contents(display, index)
+          module.exports.messenger_scrawl_profile(identity[display[index].source].image)
+        )
+       }
+       else{
+         return(
+          module.exports.messenger_scrawl_profile(identity[display[index].source].image)
+          module.exports.messenger_scrawl_contents(display, index)
+        )
+       }
+     },
+
+     messenger_scrawl_contents : function(display, index){
+       if(display[index].image != undefined){
+         return(
+             <View style = {Styles.architecture_scrawl_message_image}>
+               <Image style = {Styles.architecture_scrawl_message_image_format} source = {display[index].image}/>
+             </View>
+           )
+       }
+       else{
+         return(
+             <View style = {Styles.architecture_scrawl_message_text}>
+               <Text style = {Styles.architecture_scrawl_message_text_text}> {dusplay[index].text} </Text>
+             </View>
+           )
+       }
+     },
+
+     messenger_scrawl_profile : function(image){
+       return(
+         <View style = {Styles.architecture_scrawl_message_profile}>
+            <Image style = {Styles.architecture_scrawl_message_profile_format} source = {image}/>
+         </View>
+       )
+     },
+
+     messenger_friends : function(identity){
+       var i = 0;
+       return(
+           <ScrollView style = {Styles.architecture_friends}>
+             {Object.keys(identity).map(function(index){
+               return(module.exports.messenger_friends_entry(identity[index], index, i++))})}
+           </ScrollView>)
+     },
+
+     messenger_friends_entry : function(batch, index, i){
+       return(
+           <TouchableOpacity key = {index} style = {i % 2 == 0 ? Styles.architecture_friends_entry1 : Styles.architecture_friends_entry2} onPress = {() => {}}>
+               <View style = {Styles.architecture_friends_entry_buffer}/>
+               <View style = {Styles.architecture_friends_entry_profile}>
+                 <Image style = {Styles.architecture_friends_entry_profile_format} source = {batch.image}/>
+               </View>
+               <View style = {Styles.architecture_friends_entry_buffer}/>
+               <View style = {Styles.architecture_friends_entry_buffer}/>
+               <View style = {Styles.architecture_friends_entry_name}>
+                 <Text style = {Styles.architecture_friends_entry_name_text}> {batch.name}</Text>
+               </View>
+           </TouchableOpacity>);
+     },
+
 }

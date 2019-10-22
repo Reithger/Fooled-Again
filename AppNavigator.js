@@ -12,14 +12,14 @@ const AppNavigator = createStackNavigator({
 
 
 
+  Messenger: {
+      screen: Messenger
+  },
     Home: {
         screen: Home
     },
     Intro: {
         screen: Intro
-    },
-    Messenger: {
-        screen: Messenger
     },
     SolveIntro : {
       screen : SolveIntro
