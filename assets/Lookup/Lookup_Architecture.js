@@ -64,13 +64,13 @@ module.exports = {
       var tag = "";
       var i = 0;
       for(i = 0; i < script.format.length; i++){
-        if(script.format[i] == "header" && headline == ""){
+        if(headline == "" &&script.format[i] == "header"){
           headline = script.source[i];
         }
-        if(script.format[i] == "frame" && image == ""){
+        if(image == "" && script.format[i] == "frame"){
           image = script.source[i];
         }
-        if(script.format[i] == "tag" && tag == ""){
+        if(tag == "" && script.format[i] == "tag"){
           tag = script.source[i];
         }
       }

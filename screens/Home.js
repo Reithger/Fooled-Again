@@ -19,6 +19,8 @@ export default class Home extends React.Component {
     constructor(props){
       super(props);
       this.animate = new Animated.Value(0)
+      this.state = {messenger : false, pan : new Animated.ValueXY()}
+      this.panResponder = Methods.get_panResponder(this.state.pan);
     }
 
     componentDidMount(){
@@ -55,9 +57,9 @@ export default class Home extends React.Component {
                 <View style = {Styles.home_title}>
                     <Image style = {{}} source = {require("../assets/art/meta/title.jpg")}/>
                 </View>
-                <View style = {Styles.home_button}>
+                <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.home_button)}>
                     {Methods.app_link_shake(this.animate, function(){navigate('Intro', {memory : memory});}, require('../assets/art/meta/news_icon.png'), Styles.home_button_fun, true)}
-                </View>
+                </Animated.View>
             </View>
         );
     }
