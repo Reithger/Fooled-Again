@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Animated, Easing, ScrollView, Button, View, Text, TouchableOpacity, Image } from 'react-native';
+import { PanResponder, Animated, Easing, ScrollView, Button, View, Text, TouchableOpacity, Image } from 'react-native';
 import Styles from '../assets/Styles';
 import Lookup from '../assets/Lookup/Lookup';
 import LookupMessenger from '../assets/Lookup/Lookup_Messenger';
@@ -17,6 +17,8 @@ export default class Junction extends React.Component {
     constructor(props){
       super(props);
       this.animate = new Animated.Value(0)
+      this.state = {index : 4, pan : new Animated.ValueXY()}
+      this.panResponder = Methods.get_panResponder(this.state.pan);
     }
 
     componentDidMount(){
@@ -42,9 +44,6 @@ export default class Junction extends React.Component {
         var memory = this.props.navigation.getParam("memory", {"initialized": true, "progress": {"char_1" : "success", "char_2" : "failure"}});
         var progress = memory["progress"];
 
-        if(this.state == null){
-          this.state = {index : 4};
-        }
         var display = LookupMessenger.script.slice(0, this.state.index);
 
         return (
@@ -65,9 +64,9 @@ export default class Junction extends React.Component {
                       </View>
                     </View>
                 </View>
-                <View style = {Styles.messenger_button}>
-                    {Methods.app_link(function(){navigate('News', {memory : memory})}, require('../assets/art/meta/left_arrow.png'), Styles.messenger_button_fun)}
-                </View>
+                <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.messenger_button)}>
+                    {Methods.app_link(function(){navigate('News', {memory : memory})}, require('../assets/art/meta/news_icon.png'), Styles.messenger_button_fun)}
+                </Animated.View>
             </View>
         );
     }

@@ -177,32 +177,43 @@ export default StyleSheet.create({
       aspectRatio : 1,
     },
       architecture_app_image : {
-        flex : 1,
-        width : null,
-        height : null,
-        resizeMode : 'contain'
+        width : '100%',
+        aspectRatio : 1
       },
+        architecture_app_image_format : {
+          flex : 1,
+          width : null,
+          height : null,
+          resizeMode : 'contain',
+          overflow : 'hidden',
+        },
     architecture_scrawl : {
 
     },
-      architecutre_scrawl_buffer : {
-        width : '100%',
-        aspectRatio : 20,
-      },
       architecture_scrawl_message : {
         width : '100%',
-        aspectRatio : 5,
-        flexDirection : 'row'
+        flexDirection : 'row',
+        marginBottom : '10%',
+        justifyContent : 'space-around',
       },
-        architecture_scrawl_message_text : {
-          width : '85%',
+        architecture_scrawl_message_text1 : {
+          width : '80%',
           backgroundColor : '#6d84b4',
           borderRadius : 30,
           alignItems : 'flex-start',
           justifyContent : 'center'
         },
+        architecture_scrawl_message_text2 : {
+          width : '80%',
+          backgroundColor : '#ccc',
+          borderRadius : 30,
+          alignItems : 'flex-start',
+          justifyContent : 'center'
+        },
           architecture_scrawl_message_text_text : {
-            fontSize : 22,
+            fontSize : 16,
+            marginLeft : '3%',
+            marginRight : '3%',
           },
         architecture_scrawl_message_profile : {
           width : '10%',
@@ -216,18 +227,25 @@ export default StyleSheet.create({
             overflow : 'hidden',
             borderRadius : 9999
           },
-        architecture_scrawl_message_image : {
-            width : '10%',
-            justifyContent : 'center',
-            aspectRatio : 1,
+        architecture_scrawl_message_image1 : {
+          width : '80%',
+          backgroundColor : '#6d84b4',
+          borderRadius : 30,
+          aspectRatio : 1,
+        },
+        architecture_scrawl_message_image2 : {
+          width : '80%',
+          backgroundColor : '#ccc',
+          borderRadius : 30,
+          aspectRatio : 1,
         },
           architecture_scrawl_message_image_format : {
             height : null,
             width : null,
             flex : 1,
             resizeMode : 'cover',
-            overflow : 'hidden',
-            borderRadius : 9999
+            margin : '4%',
+            borderRadius : 10,
           },
     architecture_friends : {
 
@@ -287,12 +305,12 @@ export default StyleSheet.create({
         width : '100%',
         height : '100%',
         alignItems : 'flex-end',
-        justifyContent : 'flex-end'
+        justifyContent : 'flex-end',
+        paddingRight : '5%',
+        paddingBottom : '5%',
       },
         home_button_fun : {
-          marginRight : '5%',
-          marginBottom : '5%',
-          width : '15%',
+          width : '10%',
           aspectRatio : 1,
           borderRadius : 9999,
           borderWidth : 1,
@@ -323,7 +341,7 @@ export default StyleSheet.create({
         },
           intro_button_fun : {
             position : 'absolute',
-            width : '15%',
+            width : '10%',
             aspectRatio : 1,
             borderRadius : 9999,
             borderWidth : 1,
@@ -385,12 +403,12 @@ export default StyleSheet.create({
         width : '100%',
         height : '100%',
         alignItems : 'flex-start',
-        justifyContent : 'flex-end'
+        justifyContent : 'flex-end',
+        marginLeft : '5%',
+        marginBottom : '5%',
       },
         messenger_button_fun : {
-          marginLeft : '5%',
-          marginBottom : '5%',
-          width : '15%',
+          width : '10%',
           aspectRatio : 1,
           borderRadius : 9999,
           borderWidth : 1,

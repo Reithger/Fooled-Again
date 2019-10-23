@@ -16,6 +16,8 @@ export default class Intro extends React.Component {
     constructor(props){
       super(props);
       this.animate = new Animated.Value(0);
+      this.state = {messenger : false, pan : new Animated.ValueXY()}
+      this.panResponder = Methods.get_panResponder(this.state.pan);
     }
 
     componentDidMount(){
@@ -50,17 +52,17 @@ export default class Intro extends React.Component {
 
         return (
             <View style={Styles.intro}>
-                {Methods.article_header([{function : function(){}, image : require('../assets/art/meta/left_arrow.png')}],
-                                       [{function : function(){}, image : require('../assets/art/meta/right_arrow.png')}])}
+                {Methods.article_header([{function : function(){}, image : require('../assets/art/meta/blank_image.png')}],
+                                       [{function : function(){}, image : require('../assets/art/meta/blank_image.png')}])}
                 <ScrollView style = {Styles.intro_body} onScroll = {spawnMessenger.bind(this)}>
                   {Lookup_Intro.screen.map(function(item){
                     return(Methods.article(item));
                   })}
                   <View style = {Styles.intro_buffer}/>
                 </ScrollView>
-                <View style = {this.state.messenger ? Styles.intro_button : null}>
-                    {Methods.app_link_shake(this.animate, function(){navigate('Messenger', {memory : memory})}, require('../assets/art/meta/right_arrow.png'), this.state.messenger ? Styles.intro_button_fun : null, true)}
-                </View>
+                <Animated.View {...this.panResponder.panHandlers} style = {this.state.messenger ? Object.assign({}, Styles.intro_button, this.state.pan.getLayout()) : null}>
+                    {Methods.app_link_shake(this.animate, function(){navigate('Messenger', {memory : memory})}, require('../assets/art/meta/messenger.png'), this.state.messenger ? Styles.intro_button_fun : null, true)}
+                </Animated.View>
             </View>
         );
     }

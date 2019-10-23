@@ -1,8 +1,27 @@
 import React from 'react';
-import {ScrollView, Animated, TouchableOpacity, View, Text, Image } from 'react-native';
+import {PanResponder, ScrollView, Animated, TouchableOpacity, View, Text, Image } from 'react-native';
 import Styles from '../../assets/Styles';
 
 module.exports = {
+
+    get_panResponder : function(pan){
+      return PanResponder.create({
+          onStartShouldSetPanResponder : () => true,
+          onPanResponderMove           : Animated.event([null,{
+              dx : pan.x,
+              dy : pan.y
+          }]),
+          onPanResponderRelease        : (e, gesture) => {},
+          onPanResponderGrant          : (e, gesture) => {
+            pan.setOffset(pan.__getValue())
+            pan.setValue({x : 0, y : 0})
+          },
+          onMoveShouldSetPanResponder : (evt, gestureState) => {
+            return !(gestureState.dx == 0 && gestureState.dy == 0)
+          }
+      });
+    },
+
     headline : function(headline, key){
       return(
       <View key = {key} style = {Styles.architecture_headline}>
@@ -133,8 +152,8 @@ module.exports = {
        }
        return(
          <Animated.View style = {Object.assign({}, style, {transform : [{scale : scale}]})}>
-           <TouchableOpacity style = {{width : '70%', aspectRatio : 1}} onPress = {action}>
-             <Animated.Image style = {Object.assign({}, {transform : [{rotate : spin}]}, Styles.architecture_app_image)} source = {image}/>
+           <TouchableOpacity style = {Styles.architecture_app_image} onPress = {action}>
+             <Animated.Image style = {Object.assign({}, {transform : [{rotate : spin}]}, Styles.architecture_app_image_format)} source = {image}/>
            </TouchableOpacity>
          </Animated.View>
        );
@@ -146,8 +165,8 @@ module.exports = {
        }
        return(
          <View style = {style}>
-           <TouchableOpacity style = {{width : '70%', aspectRatio : 1}} onPress = {action}>
-             <Image style = {Styles.architecture_app_image} source = {image}/>
+           <TouchableOpacity style = {Styles.architecture_app_image} onPress = {action}>
+             <Image style = {Styles.architecture_app_image_format} source = {image}/>
            </TouchableOpacity>
          </View>
        );
@@ -155,14 +174,11 @@ module.exports = {
 
      messenger_scrawl : function(display, identity){
        return(
-         <ScrollView style = {Styles.architecture_scrawl}>
+         <ScrollView style = {Styles.architecture_scrawl} ref = {(scroll) => {this.scroll = scroll}} onContentSizeChange = {(contentWidth, contentHeight) => {this.scroll.scrollToEnd();}}>
            { Array.from(Array(display.length).keys()).map(function(index){
                return(
-                 <View>
-                   <View key = {index} style = {Styles.architecture_scrawl_message}>
+                 <View key = {index}>
                       {module.exports.messenger_scrawl_side(display, identity, index)}
-                  </View>
-                  <View style = {Styles.architecture_scrawl_buffer}/>
                 </View>
               )
            })}
@@ -173,30 +189,34 @@ module.exports = {
      messenger_scrawl_side : function(display, identity, index){
        if(display[index].source == "player"){
          return(
-          module.exports.messenger_scrawl_contents(display, index)
-          module.exports.messenger_scrawl_profile(identity[display[index].source].image)
+           <View style = {Styles.architecture_scrawl_message}>
+              {module.exports.messenger_scrawl_contents(display, index, display[index].source)}
+              {module.exports.messenger_scrawl_profile(identity[display[index].source].image)}
+          </View>
         )
        }
        else{
          return(
-          module.exports.messenger_scrawl_profile(identity[display[index].source].image)
-          module.exports.messenger_scrawl_contents(display, index)
+           <View style = {Styles.architecture_scrawl_message}>
+              {module.exports.messenger_scrawl_profile(identity[display[index].source].image)}
+              {module.exports.messenger_scrawl_contents(display, index, display[index].source)}
+          </View>
         )
        }
      },
 
-     messenger_scrawl_contents : function(display, index){
+     messenger_scrawl_contents : function(display, index, identity){
        if(display[index].image != undefined){
          return(
-             <View style = {Styles.architecture_scrawl_message_image}>
+             <View style = {identity == "player" ? Styles.architecture_scrawl_message_image1 : Styles.architecture_scrawl_message_image2}>
                <Image style = {Styles.architecture_scrawl_message_image_format} source = {display[index].image}/>
              </View>
            )
        }
        else{
          return(
-             <View style = {Styles.architecture_scrawl_message_text}>
-               <Text style = {Styles.architecture_scrawl_message_text_text}> {dusplay[index].text} </Text>
+             <View style = {identity == "player" ? Styles.architecture_scrawl_message_text1 : Styles.architecture_scrawl_message_text2}>
+               <Text style = {Styles.architecture_scrawl_message_text_text}> {display[index].text} </Text>
              </View>
            )
        }

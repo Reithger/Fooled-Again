@@ -56,7 +56,7 @@ export default class Home extends React.Component {
                     <Image style = {{}} source = {require("../assets/art/meta/title.jpg")}/>
                 </View>
                 <View style = {Styles.home_button}>
-                    {Methods.app_link_shake(this.animate, function(){navigate('Intro', {memory : memory})}, require('../assets/art/meta/right_arrow.png'), Styles.home_button_fun, true)}
+                    {Methods.app_link_shake(this.animate, function(){navigate('Intro', {memory : memory});}, require('../assets/art/meta/news_icon.png'), Styles.home_button_fun, true)}
                 </View>
             </View>
         );

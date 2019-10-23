@@ -9,9 +9,9 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/art/meta/icon.png",
+    "icon": "./assets/art/meta/title.png",
     "splash": {
-      "image": "./assets/art/meta/newspapers.png",
+      "image": "./assets/art/meta/title.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
