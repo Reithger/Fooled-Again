@@ -58,24 +58,22 @@ module.exports = {
       </View>)
     },
 
-    article_descriptor : function(script, key, navigate, memory) {
-      var headline = "";
-      var image = "";
-      var tag = "";
+    headline_page : function(stories, navig){
       var i = 0;
-      for(i = 0; i < script.format.length; i++){
-        if(headline == "" &&script.format[i] == "header"){
-          headline = script.source[i];
-        }
-        if(image == "" && script.format[i] == "frame"){
-          image = script.source[i];
-        }
-        if(tag == "" && script.format[i] == "tag"){
-          tag = script.source[i];
-        }
-      }
       return(
-        <TouchableOpacity key = {key} style = {Styles.architecture_descriptor} onPress = {() => {navigate('NewsStory', {memory : memory, script : script})}}>
+        <ScrollView style = {{}} keyboardShouldPersistTaps = 'always'>
+          {stories.map(function(source){
+            var headline = source.source[source.format.indexOf("header")];
+            var image = source.source[source.format.indexOf("frame")];
+            var tag = source.source[source.format.indexOf("tag")];
+            return module.exports.article_descriptor(headline, image, tag, i++, navig(source));
+          })}
+        </ScrollView>)
+    },
+
+    article_descriptor : function(headline, image, tag, key, navig) {
+      return(
+        <TouchableOpacity key = {key} style = {Styles.architecture_descriptor} onPress = {navig}>
           <View style = {Styles.architecture_descriptor_image}>
               <Image source = {image} style = {Styles.architecture_descriptor_image_format}/>
           </View>
@@ -93,16 +91,6 @@ module.exports = {
           </View>
         </TouchableOpacity>
       )
-    },
-
-    headline_page : function(stories, navigate, memory){
-      var i = 0;
-      return(
-        <ScrollView style = {{}}>
-          {stories.map(function(source){
-            return module.exports.article_descriptor(source, i++, navigate, memory);
-          })}
-        </ScrollView>)
     },
 
     article : function(script){
@@ -216,7 +204,7 @@ module.exports = {
        else{
          return(
              <View style = {identity == "player" ? Styles.architecture_scrawl_message_text1 : Styles.architecture_scrawl_message_text2}>
-               <Text style = {Styles.architecture_scrawl_message_text_text}> {display[index].text} </Text>
+               <Text style = {identity == "player" ? Styles.architecture_scrawl_message_text_text1 : Styles.architecture_scrawl_message_text_text2}>{display[index].text}</Text>
              </View>
            )
        }
@@ -241,7 +229,7 @@ module.exports = {
 
      messenger_friends_entry : function(batch, index, i){
        return(
-           <TouchableOpacity key = {index} style = {i % 2 == 0 ? Styles.architecture_friends_entry1 : Styles.architecture_friends_entry2} onPress = {() => {}}>
+           <View key = {index} style = {i % 2 == 0 ? Styles.architecture_friends_entry1 : Styles.architecture_friends_entry2} onPress = {() => {}}>
                <View style = {Styles.architecture_friends_entry_buffer}/>
                <View style = {Styles.architecture_friends_entry_profile}>
                  <Image style = {Styles.architecture_friends_entry_profile_format} source = {batch.image}/>
@@ -251,7 +239,7 @@ module.exports = {
                <View style = {Styles.architecture_friends_entry_name}>
                  <Text style = {Styles.architecture_friends_entry_name_text}> {batch.name}</Text>
                </View>
-           </TouchableOpacity>);
+           </View>);
      },
 
 }

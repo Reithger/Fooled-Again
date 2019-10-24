@@ -55,7 +55,7 @@ export default class Home extends React.Component {
         return (
             <View style={Styles.home}>
                 <View style = {Styles.home_title}>
-                    <Image style = {{}} source = {require("../assets/art/meta/title.jpg")}/>
+                    <Image style = {Styles.home_title_image} source = {require("../assets/art/meta/title.jpg")}/>
                 </View>
                 <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.home_button)}>
                     {Methods.app_link_shake(this.animate, function(){navigate('Intro', {memory : memory});}, require('../assets/art/meta/news_icon.png'), Styles.home_button_fun, true)}

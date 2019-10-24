@@ -147,7 +147,7 @@ export default StyleSheet.create({
             architecture_descriptor_image_format : {
               width : null,
               height : null,
-              resizeMode : 'contain',
+              resizeMode : 'cover',
               flex : 1,
             },
         architecture_descriptor_short : {
@@ -198,10 +198,10 @@ export default StyleSheet.create({
       },
         architecture_scrawl_message_text1 : {
           width : '80%',
-          backgroundColor : '#6d84b4',
+          backgroundColor : '#0099ff',
           borderRadius : 30,
           alignItems : 'flex-start',
-          justifyContent : 'center'
+          justifyContent : 'center',
         },
         architecture_scrawl_message_text2 : {
           width : '80%',
@@ -210,7 +210,13 @@ export default StyleSheet.create({
           alignItems : 'flex-start',
           justifyContent : 'center'
         },
-          architecture_scrawl_message_text_text : {
+          architecture_scrawl_message_text_text1 : {
+            fontSize : 16,
+            marginLeft : '3%',
+            marginRight : '3%',
+            color : 'white',
+          },
+          architecture_scrawl_message_text_text2 : {
             fontSize : 16,
             marginLeft : '3%',
             marginRight : '3%',
@@ -297,9 +303,13 @@ export default StyleSheet.create({
         backgroundColor : '#f57e20',
         width : '100%',
         height : '100%',
-         justifyContent : 'center',
-         alignItems : 'center'
       },
+        home_title_image : {
+          width : null,
+          height : null,
+          flex : 1,
+          resizeMode : 'contain',
+        },
       home_button : {
         position : 'absolute',
         width : '100%',
@@ -366,7 +376,8 @@ export default StyleSheet.create({
       messenger_display : {
         flexDirection : 'row',
         height : '100%',
-        width : '100%'
+        width : '100%',
+        backgroundColor : 'white',
       },
         messenger_display_friends : {
           width : '35%',
@@ -378,7 +389,7 @@ export default StyleSheet.create({
         messenger_display_chat : {
           width : '65%',
           height : '100%',
-          flexDirection : 'column'
+          flexDirection : 'column',
         },
           messenger_display_chat_conversation : {
             height : '84%',
@@ -393,12 +404,20 @@ export default StyleSheet.create({
             backgroundColor : '#3b5998'
           },
             messenger_display_chat_keyboard_touch : {
-              width : '15%',
-              aspectRatio : 1,
+              width : '25%',
+              aspectRatio : 5/3,
               borderRadius : 9999,
-              backgroundColor : '#ddd'
+              backgroundColor : '#eee',
+              alignItems : 'center',
+              justifyContent : 'center',
             },
-      messenger_button : {
+              messenger_display_chat_keyboard_touch_textOn : {
+                fontSize : 20
+              },
+              messenger_display_chat_keyboard_touch_textOff : {
+                fontSize : 0
+              },
+      messenger_button_news : {
         position : 'absolute',
         width : '100%',
         height : '100%',
@@ -407,7 +426,7 @@ export default StyleSheet.create({
         marginLeft : '5%',
         marginBottom : '5%',
       },
-        messenger_button_fun : {
+        messenger_button_news_fun : {
           width : '10%',
           aspectRatio : 1,
           borderRadius : 9999,
@@ -416,143 +435,24 @@ export default StyleSheet.create({
           justifyContent : 'center',
           backgroundColor : '#e60505',
         },
-
-    sleuthDescription: {
-        flex: 1,
-    },
-        sleuthDescription_profile: {
-            flex: 3,
-            backgroundColor: sleuthDescription_background_color,
-            borderWidth: 6,
-            borderBottomWidth: 4,
-            borderColor: sleuthDescription_border_color_2,
+      messenger_button_solve : {
+        position : 'absolute',
+        width : '100%',
+        height : '100%',
+        alignItems : 'flex-start',
+        justifyContent : 'flex-end',
+        marginLeft : '5%',
+        marginBottom : '5%',
+      },
+        messenger_button_solve_fun : {
+          width : '10%',
+          aspectRatio : 1,
+          borderRadius : 9999,
+          borderWidth : 1,
+          alignItems : 'center',
+          justifyContent : 'center',
+          backgroundColor : '#e60505',
         },
-            sleuthDescription_profile_image: {
-                borderWidth: 6,
-                borderColor: sleuthDescription_border_color,
-                width: '100%',
-                height: '100%',
-                resizeMode : 'contain'
-            },
-        sleuthDescription_description: {
-            flex: 2,
-            backgroundColor: sleuthDescription_background_color,
-            borderWidth: 6,
-            borderColor: sleuthDescription_border_color,
-            borderBottomWidth: 4,
-        },
-            sleuthDescription_description_title: {
-                alignItems: 'center',
-                borderBottomWidth: 3,
-                borderColor: sleuthDescription_border_color_2,
-                borderTopWidth: 3,
-            },
-                sleuthDescription_description_title_text: {
-                    fontSize: 26,
-                },
-        sleuthDescription_description_body: {
-            alignItems: 'center',
-            margin : '2%',
-        },
-            sleuthDescription_description_body_text: {
-                fontSize: 16,
-                justifyContent: 'center'
-            },
-        sleuthDescription_interact: {
-            flex: 1,
-            backgroundColor: sleuthDescription_background_color,
-            alignItems: 'center',
-            flexDirection: 'row',
-            justifyContent: 'space-around',
-            borderWidth: 6,
-            borderTopWidth: 4,
-            borderColor: sleuthDescription_border_color_2
-        },
-            sleuthDescription_interact_back: {
-                borderWidth : 4,
-                borderColor: sleuthDescription_border_color,
-                width: '40%',
-                alignItems: 'center'
-            },
-                sleuthDescription_interact_back_text: {
-                    fontSize: 24,
-                },
-            sleuthDescription_interact_interrogate: {
-                borderWidth: 4,
-                borderColor: sleuthDescription_border_color,
-                width: '40%',
-                alignItems: 'center',
-            },
-                sleuthDescription_interact_interrogate_text: {
-                    fontSize: 24,
-                },
-
-
-    sleuthConversation: {
-        flex: 1,
-    },
-        sleuthConversation_profile: {
-            flex: 1,
-            backgroundColor: sleuthConversation_background_color,
-            borderWidth: 6,
-            borderBottomWidth: 4,
-            borderColor: sleuthConversation_border_color_2,
-        },
-            sleuthConversation_profile_image: {
-                borderWidth: 6,
-                borderColor: sleuthConversation_border_color,
-                width: '100%',
-                height: '100%',
-                resizeMode: 'contain'
-            },
-        sleuthConversation_Conversation: {
-            flex: 1,
-            backgroundColor: sleuthConversation_background_color,
-            borderWidth: 6,
-            borderColor: sleuthConversation_border_color,
-            borderBottomWidth: 4,
-        },
-            sleuthConversation_Conversation_title: {
-                flex: 1,
-                alignItems: 'center',
-                justifyContent : 'center',
-                borderBottomWidth: 3,
-                borderColor: sleuthConversation_border_color_2,
-                borderTopWidth: 3,
-            },
-                sleuthConversation_Conversation_title_text: {
-                    fontSize: 26,
-                },
-            sleuthConversation_Conversation_body: {
-                flex: 3,
-                justifyContent : 'center',
-                alignItems : 'center',
-                margin : '2%',
-            },
-                sleuthConversation_Conversation_body_text: {
-                    fontSize: 20,
-                },
-        sleuthConversation_interact: {
-            flex: 1,
-            backgroundColor: sleuthConversation_background_color,
-            alignItems: 'center',
-            flexDirection: 'column',
-            justifyContent: 'space-around',
-            borderWidth: 6,
-            borderTopWidth: 4,
-            borderColor: sleuthConversation_border_color_2
-        },
-            sleuthConversation_interact_button: {
-                borderWidth: 3,
-                borderColor: sleuthConversation_border_color,
-                width: '90%',
-                height : '25%',
-                alignItems: 'center',
-                justifyContent: 'center',
-            },
-                sleuthConversation_interact_button_text: {
-                    fontSize: 18,
-                },
 
     solveIntro : {
       flex : 1

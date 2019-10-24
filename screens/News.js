@@ -39,11 +39,13 @@ export default class Intro extends React.Component {
     render() {
         const { navigate } = this.props.navigation;
         var memory = this.props.navigation.getParam("memory", {"initialized": true, "progress": {}});
-
+        var navig = function(script){
+          return(function() {navigate('NewsStory', {memory : memory, script : script})})
+        }
         return (
             <View style={Styles.intro}>
                 {Methods.article_header([], [])}
-                {Methods.headline_page(Lookup_Intro.screen, navigate, memory)}
+                {Methods.headline_page(Lookup_Intro.screen, navig)}
                 <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.intro_button)}>
                     {Methods.app_link(function(){navigate('Messenger', {memory : memory})}, require('../assets/art/meta/messenger.png'), Styles.intro_button_fun)}
                 </Animated.View>

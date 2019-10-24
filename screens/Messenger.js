@@ -17,8 +17,20 @@ export default class Junction extends React.Component {
     constructor(props){
       super(props);
       this.animate = new Animated.Value(0)
-      this.state = {index : 4, pan : new Animated.ValueXY()}
+      this.state = {index : 40, pan : new Animated.ValueXY(), pan2 : new Animated.ValueXY(), continue : false, news : false}
       this.panResponder = Methods.get_panResponder(this.state.pan);
+      this.panResponder2 = Methods.get_panResponder(this.state.pan2);
+      const interval = setInterval(function(){
+        if(this.state.index == LookupMessenger.script.length || this.state.continue){
+          this.state.continue = false;
+          this.state.news = true;
+          return;
+        }
+        if(LookupMessenger.script[this.state.index].source != "player"){
+          this.setState({index : this.state.index + 1});
+        }
+        this.state.news = false;
+      }.bind(this), 1500);
     }
 
     componentDidMount(){
@@ -45,7 +57,6 @@ export default class Junction extends React.Component {
         var progress = memory["progress"];
 
         var display = LookupMessenger.script.slice(0, this.state.index);
-
         return (
             <View style={Styles.messenger}>
                 <View style = {Styles.messenger_head}>
@@ -60,12 +71,17 @@ export default class Junction extends React.Component {
                         {Methods.messenger_scrawl(display, LookupMessenger.identity)}
                       </View>
                       <View style = {Styles.messenger_display_chat_keyboard}>
-                        <TouchableOpacity style = {Styles.messenger_display_chat_keyboard_touch} onPress = {() => {this.setState({index : this.state.index + 1})}}/>
+                        <TouchableOpacity style = {this.state.index != LookupMessenger.script.length && LookupMessenger.script[this.state.index].source == "player" ? Styles.messenger_display_chat_keyboard_touch : null} onPress = {() => {this.setState({index : this.state.index + 1, continue : true})}}>
+                          <Text style = {this.state.index != LookupMessenger.script.length && LookupMessenger.script[this.state.index].source == "player" ? Styles.messenger_display_chat_keyboard_touch_textOn : Styles.messenger_display_chat_keyboard_touch_textOff}>Hey!</Text>
+                        </TouchableOpacity>
                       </View>
                     </View>
                 </View>
-                <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.messenger_button)}>
-                    {Methods.app_link(function(){navigate('News', {memory : memory})}, require('../assets/art/meta/news_icon.png'), Styles.messenger_button_fun)}
+                <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.messenger_button_news)}>
+                    {Methods.app_link(function(){navigate('News', {memory : memory})}, require('../assets/art/meta/news_icon.png'), Styles.messenger_button_news_fun)}
+                </Animated.View>
+                <Animated.View {...this.panResponder2.panHandlers} style = {this.state.news && this.state.index == LookupMessenger.script.length ? Object.assign({}, this.state.pan2.getLayout(), Styles.messenger_button_solve, {justifyContent : 'flex-end'}) : null}>
+                    {Methods.app_link_shake(this.animate, function(){navigate('SolveIntro', {memory : memory})}, require('../assets/art/meta/news_icon.png'), Styles.messenger_button_solve_fun)}
                 </Animated.View>
             </View>
         );
