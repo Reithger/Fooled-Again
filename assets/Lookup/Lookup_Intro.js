@@ -19,7 +19,7 @@ export default {
 
 							   require('../art/intro/intro_image_4_comic.png'),
 
-                 "A worried parent /Submitted",
+                 "Bullying /Submitted",
 
 					       "Worried parents in Halifax are reporting outbreaks of violence at a local "+
                  "elementary school with Syrian refugee students threatening their fellow classmates.",
@@ -36,7 +36,7 @@ export default {
 
 							   require('../art/intro/intro_image_5_comic.png'),
 
-                 "An expert /Submitted",
+                 "A border somewhere /Submitted",
 
                 "The incident has led experts to warn that Canada’s open-door refugee policies are not "+
           		  "only costing taxpayers up to $50 billion every year, they're also sowing a \"culture of "+
@@ -55,7 +55,7 @@ export default {
 
 							   require('../art/intro/intro_image_7_comic.png'),
 
-                 "An immigrant probably /Submitted",
+                 "Politicalicians /Submitted",
 
                 "Canada has recently announced plans to increase immigration levels to at least one million over"+
                 " the next three years with a special focus on African countries.",
@@ -70,7 +70,7 @@ export default {
 
 							   require('../art/intro/intro_image_2_comic.png'),
 
-                 "A traveler /Submitted",
+                 "That very hotel /Submitted",
 
                  "Hundreds of travelers cancelled their room bookings at a posh Toronto hotel after reports"+
                  " that refugees were slaughtering animals in its public bathrooms.",
@@ -84,7 +84,7 @@ export default {
 
 							   require('../art/intro/intro_image_8_comic.png'),
 
-                 "The woman. /Submitted",
+                 "A big fire /Submitted",
 
             		"Firefighters were called to the scene when a fire was set at the hotel in an apparent arson"+
                 " attack. A woman has been charged for placing a burning gas canister in the hallway on the"+
@@ -100,7 +100,7 @@ export default {
 
 							   require('../art/intro/intro_image_3_comic.png'),
 
-                 "A celebratory figure. /Submitted",
+                 "Celebration /Submitted",
 
                  "In another incident, a photo emerged showing Muslims in Canada celebrating after ISIS"+
           		   " claimed responsibility for the deadly mass shooting in Toronto last summer in which"+
@@ -131,7 +131,7 @@ export default {
 
 							   require('../art/intro/intro_image_6_comic.png'),
 
-                 "Brenda. /Submitted",
+                 "A grocery store /Submitted",
 
                  "\"My mother Brenda raised three kids and worked as a cook at a local restaurant for 35"+
           		   " years,\" says Suzanne Duncan of Chilliwack, B.C.\"",

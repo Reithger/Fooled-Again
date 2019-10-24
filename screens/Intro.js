@@ -21,21 +21,9 @@ export default class Intro extends React.Component {
     }
 
     componentDidMount(){
-      this.spin()
+      Methods.spin(this.animate);
     }
-
-    spin () {
-      this.animate.setValue(0)
-      Animated.timing(
-          this.animate,
-          {
-              toValue: 1,
-              duration: 4000,
-              easing: Easing.linear
-          }
-      ).start(() => this.spin())
-    }
-
+    
     render() {
         const { navigate } = this.props.navigation;
         var memory = this.props.navigation.getParam("memory", {"initialized": true, "progress": {}});

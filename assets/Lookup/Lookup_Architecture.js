@@ -1,5 +1,5 @@
 import React from 'react';
-import {PanResponder, ScrollView, Animated, TouchableOpacity, View, Text, Image } from 'react-native';
+import {PanResponder, Easing, ScrollView, Animated, TouchableOpacity, View, Text, Image } from 'react-native';
 import Styles from '../../assets/Styles';
 
 module.exports = {
@@ -128,12 +128,12 @@ module.exports = {
 
      app_link_shake : function(animation, action, image, style){
        const spin = animation.interpolate({
-           inputRange: [0, .05, .075, .125, 1],
-           outputRange: ['0deg', '10deg', '-10deg', '0deg', '0deg']
+           inputRange: [0, .05, .075, .125, .5, .55, .575, .625, 1],
+           outputRange: ['0deg', '10deg', '-10deg', '0deg', '0deg','10deg', '-10deg', '0deg', '0deg']
        })
        const scale = animation.interpolate({
-           inputRange: [0, .9, .925, .975, 1],
-           outputRange: [1, 1, 1.3, .8, 1]
+           inputRange: [0, .4, .425, .475, .5, .9, .925, .975, 1],
+           outputRange: [1, 1, 1.3, .8, 1, 1, 1.3, .8, 1]
        })
        if(style == null){
          return(null);
@@ -145,6 +145,18 @@ module.exports = {
            </TouchableOpacity>
          </Animated.View>
        );
+     },
+
+     spin : function(animate){
+       animate.setValue(0)
+       Animated.timing(
+           animate,
+           {
+               toValue: 1,
+               duration: 4000,
+               easing: Easing.linear
+           }
+       ).start(() => module.exports.spin(animate))
      },
 
      app_link : function(action, image, style){
@@ -242,4 +254,53 @@ module.exports = {
            </View>);
      },
 
+     puzzle_set : function(reject, accept, toggle_show, show, images){
+       return(
+         <View style = {Styles.solve_puzzle}>
+             <ScrollView style = {Styles.solve_puzzle_scroll}>
+                 {[...Array(images.length).keys()].map(function(value){
+                   return(
+                     <View key = {value}>
+                       {module.exports.puzzle_choice(reject(value), accept(value), toggle_show(value), images[value].image)}
+                       {module.exports.puzzle_hint(show[value], images[value].hint)}
+                     </View>)
+                 })}
+             </ScrollView>
+         </View>)
+     },
+
+     puzzle_choice : function(reject, accept, toggle_show, picture){
+       return(
+         <View style = {{marginLeft : '10%', marginRight : '10%'}}>
+             <View style = {Styles.solve_puzzle_scroll_line}>
+                 <TouchableOpacity style = {Styles.solve_puzzle_scroll_line_interact} onPress={reject}>
+                     <Text style = {Styles.solve_puzzle_scroll_line_interact_text}>
+                       False
+                     </Text>
+                 </TouchableOpacity>
+                 <TouchableOpacity style = {Styles.solve_puzzle_scroll_line_image} onPress={toggle_show}>
+                     <Image style = {Styles.solve_puzzle_scroll_line_image_format} source = {picture} />
+                 </TouchableOpacity>
+                 <TouchableOpacity style = {Styles.solve_puzzle_scroll_line_interact} onPress={accept}>
+                     <Text style = {Styles.solve_puzzle_scroll_line_interact_text}>
+                         True
+                     </Text>
+                 </TouchableOpacity>
+             </View>
+         </View>)
+     },
+
+     puzzle_hint : function(show, hint){
+       if(show){
+         return (
+           <View style = {Styles.solve_puzzle_scroll_line}>
+               <View style = {{alignItems: 'center', justifyContent: 'center'}}>
+                 <Text style = {{fontSize : 16}}>
+                     {hint}
+                 </Text>
+               </View>
+           </View>)
+         }
+       return null;
+     }
 }

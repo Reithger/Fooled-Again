@@ -24,19 +24,7 @@ export default class Home extends React.Component {
     }
 
     componentDidMount(){
-      this.spin()
-    }
-
-    spin () {
-      this.animate.setValue(0)
-      Animated.timing(
-          this.animate,
-          {
-              toValue: 1,
-              duration: 4000,
-              easing: Easing.linear
-          }
-      ).start(() => this.spin())
+      Methods.spin(this.animate);
     }
 
     render() {

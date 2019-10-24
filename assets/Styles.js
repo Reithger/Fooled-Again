@@ -454,76 +454,17 @@ export default StyleSheet.create({
           backgroundColor : '#e60505',
         },
 
-    solveIntro : {
-      flex : 1
-    },
-        solveIntro_body : {
-          flex : 1,
-        },
-      solveIntro_image : {
-        borderWidth : 8,
-        borderBottomWidth : 4,
-        flex : 3,
-        width : '100%',
-        height : '100%',
-      },
-        solveIntro_image_format : {
-          flex : 1,
-          resizeMode : 'contain',
-          width : null,
-          height : null,
-        },
-      solveIntro_description : {
-        flex : 5,
-        borderWidth: 8,
-        borderTopWidth : 4,
-        alignItems: 'flex-start',
-        justifyContent : 'space-around',
-        flexDirection : 'column',
-      },
-        solveIntro_description_line : {
-          height : '20%',
-          margin: '3%',
-          borderLeftWidth : 3,
-        },
-          solveIntro_description_line_text : {
-            marginLeft : '3%',
-            fontSize : 18,
-          },
-      solveIntro_interact : {
-        flex : 1,
-        flexDirection : 'row',
-        justifyContent : 'space-around',
-        borderWidth : 4,
-        borderTopWidth : 0,
-        alignItems: 'center',
-      },
-        solveIntro_interact_back : {
-          borderWidth : 4,
-          width : '40%',
-          alignItems : 'center',
-        },
-          solveIntro_interact_back_text : {
-            fontSize : 32
-          },
-        solveIntro_interact_next : {
-          borderWidth : 4,
-          width : '40%',
-          alignItems : 'center',
-        },
-          solveIntro_interact_next_text : {
-            fontSize : 32
-          },
-
     solve : {
       flex : 1
     },
+        solve_article : {
+          flex : 1,
+        },
         solve_puzzle : {
           flex : 5,
         },
             solve_puzzle_scroll : {
               flex : 1,
-              borderWidth : 4
             },
                 solve_puzzle_scroll_line : {
                   width : '100%',

@@ -7,7 +7,7 @@ export default {
     "prepared" : {
       "source" : ["Local News Sources Rife with Errors",
 
-                "11/12/2019 - Gabby Phillips",
+                "11/12/2019 - You, the Player",
 
                 require("../art/meta/newspapers.png"),
 
@@ -22,21 +22,6 @@ export default {
                 "Don’t get fooled by fake news!"],
 
       "format" : ["header", "tag", "frame", "body", "body", "body", "body"],
-    },
-
-    "unprepared" : {
-      "source" : ["Other news sites dont... You wont believe what these 11 storys... work on this title",
-
-                "11/11/2019 - Gabey Fillips",
-
-                require("../art/meta/newspapers.png"),
-
-                "Hmm...",
-
-                "I don't think I've quite figured this out yet.",
-
-                "I should make sure that I have tracked down all of the claims that I've heard."],
-      "format" : ["header", "tag", "frame", "body", "body", "body"]
     },
 
     "recall" : [
