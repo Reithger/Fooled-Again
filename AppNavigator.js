@@ -3,12 +3,12 @@ import Home from './screens/Home';
 import Messenger from './screens/Messenger';
 import News from './screens/News';
 import NewsStory from './screens/NewsStory';
-import SolveIntro from './screens/SolveIntro';
-import Solve from './screens/Solve';
+import Blog from './screens/Blog';
 import End from './screens/End';
 import Intro from './screens/Intro';
 
 const AppNavigator = createStackNavigator({
+
 
     Home: {
         screen: Home
@@ -25,8 +25,8 @@ const AppNavigator = createStackNavigator({
     NewsStory : {
       screen : NewsStory
     },
-    Solve: {
-        screen: Solve
+    Blog: {
+        screen: Blog
     },
     End: {
         screen: End

@@ -17,26 +17,24 @@ export default class Junction extends React.Component {
     constructor(props){
       super(props);
       this.animate = new Animated.Value(0)
-      this.state = {index : 0, pan : new Animated.ValueXY(), pan2 : new Animated.ValueXY(), continue : false, news : false}
+      this.state = {index : 1, pan : new Animated.ValueXY(), pan2 : new Animated.ValueXY(), continue : false}
       this.panResponder = Methods.get_panResponder(this.state.pan);
       this.panResponder2 = Methods.get_panResponder(this.state.pan2);
       const interval = setInterval(function(){
         if(this.state.index == LookupMessenger.script.length || this.state.continue){
           this.state.continue = false;
-          this.state.news = true;
           return;
         }
         if(LookupMessenger.script[this.state.index].source != "player"){
           this.setState({index : this.state.index + 1});
         }
-        this.state.news = false;
       }.bind(this), 1500);
     }
 
     componentDidMount(){
       Methods.spin(this.animate);
     }
-    
+
     render() {
         const { navigate } = this.props.navigation;
         var memory = this.props.navigation.getParam("memory", {"initialized": true, "progress": {"char_1" : "success", "char_2" : "failure"}});
@@ -63,11 +61,11 @@ export default class Junction extends React.Component {
                       </View>
                     </View>
                 </View>
-                <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.messenger_button_news)}>
-                    {Methods.app_link(function(){navigate('News', {memory : memory})}, require('../assets/art/meta/news_icon.png'), Styles.messenger_button_news_fun)}
+                <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.button)}>
+                    {Methods.app_link(function(){navigate('News', {memory : memory})}, require('../assets/art/meta/news_icon.png'), Styles.button_news)}
                 </Animated.View>
-                <Animated.View {...this.panResponder2.panHandlers} style = {this.state.news && this.state.index == LookupMessenger.script.length ? Object.assign({}, this.state.pan2.getLayout(), Styles.messenger_button_solve, {justifyContent : 'flex-end'}) : null}>
-                    {Methods.app_link_shake(this.animate, function(){navigate('Solve', {})}, require('../assets/art/meta/news_icon.png'), Styles.messenger_button_solve_fun)}
+                <Animated.View {...this.panResponder2.panHandlers} style = {this.state.continue && this.state.index == LookupMessenger.script.length ? Object.assign({}, this.state.pan2.getLayout(), Styles.button) : null}>
+                    {Methods.app_link_shake(this.animate, function(){navigate('Blog', {})}, require('../assets/art/meta/blog.png'), Styles.button_messenger)}
                 </Animated.View>
             </View>
         );

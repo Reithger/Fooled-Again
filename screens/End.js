@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { ScrollView, Button, View, Text, Image, TouchableOpacity } from 'react-native';
+import { Animated, ScrollView, Button, View, Text, Image, TouchableOpacity } from 'react-native';
 import Styles from '../assets/Styles';
 import Memory from '../assets/Memory';
 import LookupEnding from '../assets/Lookup/Lookup_Ending';
@@ -14,27 +14,40 @@ export default class Junction extends React.Component {
         }
     };
 
+    constructor(props){
+      super(props);
+      this.animate = new Animated.Value(0)
+      this.state = {pan : new Animated.ValueXY()}
+      this.panResponder = Methods.get_panResponder(this.state.pan);
+    }
+
+    componentDidMount(){
+      Methods.spin(this.animate);
+    }
+
     render() {
         const { navigate } = this.props.navigation;
-        var memory = this.props.navigation.getParam("memory", {"initialized" : true, "progress" : {"char_1" : "success"}});
-        var victory = this.props.navigation.getParam("pass", false);
-        if(this.state == null){
-          this.state = {page : 0};
-        }
-        var script = LookupEnding[victory ? "success" : "failure"];
-
-        var back = function(){
-          navigate('Solve', {memory : memory});
-        }
-        var forward = function(){
-          navigate('Home', {memory : memory, new: true});
+        var response = this.props.navigation.getParam("response", [false, false, false, false, true, false, true, false]);
+        var result = true;
+        var i;
+        for(i = 0; i < response.length; i++){
+          if(response[i] != LookupEnding.answer[i]){
+            result = false;
+            break;
+          }
         }
         return (
             <View style={Styles.end}>
-                {Methods.article_header([{function : back.bind(this), image : require('../assets/art/meta/left_arrow.png')}], [{function : forward.bind(this), image : require('../assets/art/meta/right_arrow.png')}])}
+                {Methods.article_header([], [], "http://www.canadanewswire.ca")}
                 <ScrollView style = {Styles.end_scroll}>
-                    {Methods.article(victory ? LookupEnding.success : LookupEnding.failure)}
+                    {Methods.article(result ? LookupEnding.success : LookupEnding.failure)}
                 </ScrollView>
+                <Animated.View {...this.panResponder.panHandlers} style = {!result ? Object.assign({}, this.state.pan.getLayout(), Styles.button) : null}>
+                    {Methods.app_link_shake(this.animate, function(){navigate('Blog', {})}, require('../assets/art/meta/blog.png'), Styles.button_blog)}
+                </Animated.View>
+                <Animated.View {...this.panResponder.panHandlers} style = {result ? Object.assign({}, this.state.pan.getLayout(), Styles.button) : null}>
+                    {Methods.app_link_shake(this.animate, function(){navigate('Home', {})}, require('../assets/art/meta/blog.png'), Styles.button_blog)}
+                </Animated.View>
             </View>
         );
     }

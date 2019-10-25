@@ -22,41 +22,26 @@ module.exports = {
       });
     },
 
-    headline : function(headline, key){
-      return(
-      <View key = {key} style = {Styles.architecture_headline}>
-          <Text style = {Styles.architecture_headline_text}>
-              {headline}
-          </Text>
-      </View>)
-    },
-
-    tag : function(tag, key){
-      return(
-       <View key = {key} style = {Styles.architecture_tag}>
-          <Text style = {Styles.architecture_tag_text}>
-              {tag}
-          </Text>
-      </View>)
-    },
-
-    frame : function(frame, key){
-      return(
-      <View key = {key} style = {Styles.architecture_frame}>
-          <View key = {key} style = {Styles.architecture_frame_image}>
-              <Image style = {Styles.architecture_frame_image_format} source = {frame}/>
-          </View>
-      </View>)
-    },
-
-    body : function(body, key) {
-      return(
-      <View key = {key} style = {Styles.architecture_body}>
-          <Text style = {Styles.architecture_body_text}>
-              {body}
-          </Text>
-      </View>)
-    },
+     article_header : function(left, right, text){
+       return(
+       <View style = {Styles.architecture_header}>
+          {left.map(function(item){
+            var i = 0;
+            return(<TouchableOpacity key = {i++} style={Styles.architecture_header_interact} onPress={item.function}>
+                       <Image style = {Styles.architecture_header_interact_format} source = {item.image}/>
+                   </TouchableOpacity>)
+          })}
+           <Text style = {Styles.architecture_header_text}>
+               {text}
+           </Text>
+           {right.map(function(item){
+             var i = 0;
+             return(<TouchableOpacity key = {i++} style={Styles.architecture_header_interact} onPress={item.function}>
+                        <Image style = {Styles.architecture_header_interact_format} source = {item.image}/>
+                    </TouchableOpacity>)
+           })}
+       </View>)
+     },
 
     headline_page : function(stories, navig){
       var i = 0;
@@ -96,33 +81,60 @@ module.exports = {
     article : function(script){
        return [...Array(script.format.length).keys()].map(function(index){
          switch(script.format[index]){
-           case "header" : return module.exports.headline(script.source[index], index);
-           case "tag" : return module.exports.tag(script.source[index], index);
-           case "frame" : return module.exports.frame(script.source[index], index);
-           case "body" : return module.exports.body(script.source[index], index);
+           case "header" : return module.exports.headline(script.source[index], index, 0);
+           case "tag" : return module.exports.tag(script.source[index], index, 0);
+           case "frame" : return module.exports.frame(script.source[index], index, 0);
+           case "body" : return module.exports.body(script.source[index], index, 0);
            default : return <View key = {index} style = {{width : '100%', aspectRatio : 5, backgroundColor : '#22f'}}/>;
          }
        })
      },
 
-     article_header : function(left, right){
+     blog : function(script){
+        return [...Array(script.format.length).keys()].map(function(index){
+          switch(script.format[index]){
+            case "header" : return module.exports.headline(script.source[index], index, 1);
+            case "tag" : return module.exports.tag(script.source[index], index, 1);
+            case "frame" : return module.exports.frame(script.source[index], index, 1);
+            case "body" : return module.exports.body(script.source[index], index, 1);
+            default : return <View key = {index} style = {{width : '100%', aspectRatio : 5, backgroundColor : '#22f'}}/>;
+          }
+        })
+      },
+
+     headline : function(headline, key, type){
        return(
-       <View style = {Styles.architecture_header}>
-          {left.map(function(item){
-            var i = 0;
-            return(<TouchableOpacity key = {i++} style={Styles.architecture_header_interact} onPress={item.function}>
-                       <Image style = {Styles.architecture_header_interact_format} source = {item.image}/>
-                   </TouchableOpacity>)
-          })}
-           <Text style = {Styles.architecture_header_text}>
-               News App
+       <View key = {key} style = {type == 0 ? Styles.architecture_news_headline : Styles.architecture_blog_headline}>
+           <Text style = {type == 0 ? Styles.architecture_news_headline_text: Styles.architecture_blog_headline_text}>
+               {headline}
            </Text>
-           {right.map(function(item){
-             var i = 0;
-             return(<TouchableOpacity key = {i++} style={Styles.architecture_header_interact} onPress={item.function}>
-                        <Image style = {Styles.architecture_header_interact_format} source = {item.image}/>
-                    </TouchableOpacity>)
-           })}
+       </View>)
+     },
+
+     tag : function(tag, key, type){
+       return(
+        <View key = {key} style = {type == 0 ? Styles.architecture_news_tag: Styles.architecture_blog_tag}>
+           <Text style = {type == 0 ? Styles.architecture_news_tag_text: Styles.architecture_blog_tag_text}>
+               {tag}
+           </Text>
+       </View>)
+     },
+
+     frame : function(frame, key, type){
+       return(
+       <View key = {key} style = {type == 0 ? Styles.architecture_news_frame: Styles.architecture_blog_frame}>
+           <View key = {key} style = {type == 0 ? Styles.architecture_news_frame_image: Styles.architecture_blog_frame_image}>
+               <Image style = {type == 0 ? Styles.architecture_news_frame_image_format : Styles.architecture_blog_frame_image_format} source = {frame}/>
+           </View>
+       </View>)
+     },
+
+     body : function(body, key, type) {
+       return(
+       <View key = {key} style = {type == 0 ? Styles.architecture_news_body: Styles.architecture_blog_body}>
+           <Text style = {type == 0 ? Styles.architecture_news_body_text: Styles.architecture_blog_body_text}>
+               {body}
+           </Text>
        </View>)
      },
 
@@ -196,6 +208,8 @@ module.exports = {
         )
        }
        else{
+         console.log(identity);
+         console.log(display[index]);
          return(
            <View style = {Styles.architecture_scrawl_message}>
               {module.exports.messenger_scrawl_profile(identity[display[index].source].image)}
@@ -254,53 +268,6 @@ module.exports = {
            </View>);
      },
 
-     puzzle_set : function(reject, accept, toggle_show, show, images){
-       return(
-         <View style = {Styles.solve_puzzle}>
-             <ScrollView style = {Styles.solve_puzzle_scroll}>
-                 {[...Array(images.length).keys()].map(function(value){
-                   return(
-                     <View key = {value}>
-                       {module.exports.puzzle_choice(reject(value), accept(value), toggle_show(value), images[value].image)}
-                       {module.exports.puzzle_hint(show[value], images[value].hint)}
-                     </View>)
-                 })}
-             </ScrollView>
-         </View>)
-     },
 
-     puzzle_choice : function(reject, accept, toggle_show, picture){
-       return(
-         <View style = {{marginLeft : '10%', marginRight : '10%'}}>
-             <View style = {Styles.solve_puzzle_scroll_line}>
-                 <TouchableOpacity style = {Styles.solve_puzzle_scroll_line_interact} onPress={reject}>
-                     <Text style = {Styles.solve_puzzle_scroll_line_interact_text}>
-                       False
-                     </Text>
-                 </TouchableOpacity>
-                 <TouchableOpacity style = {Styles.solve_puzzle_scroll_line_image} onPress={toggle_show}>
-                     <Image style = {Styles.solve_puzzle_scroll_line_image_format} source = {picture} />
-                 </TouchableOpacity>
-                 <TouchableOpacity style = {Styles.solve_puzzle_scroll_line_interact} onPress={accept}>
-                     <Text style = {Styles.solve_puzzle_scroll_line_interact_text}>
-                         True
-                     </Text>
-                 </TouchableOpacity>
-             </View>
-         </View>)
-     },
 
-     puzzle_hint : function(show, hint){
-       if(show){
-         return (
-           <View style = {Styles.solve_puzzle_scroll_line}>
-               <View style = {{alignItems: 'center', justifyContent: 'center'}}>
-                 <Text style = {{fontSize : 16}}>
-                     {hint}
-                 </Text>
-               </View>
-           </View>)
-         }
-       return null;
-     }
 }

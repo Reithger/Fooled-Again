@@ -29,24 +29,14 @@ export default class Home extends React.Component {
 
     render() {
         const { navigate } = this.props.navigation;
-        var data = new Memory();
-        var memory = {};
-        data.retrieveData("DATA").then((value) => {
-            if (value == null || this.props.navigation.getParam("new", false)) {
-                value = {"initialized": false, "progress": {}};
-                value = JSON.stringify(value);
-                data.storeData("DATA", value);
-            }
-            memory = JSON.parse(value);
-        });
 
         return (
             <View style={Styles.home}>
                 <View style = {Styles.home_title}>
                     <Image style = {Styles.home_title_image} source = {require("../assets/art/meta/title.jpg")}/>
                 </View>
-                <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.home_button)}>
-                    {Methods.app_link_shake(this.animate, function(){navigate('Intro', {memory : memory});}, require('../assets/art/meta/news_icon.png'), Styles.home_button_fun, true)}
+                <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.button)}>
+                    {Methods.app_link_shake(this.animate, function(){navigate('Intro', {});}, require('../assets/art/meta/news_icon.png'), Styles.button_news, true)}
                 </Animated.View>
             </View>
         );

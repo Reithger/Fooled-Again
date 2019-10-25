@@ -23,7 +23,7 @@ export default class Intro extends React.Component {
     componentDidMount(){
       Methods.spin(this.animate);
     }
-    
+
     render() {
         const { navigate } = this.props.navigation;
         var memory = this.props.navigation.getParam("memory", {"initialized": true, "progress": {}});
@@ -40,16 +40,15 @@ export default class Intro extends React.Component {
 
         return (
             <View style={Styles.intro}>
-                {Methods.article_header([{function : function(){}, image : require('../assets/art/meta/blank_image.png')}],
-                                       [{function : function(){}, image : require('../assets/art/meta/blank_image.png')}])}
+                {Methods.article_header([],[],"http://www.canadanewswire.ca.co")}
                 <ScrollView style = {Styles.intro_body} onScroll = {spawnMessenger.bind(this)}>
                   {Lookup_Intro.screen.map(function(item){
                     return(Methods.article(item));
                   })}
                   <View style = {Styles.intro_buffer}/>
                 </ScrollView>
-                <Animated.View {...this.panResponder.panHandlers} style = {this.state.messenger ? Object.assign({}, Styles.intro_button, this.state.pan.getLayout()) : null}>
-                    {Methods.app_link_shake(this.animate, function(){navigate('Messenger', {memory : memory})}, require('../assets/art/meta/messenger.png'), this.state.messenger ? Styles.intro_button_fun : null, true)}
+                <Animated.View {...this.panResponder.panHandlers} style = {this.state.messenger ? Object.assign({}, Styles.button, this.state.pan.getLayout()) : null}>
+                    {Methods.app_link_shake(this.animate, function(){navigate('Messenger', {memory : memory})}, require('../assets/art/meta/messenger.png'), this.state.messenger ? Styles.button_messenger : null, true)}
                 </Animated.View>
             </View>
         );

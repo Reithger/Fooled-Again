@@ -52,6 +52,11 @@ export default StyleSheet.create({
     backgroundColor : '#0e1456',
     borderBottomWidth : 0,
   },
+  blog_header : {
+    height : '0%',
+    backgroundColor : '#41b3a3',
+    borderBottomWidth : 0,
+  },
 
   architecture : {
 
@@ -80,7 +85,7 @@ export default StyleSheet.create({
           fontWeight : 'bold',
           color : '#fff',
         },
-    architecture_frame : {
+    architecture_news_frame : {
       flexDirection : 'row',
       justifyContent : 'space-around',
       paddingTop : '3%',
@@ -88,7 +93,7 @@ export default StyleSheet.create({
       marginLeft : '3%',
       marginRight : '3%',
     },
-        architecture_frame_image : {
+        architecture_news_frame_image : {
           width : '100%',
           aspectRatio : 8/5,
           borderWidth : 1,
@@ -97,40 +102,92 @@ export default StyleSheet.create({
           marginLeft : '3%',
           marginRight : '3%',
         },
-            architecture_frame_image_format : {
+            architecture_news_frame_image_format : {
               flex: 1,
               resizeMode: 'cover',
               width: null,
               height: null,
             },
-    architecture_headline : {
+    architecture_news_headline : {
       alignItems: 'flex-start',
       justifyContent: 'center',
     },
-        architecture_headline_text : {
+        architecture_news_headline_text : {
             fontSize : 26,
             fontWeight : 'bold',
             paddingTop : '3%',
             marginLeft : '3%',
             marginRight : '3%',
         },
-    architecture_body : {
+    architecture_news_body : {
       justifyContent: 'center',
       alignItems : 'flex-start',
     },
-        architecture_body_text : {
+        architecture_news_body_text : {
             fontSize : 18,
             marginLeft : '3%',
             marginRight : '3%',
             paddingTop : '3%',
         },
-    architecture_tag : {
+    architecture_news_tag : {
       alignItems : 'flex-start',
     },
-        architecture_tag_text : {
+        architecture_news_tag_text : {
               fontSize : 14,
               color : '#111',
               marginLeft : '3%',
+            },
+    architecture_blog_frame : {
+      flexDirection : 'row',
+      justifyContent : 'space-around',
+      paddingTop : '3%',
+      paddingBottom : '3%',
+      marginLeft : '3%',
+      marginRight : '3%',
+    },
+        architecture_blog_frame_image : {
+          width : '100%',
+          aspectRatio : 8/5,
+          borderWidth : 1,
+          flexDirection : 'row',
+          justifyContent : 'space-around',
+          marginLeft : '3%',
+          marginRight : '3%',
+        },
+            architecture_blog_frame_image_format : {
+              flex: 1,
+              resizeMode: 'cover',
+              width: null,
+              height: null,
+            },
+    architecture_blog_headline : {
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+        architecture_blog_headline_text : {
+            fontSize : 26,
+            fontWeight : 'bold',
+            paddingTop : '3%',
+            color : '#f2f2f2',
+        },
+    architecture_blog_body : {
+      justifyContent: 'center',
+      alignItems : 'flex-start',
+    },
+        architecture_blog_body_text : {
+            fontSize : 18,
+            marginLeft : '3%',
+            marginRight : '3%',
+            paddingTop : '3%',
+            color : '#f2f2f2',
+        },
+    architecture_blog_tag : {
+      alignItems : 'center',
+    },
+        architecture_blog_tag_text : {
+              fontSize : 14,
+              color : '#111',
+              color : '#f2f2f2',
             },
     architecture_descriptor : {
       flexDirection : 'row',
@@ -178,7 +235,8 @@ export default StyleSheet.create({
     },
       architecture_app_image : {
         width : '100%',
-        aspectRatio : 1
+        aspectRatio : 1,
+        borderRadius : 9999,
       },
         architecture_app_image_format : {
           flex : 1,
@@ -293,7 +351,7 @@ export default StyleSheet.create({
           justifyContent : 'center'
         },
           architecture_friends_entry_name_text : {
-            fontSize : 22,
+            fontSize : tablet ? 22 : 16,
           },
 
     home: {
@@ -310,24 +368,6 @@ export default StyleSheet.create({
           flex : 1,
           resizeMode : 'contain',
         },
-      home_button : {
-        position : 'absolute',
-        width : '100%',
-        height : '100%',
-        alignItems : 'flex-end',
-        justifyContent : 'flex-end',
-        paddingRight : '5%',
-        paddingBottom : '5%',
-      },
-        home_button_fun : {
-          width : '10%',
-          aspectRatio : 1,
-          borderRadius : 9999,
-          borderWidth : 1,
-          alignItems : 'center',
-          justifyContent : 'center',
-          backgroundColor : '#e60505',
-        },
 
     intro: {
         flex:1
@@ -340,25 +380,6 @@ export default StyleSheet.create({
           width : '10%',
           aspectRatio : 1,
         },
-        intro_button : {
-          position : 'absolute',
-          width : '100%',
-          height : '100%',
-          alignItems : 'flex-end',
-          justifyContent : 'flex-start',
-          marginRight : '10%',
-          marginTop : '13%',
-        },
-          intro_button_fun : {
-            position : 'absolute',
-            width : '10%',
-            aspectRatio : 1,
-            borderRadius : 9999,
-            borderWidth : 1,
-            alignItems : 'center',
-            justifyContent : 'center',
-            backgroundColor : '#0e1f56',
-          },
 
     messenger: {
         flex: 1,
@@ -417,110 +438,10 @@ export default StyleSheet.create({
               messenger_display_chat_keyboard_touch_textOff : {
                 fontSize : 0
               },
-      messenger_button_news : {
-        position : 'absolute',
-        width : '100%',
-        height : '100%',
-        alignItems : 'flex-start',
-        justifyContent : 'flex-end',
-        marginLeft : '5%',
-        marginBottom : '5%',
-      },
-        messenger_button_news_fun : {
-          width : '10%',
-          aspectRatio : 1,
-          borderRadius : 9999,
-          borderWidth : 1,
-          alignItems : 'center',
-          justifyContent : 'center',
-          backgroundColor : '#e60505',
-        },
-      messenger_button_solve : {
-        position : 'absolute',
-        width : '100%',
-        height : '100%',
-        alignItems : 'flex-start',
-        justifyContent : 'flex-end',
-        marginLeft : '5%',
-        marginBottom : '5%',
-      },
-        messenger_button_solve_fun : {
-          width : '10%',
-          aspectRatio : 1,
-          borderRadius : 9999,
-          borderWidth : 1,
-          alignItems : 'center',
-          justifyContent : 'center',
-          backgroundColor : '#e60505',
-        },
 
-    solve : {
-      flex : 1
-    },
-        solve_article : {
-          flex : 1,
-        },
-        solve_puzzle : {
-          flex : 5,
-        },
-            solve_puzzle_scroll : {
-              flex : 1,
-            },
-                solve_puzzle_scroll_line : {
-                  width : '100%',
-                  aspectRatio : 5,
-                  flexDirection : 'row',
-                  justifyContent : 'space-around',
-                  alignItems : 'center',
-                  borderWidth : 2
-                },
-                    solve_puzzle_scroll_line_interact : {
-                      alignItems : 'center',
-                      justifyContent : 'center',
-                      width : '20%',
-                      aspectRatio : 2,
-                      backgroundColor : '#f2f2f2'
-                    },
-                        solve_puzzle_scroll_line_interact_text : {
-                          fontSize : 16,
-                        },
-                    solve_puzzle_scroll_line_image : {
-                      width : '15%',
-                      aspectRatio : 1,
-                      flexDirection : 'column',
-                      justifyContent : 'center'
-                    },
-                        solve_puzzle_scroll_line_image_format : {
-                          width : null,
-                          height: null,
-                          flex: 1,
-                          resizeMode : 'contain',
-                        },
-        solve_navigate : {
-          flex : 1,
-          flexDirection : 'row',
-          justifyContent : 'space-around',
-          borderWidth : 4,
-          borderTopWidth : 0,
-          alignItems: 'center',
-        },
-            solve_navigate_back : {
-              borderWidth : 3,
-              width : '40%',
-              alignItems : 'center',
-            },
-                solve_navigate_back_text : {
-                  fontSize : 32
-                },
-            solve_navigate_solve : {
-              borderWidth : 3,
-              width : '40%',
-              alignItems : 'center',
-            },
-                solve_navigate_solve_text : {
-                  fontSize: 32
-                },
+  blog : {
 
+  },
 
     end : {
       flex : 1,
@@ -528,4 +449,41 @@ export default StyleSheet.create({
       end_scroll : {
 
       },
+
+  button : {
+    position : 'absolute',
+    width : '100%',
+    height : '100%',
+    alignItems : 'flex-start',
+    justifyContent : 'flex-end',
+    marginRight : '5%',
+    marginBottom : '5%',
+  },
+    button_blog : {
+      width : tablet ? '10%' : '18%',
+      aspectRatio : 1,
+      borderRadius : 9999,
+      borderWidth : 1,
+      alignItems : 'center',
+      justifyContent : 'center',
+      backgroundColor : '#41b3a3',
+    },
+    button_news : {
+      width : tablet ? '10%' : '18%',
+      aspectRatio : 1,
+      borderRadius : 9999,
+      borderWidth : 1,
+      alignItems : 'center',
+      justifyContent : 'center',
+      backgroundColor : '#e60505',
+    },
+    button_messenger : {
+      width : tablet ? '10%' : '18%',
+      aspectRatio : 1,
+      borderRadius : 9999,
+      borderWidth : 1,
+      alignItems : 'center',
+      justifyContent : 'center',
+      backgroundColor : '#0e1f56',
+    },
 });
