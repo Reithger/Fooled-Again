@@ -5,18 +5,18 @@ export default {
 
     "identity" : {
         player : {name :"You", image : require('../art/profiles/cat_comic.png')},
-        "source_0" : {name : "Funny Man", image : require('../art/profiles/profile_18_comic.png')},
-        "source_1" : {name :"Debby", image : require('../art/profiles/profile_1_comic.png')},
-        "source_2" : {name :"Jason", image : require('../art/profiles/profile_2_comic.png')},
+        "source_0" : {name : "Eva", image : require('../art/profiles/profile_18_comic.png')},
+        "source_1" : {name :"Devon", image : require('../art/profiles/profile_1_comic.png')},
+        "source_2" : {name :"Jannet", image : require('../art/profiles/profile_2_comic.png')},
         "source_3" : {name :"Mitch", image : require('../art/profiles/profile_3_comic.png')},
-        "source_4" : {name :"Hank", image : require('../art/profiles/profile_4_comic.png')},
-        "source_5" : {name :"Glenda", image : require('../art/profiles/profile_5_comic.png')},
+        "source_4" : {name :"Hildre", image : require('../art/profiles/profile_4_comic.png')},
+        "source_5" : {name :"Glen", image : require('../art/profiles/profile_5_comic.png')},
         "source_6" : {name :"Nura", image : require('../art/profiles/profile_13_comic.png')},
-        "source_7" : {name :"Sarah", image : require('../art/profiles/profile_7_comic.png')},
+        "source_7" : {name :"Sean", image : require('../art/profiles/profile_7_comic.png')},
         "source_8" : {name :"Drake", image : require('../art/profiles/profile_8_comic.png')},
         "source_9" : {name :"Snowd'n", image : require('../art/profiles/profile_9_comic.png')},
         "source_10" : {name :"Kim", image : require('../art/profiles/profile_10_comic.png')},
-        "source_11" : {name :"Rogan", image : require('../art/profiles/profile_14_comic.png')},
+        "source_11" : {name :"Rachel", image : require('../art/profiles/profile_14_comic.png')},
     },
 
     "script" : [

@@ -124,7 +124,7 @@ export default StyleSheet.create({
       alignItems : 'flex-start',
     },
         architecture_news_body_text : {
-            fontSize : 18,
+            fontSize : tablet ? 18 : 14,
             marginLeft : '3%',
             marginRight : '3%',
             paddingTop : '3%',
@@ -307,7 +307,7 @@ export default StyleSheet.create({
             height : null,
             width : null,
             flex : 1,
-            resizeMode : 'cover',
+            resizeMode : 'contain',
             margin : '4%',
             borderRadius : 10,
           },
@@ -460,7 +460,7 @@ export default StyleSheet.create({
     marginBottom : '5%',
   },
     button_blog : {
-      width : tablet ? '10%' : '18%',
+      width : '10%',
       aspectRatio : 1,
       borderRadius : 9999,
       borderWidth : 1,
@@ -469,7 +469,7 @@ export default StyleSheet.create({
       backgroundColor : '#41b3a3',
     },
     button_news : {
-      width : tablet ? '10%' : '18%',
+      width : '10%',
       aspectRatio : 1,
       borderRadius : 9999,
       borderWidth : 1,
@@ -478,7 +478,7 @@ export default StyleSheet.create({
       backgroundColor : '#e60505',
     },
     button_messenger : {
-      width : tablet ? '10%' : '18%',
+      width : '10%',
       aspectRatio : 1,
       borderRadius : 9999,
       borderWidth : 1,

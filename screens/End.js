@@ -42,11 +42,8 @@ export default class Junction extends React.Component {
                 <ScrollView style = {Styles.end_scroll}>
                     {Methods.article(result ? LookupEnding.success : LookupEnding.failure)}
                 </ScrollView>
-                <Animated.View {...this.panResponder.panHandlers} style = {!result ? Object.assign({}, this.state.pan.getLayout(), Styles.button) : null}>
-                    {Methods.app_link_shake(this.animate, function(){navigate('Blog', {})}, require('../assets/art/meta/blog.png'), Styles.button_blog)}
-                </Animated.View>
-                <Animated.View {...this.panResponder.panHandlers} style = {result ? Object.assign({}, this.state.pan.getLayout(), Styles.button) : null}>
-                    {Methods.app_link_shake(this.animate, function(){navigate('Home', {})}, require('../assets/art/meta/blog.png'), Styles.button_blog)}
+                <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.button)}>
+                    {Methods.app_link_shake(this.animate, function(){navigate(!result ? 'Blog' : 'Home', {})}, require('../assets/art/meta/blog.png'), Styles.button_blog)}
                 </Animated.View>
             </View>
         );

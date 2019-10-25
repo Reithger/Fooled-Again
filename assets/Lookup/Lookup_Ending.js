@@ -5,7 +5,7 @@ export default {
     },
 
     "prepared" : {
-      "source" : ["The Truth Review",
+      "source" : ["Local News Woes",
 
                 "11/12/2019 - You, the Player",
 

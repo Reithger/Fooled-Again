@@ -41,6 +41,11 @@ export default class Junction extends React.Component {
         var progress = memory["progress"];
 
         var display = LookupMessenger.script.slice(0, this.state.index);
+        const scale = this.animate.interpolate({
+            inputRange: [0, .4, .425, .475, .5, .9, .925, .975, 1],
+            outputRange: [1, 1, 1.1, .8, 1, 1, 1.1, .8, 1]
+        })
+
         return (
             <View style={Styles.messenger}>
                 <View style = {Styles.messenger_head}>
@@ -55,9 +60,11 @@ export default class Junction extends React.Component {
                         {Methods.messenger_scrawl(display, LookupMessenger.identity)}
                       </View>
                       <View style = {Styles.messenger_display_chat_keyboard}>
-                        <TouchableOpacity style = {this.state.index != LookupMessenger.script.length && LookupMessenger.script[this.state.index].source == "player" ? Styles.messenger_display_chat_keyboard_touch : null} onPress = {() => {this.setState({index : this.state.index + 1, continue : true})}}>
-                          <Text style = {this.state.index != LookupMessenger.script.length && LookupMessenger.script[this.state.index].source == "player" ? Styles.messenger_display_chat_keyboard_touch_textOn : Styles.messenger_display_chat_keyboard_touch_textOff}>Hey!</Text>
-                        </TouchableOpacity>
+                        <Animated.View style = {LookupMessenger.script[this.state.index].source == "player" ? Object.assign({}, Styles.messenger_display_chat_keyboard_touch, {transform : [{scale : scale}]}) : null}>
+                          <TouchableOpacity style = {this.state.index != LookupMessenger.script.length && LookupMessenger.script[this.state.index].source == "player" ? {width : '100%', height : '100%', alignItems : 'center', justifyContent : 'center'} : null} onPress = {() => {this.setState({index : this.state.index + 1, continue : true})}}>
+                            <Text style = {this.state.index != LookupMessenger.script.length && LookupMessenger.script[this.state.index].source == "player" ? Styles.messenger_display_chat_keyboard_touch_textOn : Styles.messenger_display_chat_keyboard_touch_textOff}>Hey!</Text>
+                          </TouchableOpacity>
+                        </Animated.View>
                       </View>
                     </View>
                 </View>
