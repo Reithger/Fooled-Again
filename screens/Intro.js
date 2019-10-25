@@ -47,7 +47,7 @@ export default class Intro extends React.Component {
                   })}
                   <View style = {Styles.intro_buffer}/>
                 </ScrollView>
-                <Animated.View {...this.panResponder.panHandlers} style = {this.state.messenger ? Object.assign({}, Styles.button, this.state.pan.getLayout()) : null}>
+                <Animated.View {...this.panResponder.panHandlers} style = {this.state.messenger ? Object.assign({}, Styles.button, this.state.pan.getLayout(), {marginRight : '5%'}) : null}>
                     {Methods.app_link_shake(this.animate, function(){navigate('Messenger', {memory : memory})}, require('../assets/art/meta/messenger.png'), this.state.messenger ? Styles.button_messenger : null, true)}
                 </Animated.View>
             </View>

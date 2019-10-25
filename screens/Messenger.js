@@ -28,7 +28,7 @@ export default class Junction extends React.Component {
         if(LookupMessenger.script[this.state.index].source != "player"){
           this.setState({index : this.state.index + 1});
         }
-      }.bind(this), 1500);
+      }.bind(this), 2000);
     }
 
     componentDidMount(){
@@ -61,10 +61,10 @@ export default class Junction extends React.Component {
                       </View>
                     </View>
                 </View>
-                <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.button)}>
+                <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.button, {marginLeft : '5%'})}>
                     {Methods.app_link(function(){navigate('News', {memory : memory})}, require('../assets/art/meta/news_icon.png'), Styles.button_news)}
                 </Animated.View>
-                <Animated.View {...this.panResponder2.panHandlers} style = {this.state.continue && this.state.index == LookupMessenger.script.length ? Object.assign({}, this.state.pan2.getLayout(), Styles.button) : null}>
+                <Animated.View {...this.panResponder2.panHandlers} style = {this.state.continue && this.state.index == LookupMessenger.script.length ? Object.assign({}, this.state.pan2.getLayout(), Styles.button, {marginLeft : '25%'}) : null}>
                     {Methods.app_link_shake(this.animate, function(){navigate('Blog', {})}, require('../assets/art/meta/blog.png'), Styles.button_messenger)}
                 </Animated.View>
             </View>

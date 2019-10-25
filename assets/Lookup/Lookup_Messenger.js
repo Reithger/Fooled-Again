@@ -77,9 +77,11 @@ export default {
       { source : "source_10", text : "Good question! Creators of fake news stories often use a technique called “spoofing” where they make their story look like it is coming from a legitimate news site."},
       { source : "source_10", text : "If you look very closely at the URL for this news site you will see that it does not match that of the real news site. Notice that there is “.co” added to the end. Even though the story appears to be from a well-respected news source it is in fact just a convincing copy of the actual website."},
       { source : "player", text : "Is this really a photo of Muslims celebrating the deadly shooting in Metro?"},
+      { source : "player", imaage : require('../art/intro/intro_image_3_comic.png')},
       { source : "source_11", text : "I just did a quick reverse image search to find where that photo originates."},
       { source : "source_0", text : "Turns out that this photo shows people celebrating at a cricket match."},
       { source : "source_0", text : "Well that brings up a whole new line of questions, mainly : why would anyone be celebrating cricket?"},
+      { source : "player", text : "I gotta go, thanks folks!"},
       { source : "player", text : "Left chatroom."},
   ]
 }

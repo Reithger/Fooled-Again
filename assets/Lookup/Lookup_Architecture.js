@@ -208,8 +208,6 @@ module.exports = {
         )
        }
        else{
-         console.log(identity);
-         console.log(display[index]);
          return(
            <View style = {Styles.architecture_scrawl_message}>
               {module.exports.messenger_scrawl_profile(identity[display[index].source].image)}
