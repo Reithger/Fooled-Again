@@ -1,0 +1,15 @@
+text cutoff on messenger iPhone
+ - AI translation
+images missing on iOS
+puzzle: use '?' instead of 'True?'
+more clear fail state at end if bad puzzle
+button on iOS way too big detection range
+more instructions on procedure
+ - start in messenger, get sent to news and given direction
+feedback on which responses are right/wrong? some non-direct feedback?
+ - more ways to say why it's wrong, then the negative feedback is useful without trivializing
+more informal chatter
+music?
+voices for accessibility
+write your own story, pre-written bits and pieces
+smaller side-friends panel, make able to disappear/reappear?

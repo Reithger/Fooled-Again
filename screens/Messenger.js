@@ -60,7 +60,7 @@ export default class Junction extends React.Component {
                         {Methods.messenger_scrawl(display, LookupMessenger.identity)}
                       </View>
                       <View style = {Styles.messenger_display_chat_keyboard}>
-                        <Animated.View style = {LookupMessenger.script[this.state.index].source == "player" ? Object.assign({}, Styles.messenger_display_chat_keyboard_touch, {transform : [{scale : scale}]}) : null}>
+                        <Animated.View style = {this.state.index != LookupMessenger.script.length && LookupMessenger.script[this.state.index].source == "player" ? Object.assign({}, Styles.messenger_display_chat_keyboard_touch, {transform : [{scale : scale}]}) : null}>
                           <TouchableOpacity style = {this.state.index != LookupMessenger.script.length && LookupMessenger.script[this.state.index].source == "player" ? {width : '100%', height : '100%', alignItems : 'center', justifyContent : 'center'} : null} onPress = {() => {this.setState({index : this.state.index + 1, continue : true})}}>
                             <Text style = {this.state.index != LookupMessenger.script.length && LookupMessenger.script[this.state.index].source == "player" ? Styles.messenger_display_chat_keyboard_touch_textOn : Styles.messenger_display_chat_keyboard_touch_textOff}>Hey!</Text>
                           </TouchableOpacity>
@@ -71,7 +71,7 @@ export default class Junction extends React.Component {
                 <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.button, {marginLeft : '5%'})}>
                     {Methods.app_link(function(){navigate('News', {memory : memory})}, require('../assets/art/meta/news_icon.png'), Styles.button_news)}
                 </Animated.View>
-                <Animated.View {...this.panResponder2.panHandlers} style = {this.state.continue && this.state.index == LookupMessenger.script.length ? Object.assign({}, this.state.pan2.getLayout(), Styles.button, {marginLeft : '25%'}) : null}>
+                <Animated.View {...this.panResponder2.panHandlers} style = {this.state.index >= LookupMessenger.script.length - 3 ? Object.assign({}, this.state.pan2.getLayout(), Styles.button, {marginLeft : '25%'}) : null}>
                     {Methods.app_link_shake(this.animate, function(){navigate('Blog', {})}, require('../assets/art/meta/blog.png'), Styles.button_messenger)}
                 </Animated.View>
             </View>

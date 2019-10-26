@@ -256,7 +256,9 @@ module.exports = {
            <View key = {index} style = {i % 2 == 0 ? Styles.architecture_friends_entry1 : Styles.architecture_friends_entry2} onPress = {() => {}}>
                <View style = {Styles.architecture_friends_entry_buffer}/>
                <View style = {Styles.architecture_friends_entry_profile}>
-                 <Image style = {Styles.architecture_friends_entry_profile_format} source = {batch.image}/>
+                  <View style = {{width : '100%', aspectRatio : 1}}>
+                     <Image style = {Styles.architecture_friends_entry_profile_format} source = {batch.image}/>
+                 </View>
                </View>
                <View style = {Styles.architecture_friends_entry_buffer}/>
                <View style = {Styles.architecture_friends_entry_buffer}/>
@@ -265,7 +267,4 @@ module.exports = {
                </View>
            </View>);
      },
-
-
-
 }

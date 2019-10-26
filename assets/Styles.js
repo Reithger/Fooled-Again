@@ -269,13 +269,13 @@ export default StyleSheet.create({
           justifyContent : 'center'
         },
           architecture_scrawl_message_text_text1 : {
-            fontSize : 16,
+            fontSize : tablet ? 16 : 12,
             marginLeft : '3%',
             marginRight : '3%',
             color : 'white',
           },
           architecture_scrawl_message_text_text2 : {
-            fontSize : 16,
+            fontSize : tablet ? 16 : 12,
             marginLeft : '3%',
             marginRight : '3%',
           },
@@ -335,7 +335,8 @@ export default StyleSheet.create({
         architecture_friends_entry_profile : {
           width : '20%',
           justifyContent : 'center',
-          aspectRatio : 1
+          aspectRatio : 1,
+          alignItems : 'center'
         },
           architecture_friends_entry_profile_format : {
             height : null,
@@ -467,6 +468,7 @@ export default StyleSheet.create({
       alignItems : 'center',
       justifyContent : 'center',
       backgroundColor : '#41b3a3',
+      overflow : 'hidden',
     },
     button_news : {
       width : '10%',
@@ -476,6 +478,7 @@ export default StyleSheet.create({
       alignItems : 'center',
       justifyContent : 'center',
       backgroundColor : '#e60505',
+      overflow : 'hidden',
     },
     button_messenger : {
       width : '10%',
@@ -485,5 +488,6 @@ export default StyleSheet.create({
       alignItems : 'center',
       justifyContent : 'center',
       backgroundColor : '#0e1f56',
+      overflow : 'hidden',
     },
 });

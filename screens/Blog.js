@@ -61,7 +61,7 @@ export default class Solve extends React.Component {
                         <View style = {{width : '20%', aspectRatio : 1, alignItems : 'center', justifyContent : 'center'}}>
                           <TouchableOpacity style = {{width : '90%', aspectRatio : 1, alignItems : 'center', justifyContent : 'center', backgroundColor : '#65ccb8', borderRadius : 9999, marginTop : '20%'}} onPress = {() => {response[index] = response[index] == null ? true : !response[index]; this.setState({response : response})}}>
                             <View style = {{alignItems : 'center', justifyContent : 'center', width : '80%', aspectRatio : 1}}>
-                              <Text style = {tablet ? {fontSize : 38} : {fontSize : 22}}>{response[index] == null ? 'True?' : response[index] ? 'True' : 'False'}</Text>
+                              <Text style = {tablet ? {fontSize : 38} : {fontSize : 22}}>{response[index] == null ? '?' : response[index] ? 'True' : 'False'}</Text>
                             </View>
                           </TouchableOpacity>
                         </View>
@@ -71,7 +71,7 @@ export default class Solve extends React.Component {
                 ))}
                 <View style = {{width : '100%', aspectRatio : 25}}/>
                 <View style = {{borderTopWidth : 2, width : '100%', aspectRatio : 8, paddingTop : '5%', backgroundColor : '#41b3a3', flexDirection : 'column', alignItems : 'flex-end', justifyContent : 'space-around'}}>
-                  <TouchableOpacity style = {{marginRight : '5%', borderRadius : 15, backgroundColor : '#f2f2f2', width : '20%', aspectRatio : 3, alignItems : 'center', justifyContent : 'center'}} onPress = {() => {navigate('End', {response : response})}}>
+                  <TouchableOpacity style = {{marginRight : '5%', borderRadius : 15, backgroundColor : '#f2f2f2', width : '20%', aspectRatio : 3, alignItems : 'center', justifyContent : 'center'}} onPress = {() => {response.indexOf(null) == -1 ? navigate('End', {response : response}) : {}}}>
                     <Text style = {{fontSize : 22}}>Post</Text>
                   </TouchableOpacity>
                 </View>

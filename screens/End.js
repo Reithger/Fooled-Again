@@ -43,7 +43,7 @@ export default class Junction extends React.Component {
                     {Methods.article(result ? LookupEnding.success : LookupEnding.failure)}
                 </ScrollView>
                 <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.button)}>
-                    {Methods.app_link_shake(this.animate, function(){navigate(!result ? 'Blog' : 'Home', {})}, require('../assets/art/meta/blog.png'), Styles.button_blog)}
+                    {Methods.app_link_shake(this.animate, function(){navigate(!result ? 'Blog' : 'Home', {})}, !result ? require('../assets/art/meta/blog.png') : require('../assets/art/meta/title.png'), Styles.button_blog)}
                 </Animated.View>
             </View>
         );

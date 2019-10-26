@@ -32,8 +32,8 @@ export default class Intro extends React.Component {
         }
         return (
             <View style={Styles.intro}>
-                {Methods.article_header([], [])}
-                {Methods.headline_page(Lookup_Intro.screen, navig, "http://www.canadanewswire.ca.co")}
+                {Methods.article_header([], [], "http://www.canadanewswire.ca.co")}
+                {Methods.headline_page(Lookup_Intro.screen, navig)}
                 <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.button)}>
                     {Methods.app_link(function(){navigate('Messenger', {memory : memory})}, require('../assets/art/meta/messenger.png'), Styles.button_messenger)}
                 </Animated.View>
