@@ -10,9 +10,6 @@ import Intro from './screens/Intro';
 const AppNavigator = createStackNavigator({
 
 
-  Blog: {
-      screen: Blog
-  },
     Home: {
         screen: Home
     },
