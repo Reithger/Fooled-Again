@@ -13,7 +13,8 @@ export default class Home extends React.Component {
         headerStyle: Styles.title_header,
         headerTitleStyle: {
             fontSize: 0,
-        }
+        },
+        gesturesEnabled : false,
     };
 
     constructor(props){
@@ -35,9 +36,11 @@ export default class Home extends React.Component {
                 <View style = {Styles.home_title}>
                     <Image style = {Styles.home_title_image} source = {require("../assets/art/meta/title.jpg")}/>
                 </View>
-                <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.button, {alignItems : 'flex-end', marginRight : '5%',})}>
-                    {Methods.app_link_shake(this.animate, function(){navigate('Intro', {});}, require('../assets/art/meta/news_icon.png'), Styles.button_news, true)}
-                </Animated.View>
+                <View pointerEvents="box-none" style = {Styles.float}>
+                  <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.button, {alignItems : 'flex-end', marginRight : '5%',})}>
+                      {Methods.app_link_shake(this.animate, function(){navigate('Intro', {});}, require('../assets/art/meta/news_icon.png'), Styles.button_news, true)}
+                  </Animated.View>
+                </View>
             </View>
         );
     }

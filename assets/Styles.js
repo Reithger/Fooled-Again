@@ -1,7 +1,9 @@
 import { StyleSheet } from 'react-native';
 const DeviceInfo = require('react-native-device-detection');
+import { Platform } from 'react-native';
 
 tablet = DeviceInfo.isTablet;
+android = Platform.OS != "ios";
 
 buff = "#f0dc82"
 beaver = "#9f8170";
@@ -236,7 +238,7 @@ export default StyleSheet.create({
       architecture_app_image : {
         width : '100%',
         aspectRatio : 1,
-        borderRadius : 9999,
+        borderRadius : android ? 9999 : 25,
       },
         architecture_app_image_format : {
           flex : 1,
@@ -257,14 +259,14 @@ export default StyleSheet.create({
         architecture_scrawl_message_text1 : {
           width : '80%',
           backgroundColor : '#0099ff',
-          borderRadius : 30,
+          borderRadius : tablet ? 40 : 15,
           alignItems : 'flex-start',
           justifyContent : 'center',
         },
         architecture_scrawl_message_text2 : {
           width : '80%',
           backgroundColor : '#ccc',
-          borderRadius : 30,
+          borderRadius : tablet ? 40 : 15,
           alignItems : 'flex-start',
           justifyContent : 'center'
         },
@@ -289,18 +291,18 @@ export default StyleSheet.create({
             width : null,
             flex : 1, resizeMode : 'cover',
             overflow : 'hidden',
-            borderRadius : 9999
+            borderRadius : android ? 9999 : 25
           },
         architecture_scrawl_message_image1 : {
           width : '80%',
           backgroundColor : '#6d84b4',
-          borderRadius : 30,
+          borderRadius : tablet ? 40 : 15,
           aspectRatio : 1,
         },
         architecture_scrawl_message_image2 : {
           width : '80%',
           backgroundColor : '#ccc',
-          borderRadius : 30,
+          borderRadius : tablet ? 40 : 15,
           aspectRatio : 1,
         },
           architecture_scrawl_message_image_format : {
@@ -344,7 +346,7 @@ export default StyleSheet.create({
             flex : 1,
             resizeMode : 'cover',
             overflow : 'hidden',
-            borderRadius : 9999
+            borderRadius : android ? 9999 : 25,
           },
         architecture_friends_entry_name : {
           width : '65%',
@@ -428,7 +430,7 @@ export default StyleSheet.create({
             messenger_display_chat_keyboard_touch : {
               width : '25%',
               aspectRatio : 5/3,
-              borderRadius : 9999,
+              borderRadius : 30,
               backgroundColor : '#eee',
               alignItems : 'center',
               justifyContent : 'center',
@@ -437,12 +439,143 @@ export default StyleSheet.create({
                 fontSize : 20
               },
               messenger_display_chat_keyboard_touch_textOff : {
-                fontSize : 0
+                color : '#3b5998',
               },
 
   blog : {
-
+    height : '100%',
+    backgroundColor : '#3b945e',
+    width : '100%'
   },
+    blog_scroll : {
+
+    },
+      blog_scroll_header : {
+          aspectRatio : 4,
+          backgroundColor : '#65ccb8',
+          width : '100%',
+          alignItems : 'flex-end',
+          justifyContent : 'flex-end',
+          borderBottomWidth : 2
+      },
+        blog_scroll_header_image : {
+          position : 'absolute',
+          height : '100%',
+          width : '100%'
+        },
+          blog_scroll_header_image_format : {
+            flex : 1,
+            width : null,
+            height : null,
+            resizeMode : 'cover'
+          },
+      blog_scroll_header_title : {
+        fontSize : tablet ? 54 : 34,
+        fontWeight : 'bold',
+        marginRight : '2%',
+        color : 'white'},
+    blog_scroll_puzzle : {
+
+    },
+      blog_scroll_puzzle_buffer : {
+        width : '100%',
+        aspectRatio : 30,
+      },
+      blog_scroll_puzzle_body : {
+        marginLeft : '2%',
+        marginRight : '2%',
+        borderWidth : 4,
+        borderColor : '#41a3b3',
+        width : '96%',
+        aspectRatio : 4,
+      },
+        blog_scroll_puzzle_body_grid : {
+          flexDirection : 'row',
+          justifyContent : 'space-around',
+        },
+          blog_scroll_puzzle_body_grid_text : {
+            width : '30%',
+            aspectRatio : 1,
+            alignItems : 'center',
+            justifyContent : 'center'
+          },
+            blog_scroll_puzzle_body_grid_text_align : {
+              width : '100%',
+              alignItems : 'center',
+              justifyContent : 'center',
+              marginBottom : '30%'
+            },
+              blog_scroll_puzzle_body_grid_text_align_format : {
+                fontSize : tablet ? 22 : 14,
+                color : '#f2f2f2',
+              },
+          blog_scroll_body_grid_image : {
+            width : '30%',
+            aspectRatio : 1,
+            alignItems : 'center',
+            justifyContent : 'center'
+          },
+            blog_scroll_puzzle_body_grid_image_align : {
+              width : '90%',
+              aspectRatio : 5/3,
+              justifyContent : 'flex-start',
+              flexDirection : 'column',
+              marginBottom : '20%'
+            },
+              blog_scroll_puzzle_body_grid_image_align_format : {
+                flex : 1,
+                width : null,
+                height : null,
+                resizeMode : 'cover'
+              },
+          blog_scroll_puzzle_body_grid_button : {
+            width : '20%', aspectRatio : 1, alignItems : 'center', justifyContent : 'center'
+          },
+            blog_scroll_puzzle_body_grid_button_region : {
+              width : '90%',
+              aspectRatio : 1,
+              alignItems : 'center',
+              justifyContent : 'center',
+              backgroundColor : '#65ccb8',
+              borderRadius : 9999,
+              marginTop : '20%'
+            },
+              blog_scroll_puzzle_body_grid_button_region_text : {
+                alignItems : 'center',
+                justifyContent : 'center',
+                width : '80%',
+                aspectRatio : 1
+              },
+                blog_scroll_puzzle_body_grid_button_region_text_format : {
+                  fontSize : tablet ? 36 : 22,
+                },
+      blog_scroll_floor : {
+        borderTopWidth : 2,
+        width : '100%',
+        aspectRatio : 8,
+        paddingTop : '5%',
+        backgroundColor : '#41b3a3',
+        flexDirection : 'column',
+        alignItems : 'flex-end',
+        justifyContent : 'space-around'
+      },
+        blog_scroll_floor_buffer : {
+          width : '100%',
+          aspectRatio : 24,
+        },
+        blog_scroll_floor_button : {
+          marginRight : '5%',
+          borderRadius : 20,
+          backgroundColor : '#f2f2f2',
+          width : '20%',
+          aspectRatio : 3,
+          alignItems : 'center',
+          justifyContent : 'center'
+        },
+          blog_scroll_floor_button_text : {
+            fontSize : 22
+          },
+
 
     end : {
       flex : 1,
@@ -451,17 +584,21 @@ export default StyleSheet.create({
 
       },
 
-  button : {
+  float : {
     position : 'absolute',
     width : '100%',
     height : '100%',
-    alignItems : 'flex-start',
+    flexDirection : 'row',
     justifyContent : 'flex-end',
-    marginRight : '5%',
-    marginBottom : '5%',
+    alignItems : 'flex-end'
+  },
+
+  button : {
+    width : tablet ? '12%' : '16%',
+    aspectRatio: 1,
   },
     button_blog : {
-      width : '10%',
+      width : '100%',
       aspectRatio : 1,
       borderRadius : 9999,
       borderWidth : 1,
@@ -471,7 +608,7 @@ export default StyleSheet.create({
       overflow : 'hidden',
     },
     button_news : {
-      width : '10%',
+      width : '100%',
       aspectRatio : 1,
       borderRadius : 9999,
       borderWidth : 1,
@@ -481,7 +618,7 @@ export default StyleSheet.create({
       overflow : 'hidden',
     },
     button_messenger : {
-      width : '10%',
+      width : '100%',
       aspectRatio : 1,
       borderRadius : 9999,
       borderWidth : 1,

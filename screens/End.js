@@ -11,7 +11,8 @@ export default class Junction extends React.Component {
         headerStyle: Styles.news_header,
         headerTitleStyle: {
             fontSize: 0,
-        }
+        },
+        gesturesEnabled : false,
     };
 
     constructor(props){
@@ -42,9 +43,11 @@ export default class Junction extends React.Component {
                 <ScrollView style = {Styles.end_scroll}>
                     {Methods.article(result ? LookupEnding.success : LookupEnding.failure)}
                 </ScrollView>
-                <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.button)}>
-                    {Methods.app_link_shake(this.animate, function(){navigate(!result ? 'Blog' : 'Home', {})}, !result ? require('../assets/art/meta/blog.png') : require('../assets/art/meta/title.png'), Styles.button_blog)}
-                </Animated.View>
+                <View pointerEvents="box-none" style = {Styles.float}>
+                  <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.button)}>
+                      {Methods.app_link_shake(this.animate, function(){navigate(!result ? 'Blog' : 'Home', {})}, !result ? require('../assets/art/meta/blog.png') : require('../assets/art/meta/title.png'), Styles.button_blog)}
+                  </Animated.View>
+                </View>
             </View>
         );
     }

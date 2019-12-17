@@ -10,7 +10,8 @@ export default class Intro extends React.Component {
         headerStyle: Styles.news_header,
         headerTitleStyle: {
             fontSize: 0,
-        }
+        },
+        gesturesEnabled : false,
     };
 
     constructor(props){
@@ -40,16 +41,18 @@ export default class Intro extends React.Component {
 
         return (
             <View style={Styles.intro}>
-                {Methods.article_header([],[],"http://www.canadanewswire.ca.co")}
-                <ScrollView style = {Styles.intro_body} onScroll = {spawnMessenger.bind(this)}>
-                  {Lookup_Intro.screen.map(function(item){
-                    return(Methods.article(item));
-                  })}
-                  <View style = {Styles.intro_buffer}/>
-                </ScrollView>
+              {Methods.article_header([],[],"http://www.canadanewswire.ca.co")}
+              <ScrollView style = {Styles.intro_body} onScroll = {spawnMessenger.bind(this)}>
+                {Lookup_Intro.screen.map(function(item){
+                  return(Methods.article(item));
+                })}
+                <View style = {Styles.intro_buffer}/>
+              </ScrollView>
+              <View pointerEvents="box-none" style = {Styles.float}>
                 <Animated.View {...this.panResponder.panHandlers} style = {this.state.messenger ? Object.assign({}, Styles.button, this.state.pan.getLayout(), {marginRight : '5%'}) : null}>
                     {Methods.app_link_shake(this.animate, function(){navigate('Messenger', {memory : memory})}, require('../assets/art/meta/messenger.png'), this.state.messenger ? Styles.button_messenger : null, true)}
                 </Animated.View>
+              </View>
             </View>
         );
     }

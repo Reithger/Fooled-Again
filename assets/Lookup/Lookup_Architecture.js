@@ -22,7 +22,7 @@ module.exports = {
       });
     },
 
-     article_header : function(left, right, text){
+    article_header : function(left, right, text){
        return(
        <View style = {Styles.architecture_header}>
           {left.map(function(item){

@@ -10,7 +10,8 @@ export default class Intro extends React.Component {
         headerStyle: Styles.news_header,
         headerTitleStyle: {
             fontSize: 0,
-        }
+        },
+        gesturesEnabled : false,
     };
 
     constructor(props){
@@ -26,15 +27,17 @@ export default class Intro extends React.Component {
 
         return (
             <View style={Styles.intro}>
-                {Methods.article_header([{function : function(){navigate('News', {memory : memory})}, image : require('../assets/art/meta/left_arrow.png')}],
-                                        [{function : function(){}, image : require('../assets/art/meta/blank_image.png')}], "http://www.canadanewswire.ca.co")}
-                <ScrollView style = {Styles.intro_body}>
-                  {Methods.article(script)}
-                  <View style = {Styles.intro_buffer}/>
-                </ScrollView>
+              {Methods.article_header([{function : function(){navigate('News', {memory : memory})}, image : require('../assets/art/meta/left_arrow.png')}],
+                                      [{function : function(){}, image : require('../assets/art/meta/blank_image.png')}], "http://www.canadanewswire.ca.co")}
+              <ScrollView style = {Styles.intro_body}>
+                {Methods.article(script)}
+                <View style = {Styles.intro_buffer}/>
+              </ScrollView>
+              <View pointerEvents="box-none" style = {Styles.float}>
                 <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.button)}>
                     {Methods.app_link(function(){navigate('Messenger', {memory : memory})}, require('../assets/art/meta/messenger.png'), Styles.button_messenger)}
                 </Animated.View>
+              </View>
             </View>
         );
     }

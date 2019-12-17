@@ -10,7 +10,8 @@ export default class Intro extends React.Component {
         headerStyle: Styles.news_header,
         headerTitleStyle: {
             fontSize: 0,
-        }
+        },
+        gesturesEnabled : false,
     };
 
     constructor(props){
@@ -32,11 +33,13 @@ export default class Intro extends React.Component {
         }
         return (
             <View style={Styles.intro}>
-                {Methods.article_header([], [], "http://www.canadanewswire.ca.co")}
-                {Methods.headline_page(Lookup_Intro.screen, navig)}
+              {Methods.article_header([], [], "http://www.canadanewswire.ca.co")}
+              {Methods.headline_page(Lookup_Intro.screen, navig)}
+              <View pointerEvents="box-none" style = {Styles.float}>
                 <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.button)}>
                     {Methods.app_link(function(){navigate('Messenger', {memory : memory})}, require('../assets/art/meta/messenger.png'), Styles.button_messenger)}
                 </Animated.View>
+              </View>
             </View>
         );
     }
