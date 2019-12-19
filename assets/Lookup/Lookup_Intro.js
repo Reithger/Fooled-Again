@@ -30,7 +30,7 @@ export default {
 
 			 "format" : ["header", "tag", "frame", "tag", "body", "body"],
      },
-     {"source" : ["Failed refugee policy sows “culture of violence” - expert",
+     {"source" : ["Expert says failed refugee policy sows “culture of violence”",
 
  			 				  "11/11/2019 - Professional Writer",
 
@@ -39,14 +39,14 @@ export default {
                  "A border somewhere /Submitted",
 
                 "The incident has led experts to warn that Canada’s open-door refugee policies are not "+
-          		  "only costing taxpayers up to $50 billion every year, they're also sowing a \"culture of "+
+          		  "only costing taxpayers every year, they're also sowing a \"culture of "+
           		  "violence\" in communities across the country.",
 
           		  "\"Canadian politicians are doling out billions for a failed refugee system that is causing direct"+
                 " harm to the citizens who are expected to foot the bill,\"",
 
-                "This claim was made by a former Canadian diplomat said during a Montreal public policy forum on"+
-                " the links between terrorism and immigration."],
+                "This claim was made by a well-known Canadian academic during a security forum on the links between"+
+                " terrorism and immigration."],
 
 			 "format" : ["header", "tag", "frame", "tag", "body", "body", "body"],
      },

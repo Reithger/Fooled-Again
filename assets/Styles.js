@@ -435,12 +435,15 @@ export default StyleSheet.create({
               alignItems : 'center',
               justifyContent : 'center',
             },
-              messenger_display_chat_keyboard_touch_textOn : {
-                fontSize : 20
+              messenger_display_chat_keyboard_touch_interact : {
+                width : '100%',
+                height : '100%',
+                alignItems : 'center',
+                justifyContent : 'center'
               },
-              messenger_display_chat_keyboard_touch_textOff : {
-                color : '#3b5998',
-              },
+                messenger_display_chat_keyboard_touch_interact_text : {
+                  fontSize : 20
+                },
 
   blog : {
     height : '100%',

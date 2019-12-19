@@ -10,20 +10,21 @@ import Intro from './screens/Intro';
 const AppNavigator = createStackNavigator({
 
 
+
     Home: {
         screen: Home
     },
     Intro: {
         screen: Intro
     },
-    Messenger: {
-        screen: Messenger
-    },
     News : {
       screen : News
     },
     NewsStory : {
       screen : NewsStory
+    },
+    Messenger: {
+        screen: Messenger
     },
     Blog: {
         screen: Blog
