@@ -18,16 +18,20 @@ export default class Junction extends React.Component {
     constructor(props){
       super(props);
       this.animate = new Animated.Value(0)
-      this.state = {script : [], block : "intro", index : 0, pan : new Animated.ValueXY(), pan2 : new Animated.ValueXY()}
+      this.state = {script : [], choices : [], block : "intro", index : 0, pause : false, pan : new Animated.ValueXY(), pan2 : new Animated.ValueXY()}
       this.state.script.push(LookupMessenger.script[this.state.block].content[0]);
       this.panResponder = Methods.get_panResponder(this.state.pan);
       this.panResponder2 = Methods.get_panResponder(this.state.pan2);
       const interval = setInterval(function(){
+        if(this.state.pause){
+          this.state.pause = false;
+          return;
+        }
         ref = this.state;
 
         if(ref.index + 1 >= LookupMessenger.script[ref.block].content.length){
           if(ref.block != "end" && LookupMessenger.script[ref.block].content[ref.index].goto.length == 1 && LookupMessenger.script[ref.block].content[ref.index].choice[0] == ""){
-            this.setState({index : 0, block : LookupMessenger.script[ref.block].content[ref.index].goto[0]});
+            this.setState({index : 0, pause : true, block : LookupMessenger.script[ref.block].content[ref.index].goto[0]});
             this.state.script.push(LookupMessenger.script[this.state.block].content[this.state.index]);
             this.setState({});
           }
@@ -58,36 +62,26 @@ export default class Junction extends React.Component {
           choice = ref[this.state.block].content[this.state.index];
         }
 
+        var action = function(index){
+          return function(){
+            var next = {};
+            next.text = choice.choice[index];
+            next.source = "player";
+            console.log(next);
+            this.state.script.push(next);
+            this.setState({choices : [], block : choice.goto[index], index : 0, pause : true});
+          }.bind(this)
+        }.bind(this)
+
         return (
             <View style={Styles.messenger}>
                 <View style = {Styles.messenger_head}>
                     <Text style = {Styles.messenger_header_text}>Messenger</Text>
                 </View>
                 <View style = {Styles.messenger_display}>
-                    <View style = {Styles.messenger_display_friends}>
-                      {Methods.messenger_friends(LookupMessenger.identity)}
-                    </View>
                     <View style = {Styles.messenger_display_chat}>
                       <View style = {Styles.messenger_display_chat_conversation}>
-                        {Methods.messenger_scrawl(this.state.script, LookupMessenger.identity)}
-                      </View>
-                      <View style = {Styles.messenger_display_chat_keyboard}>
-                        {[...Array(choice.goto.length).keys()].map(function(index){
-                          if(choice.choice[index] == ""){
-                            return null;
-                          }
-                          return(
-                            <Animated.View key = {index} style = {Object.assign({}, Styles.messenger_display_chat_keyboard_touch, {transform : [{scale : scale}]})}>
-                              <TouchableOpacity style = {Styles.messenger_display_chat_keyboard_touch_interact} onPress = {() => {this.setState({index : 0, block : choice.goto[index]}); this.state.script.push(LookupMessenger.script[choice.goto[index]].content[0]);}}>
-                                <Text style = {Styles.messenger_display_chat_keyboard_touch_ineract_text}>
-                                  {choice.choice[index]}
-                                </Text>
-                              </TouchableOpacity>
-                            </Animated.View>
-                          )
-                        }.bind(this))
-                        }
-
+                        {Methods.messenger_scrawl(this.state.script, LookupMessenger.identity, choice.choice, action)}
                       </View>
                     </View>
                 </View>

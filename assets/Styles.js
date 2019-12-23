@@ -248,27 +248,48 @@ export default StyleSheet.create({
           overflow : 'hidden',
         },
     architecture_scrawl : {
-
+      flex : 1,
     },
       architecture_scrawl_message : {
         width : '100%',
         flexDirection : 'row',
-        marginBottom : '10%',
+        marginBottom : '4%',
         justifyContent : 'space-around',
+        alignItems : 'center',
       },
+        architecture_scrawl_message_choice : {
+          width : '80%',
+          backgroundColor : '#0099ff',
+          borderRadius : tablet ? 40 : 15,
+          alignItems : 'center',
+          justifyContent : 'center',
+          paddingTop : '3%',
+          paddingBottom : '3%',
+          flexDirection : 'row',
+        },
+          architecture_scrawl_message_choice_text : {
+            fontSize : tablet ? 16 : 12,
+            marginLeft : '3%',
+            marginRight : '3%',
+            color : 'white',
+          },
         architecture_scrawl_message_text1 : {
           width : '80%',
           backgroundColor : '#0099ff',
           borderRadius : tablet ? 40 : 15,
           alignItems : 'flex-start',
           justifyContent : 'center',
+          paddingTop : '3%',
+          paddingBottom : '3%',
         },
         architecture_scrawl_message_text2 : {
           width : '80%',
-          backgroundColor : '#ccc',
+          backgroundColor : '#ddd',
           borderRadius : tablet ? 40 : 15,
           alignItems : 'flex-start',
-          justifyContent : 'center'
+          justifyContent : 'center',
+          paddingTop : '3%',
+          paddingBottom : '3%',
         },
           architecture_scrawl_message_text_text1 : {
             fontSize : tablet ? 16 : 12,
@@ -289,9 +310,10 @@ export default StyleSheet.create({
           architecture_scrawl_message_profile_format : {
             height : null,
             width : null,
-            flex : 1, resizeMode : 'cover',
+            flex : 1,
+            resizeMode : 'cover',
             overflow : 'hidden',
-            borderRadius : android ? 9999 : 25
+            borderRadius : android ? 9999 : 40
           },
         architecture_scrawl_message_image1 : {
           width : '80%',
@@ -411,7 +433,7 @@ export default StyleSheet.create({
           backgroundColor : '#0e1f56'
         },
         messenger_display_chat : {
-          width : '65%',
+          flex : 1,
           height : '100%',
           flexDirection : 'column',
         },
@@ -428,8 +450,8 @@ export default StyleSheet.create({
             backgroundColor : '#3b5998'
           },
             messenger_display_chat_keyboard_touch : {
-              width : '25%',
-              aspectRatio : 5/3,
+              width : tablet ? '18%' : '24%',
+              aspectRatio : tablet ? 5/3 : 7/3,
               borderRadius : 30,
               backgroundColor : '#eee',
               alignItems : 'center',
@@ -442,7 +464,7 @@ export default StyleSheet.create({
                 justifyContent : 'center'
               },
                 messenger_display_chat_keyboard_touch_interact_text : {
-                  fontSize : 20
+                  fontSize : tablet ? 24 : 16,
                 },
 
   blog : {

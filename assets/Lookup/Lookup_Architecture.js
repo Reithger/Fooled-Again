@@ -184,13 +184,23 @@ module.exports = {
        );
      },
 
-     messenger_scrawl : function(display, identity){
+     messenger_scrawl : function(display, identity, choices=null, action=null){
+       if(choices == null){
+         choices = []
+       }
        return(
          <ScrollView style = {Styles.architecture_scrawl} ref = {(scroll) => {this.scroll = scroll}} onContentSizeChange = {(contentWidth, contentHeight) => {this.scroll.scrollToEnd();}}>
            { Array.from(Array(display.length).keys()).map(function(index){
                return(
                  <View key = {index}>
                       {module.exports.messenger_scrawl_side(display, identity, index)}
+                </View>
+              )
+           })}
+           { Array.from(Array(choices.length).keys()).map(function(index){
+               return(
+                 <View key = {index}>
+                      {module.exports.messenger_scrawl_choice(choices, identity, index, action)}
                 </View>
               )
            })}
@@ -233,6 +243,19 @@ module.exports = {
            )
        }
      },
+
+      messenger_scrawl_choice : function(display, identity, index, action){
+        if(display == null || display.length == 0 || display[index] == ""){
+          return null;
+        }
+        return(
+          <TouchableOpacity style = {Styles.architecture_scrawl_message} onPress = {action(index)}>
+            <View style = {Styles.architecture_scrawl_message_choice}>
+              <Text style = {Styles.architecture_scrawl_message_choice_text}>{display[index]}</Text>
+            </View>
+          </TouchableOpacity>
+        )
+      },
 
      messenger_scrawl_profile : function(image){
        return(

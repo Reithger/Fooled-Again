@@ -1,15 +1,17 @@
 ___Bugs:
 text cutoff on messenger iPhone
  - AI translation
-images missing on iOS
 
 ***fixed***
 button on iOS way too big detection range
+images missing on iOS
 
 ___Changes:
 smaller side-friends panel, make able to disappear/reappear?
-puzzle: use '?' instead of 'True?'
 more clear fail state at end if bad puzzle
+
+***done***
+puzzle: use '?' instead of 'True?'
 
 ___Suggestions:
 
