@@ -531,7 +531,7 @@ export default StyleSheet.create({
               marginBottom : '30%'
             },
               blog_scroll_puzzle_body_grid_text_align_format : {
-                fontSize : tablet ? 22 : 14,
+                fontSize : tablet ? 22 : 12,
                 color : '#f2f2f2',
               },
           blog_scroll_body_grid_image : {
@@ -545,25 +545,26 @@ export default StyleSheet.create({
               aspectRatio : 5/3,
               justifyContent : 'flex-start',
               flexDirection : 'column',
-              marginBottom : '20%'
+              marginBottom : '20%',
             },
               blog_scroll_puzzle_body_grid_image_align_format : {
                 flex : 1,
                 width : null,
                 height : null,
-                resizeMode : 'cover'
+                resizeMode : 'cover',
+                borderRadius : 10,
               },
           blog_scroll_puzzle_body_grid_button : {
             width : '20%', aspectRatio : 1, alignItems : 'center', justifyContent : 'center'
           },
             blog_scroll_puzzle_body_grid_button_region : {
               width : '90%',
-              aspectRatio : 1,
+              aspectRatio : 5/2,
               alignItems : 'center',
               justifyContent : 'center',
               backgroundColor : '#65ccb8',
-              borderRadius : 9999,
-              marginTop : '20%'
+              marginTop : '20%',
+              borderRadius : 15,
             },
               blog_scroll_puzzle_body_grid_button_region_text : {
                 alignItems : 'center',
@@ -572,7 +573,7 @@ export default StyleSheet.create({
                 aspectRatio : 1
               },
                 blog_scroll_puzzle_body_grid_button_region_text_format : {
-                  fontSize : tablet ? 36 : 22,
+                  fontSize : tablet ? 30 : 16,
                 },
       blog_scroll_floor : {
         borderTopWidth : 2,
@@ -591,14 +592,15 @@ export default StyleSheet.create({
         blog_scroll_floor_button : {
           marginRight : '5%',
           borderRadius : 20,
-          backgroundColor : '#f2f2f2',
+          backgroundColor : '#65ccb8',
           width : '20%',
           aspectRatio : 3,
           alignItems : 'center',
-          justifyContent : 'center'
+          justifyContent : 'center',
+          borderWidth : tablet ? 2 : 1,
         },
           blog_scroll_floor_button_text : {
-            fontSize : 22
+            fontSize : tablet ? 24 : 18
           },
 
 
@@ -608,14 +610,32 @@ export default StyleSheet.create({
       end_scroll : {
 
       },
+      end_badge : {
+        alignItems : 'center',
+        justifyContent : 'center',
+        flex : tablet ? 4 : 2
+      },
+        end_badge_image : {
+           flex : 1,
+           resizeMode : 'contain'
+        },
 
   float : {
     position : 'absolute',
     width : '100%',
     height : '100%',
     flexDirection : 'row',
+    justifyContent : 'space-around',
+    alignItems : 'flex-end',
+  },
+  float_alt_end : {
+    position : 'absolute',
+    flexDirection : 'column',
+    alignItems : 'center',
     justifyContent : 'flex-end',
-    alignItems : 'flex-end'
+    flex : 1,
+    width : '100%',
+    height : '100%',
   },
 
   button : {

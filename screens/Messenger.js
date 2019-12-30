@@ -42,7 +42,7 @@ export default class Junction extends React.Component {
           this.state.script.push(LookupMessenger.script[ref.block].content[this.state.index]);
           this.setState({});
         }
-      }.bind(this), 2000);
+      }.bind(this), 5000);
     }
 
     componentDidMount(){

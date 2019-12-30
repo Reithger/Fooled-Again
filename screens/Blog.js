@@ -68,9 +68,14 @@ export default class Solve extends React.Component {
                         </View>
 
                         <View style = {Styles.blog_scroll_puzzle_body_grid_button}>
-                          <TouchableOpacity style = {Styles.blog_scroll_puzzle_body_grid_button_region} onPress = {() => {response[index] = response[index] == null ? true : !response[index]; this.setState({response : response})}}>
+                          <TouchableOpacity style = {Styles.blog_scroll_puzzle_body_grid_button_region} onPress = {() => {response[index] = true; this.setState({response : response})}}>
                             <View style = {Styles.blog_scroll_puzzle_body_grid_button_region_text}>
-                              <Text style = {Styles.blog_scroll_puzzle_body_grid_button_region_text_format}>{response[index] == null ? '?' : response[index] ? 'True' : 'False'}</Text>
+                              <Text style = {Styles.blog_scroll_puzzle_body_grid_button_region_text_format}>True</Text>
+                            </View>
+                          </TouchableOpacity>
+                          <TouchableOpacity style = {Styles.blog_scroll_puzzle_body_grid_button_region} onPress = {() => {response[index] = false; this.setState({response : response})}}>
+                            <View style = {Styles.blog_scroll_puzzle_body_grid_button_region_text}>
+                              <Text style = {Styles.blog_scroll_puzzle_body_grid_button_region_text_format}>False</Text>
                             </View>
                           </TouchableOpacity>
                         </View>

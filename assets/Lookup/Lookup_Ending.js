@@ -32,6 +32,7 @@ export default {
                   require("../art/end/bad_ending.png"),
                 ],
       "format" : ["header", "tag", "frame"],
+      "badge" : require("../art/end/fail_stamp.png"),
     },
 
     "success" : {
@@ -44,6 +45,7 @@ export default {
                   require("../art/end/good_ending.png"),
                 ],
       "format" : ["header", "tag", "frame"],
+      "badge" : require("../art/end/winner_badge.png"),
     },
 
     "answer" : [false, true, false, false, true, false, true, false],
