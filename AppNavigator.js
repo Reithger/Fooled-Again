@@ -1,5 +1,6 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import Home from './screens/Home';
+import Hub from './screens/Hub';
 import Messenger from './screens/Messenger';
 import News from './screens/News';
 import NewsStory from './screens/NewsStory';
@@ -10,7 +11,9 @@ import Intro from './screens/Intro';
 const AppNavigator = createStackNavigator({
 
 
-
+    Hub : {
+      screen : Hub
+    },
     Home: {
         screen: Home
     },

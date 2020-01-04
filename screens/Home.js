@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import {Animated, Easing, ScrollView, ImageBackground, Button, View, Text, TouchableOpacity, Image } from 'react-native';
-import {BlurView} from 'expo-blur';
 import Styles from '../assets/Styles';
 import Memory from '../assets/Memory';
 import Methods from '../assets/Lookup/Lookup_Architecture';
-import LookupIntro from '../assets/Lookup/Lookup_Intro';
-const DeviceInfo = require('react-native-device-detection');
 
 export default class Home extends React.Component {
     static navigationOptions = {

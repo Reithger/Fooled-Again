@@ -90,10 +90,7 @@ export default class Junction extends React.Component {
 
                 <View pointerEvents="box-none" style = {Styles.float}>
                   <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.button)}>
-                      {Methods.app_link(function(){navigate('News', {})}, require('../assets/art/meta/news_icon.png'), Styles.button_news)}
-                  </Animated.View>
-                  <Animated.View {...this.panResponder2.panHandlers} style = {this.state.block == "end" ? Object.assign({}, this.state.pan2.getLayout(), Styles.button) : null}>
-                      {this.state.block == "end" ? Methods.app_link_shake(this.animate, function(){navigate('Blog', {})}, require('../assets/art/meta/blog.png'), Styles.button_messenger) : null}
+                      {Methods.app_link(function(){navigate('Hub', {})}, require('../assets/art/meta/news_icon.png'), Styles.button_news)}
                   </Animated.View>
                 </View>
             </View>
