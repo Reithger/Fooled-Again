@@ -53,16 +53,16 @@ export default class Junction extends React.Component {
                     {Methods.article(result ? LookupEnding.success : LookupEnding.failure)}
                 </ScrollView>
 
-                <View pointerEvents="box-none" style = {Styles.float_alt_end}>
-                  <View style = {{flex : 10}}/>
-                  <Animated.View {...this.panResponder2.panHandlers} style = {Object.assign({}, this.state.pan2.getLayout(), Styles.end_badge, result ? {flex : 6} : {}, {transform : [{scale : scale}]})}>
+                <View pointerEvents="box-none" style = {Object.assign({}, Styles.float, {justifyContent : 'flex-end'})}>
+                  <Animated.View {...this.panResponder2.panHandlers} style = {Object.assign({}, this.state.pan2.getLayout(), Styles.end_badge, {transform : [{scale : scale}]})}>
                       <Image style = {Styles.end_badge_image} source = {result ? LookupEnding.success.badge : LookupEnding.failure.badge}/>
                   </Animated.View>
-                  <View style = {{flex : result ? 2 : 1}}/>
-                  <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.button, {flex : result ? 2 : 1})}>
+                </View>
+
+                <View pointerEvents="box-none" style = {Styles.float}>
+                  <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.button)}>
                       {Methods.app_link_shake(this.animate, function(){navigate(!result ? 'Blog' : 'Home', {})}, !result ? require('../assets/art/meta/blog.png') : require('../assets/art/meta/title.png'), Styles.button_blog)}
                   </Animated.View>
-                  <View style = {{flex : 1}}/>
                 </View>
 
             </View>

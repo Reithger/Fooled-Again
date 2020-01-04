@@ -25,6 +25,7 @@ export default class Junction extends React.Component {
       const interval = setInterval(function(){
         if(this.state.pause){
           this.state.pause = false;
+          this.setState({});
           return;
         }
         ref = this.state;
@@ -35,10 +36,11 @@ export default class Junction extends React.Component {
             this.state.script.push(LookupMessenger.script[this.state.block].content[this.state.index]);
             this.setState({});
           }
+          this.setState({});
           return;
         }
-        if(ref.index + 1 < LookupMessenger.script[ref.block].content.length){
-          this.setState({index : this.state.index + 1});
+        else{
+          this.setState({index : this.state.index + 1, pause : this.state.index + 2 >= LookupMessenger.script[ref.block].content.length});
           this.state.script.push(LookupMessenger.script[ref.block].content[this.state.index]);
           this.setState({});
         }
@@ -58,7 +60,7 @@ export default class Junction extends React.Component {
         })
 
         var choice = {goto : []};
-        if(this.state.index < ref[this.state.block].content.length && ref[this.state.block].content[this.state.index].hasOwnProperty("choice")){
+        if(!this.state.pause && this.state.index + 1 >= ref[this.state.block].content.length && ref[this.state.block].content[this.state.index].hasOwnProperty("choice")){
           choice = ref[this.state.block].content[this.state.index];
         }
 

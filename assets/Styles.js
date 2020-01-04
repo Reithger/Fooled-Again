@@ -611,13 +611,14 @@ export default StyleSheet.create({
 
       },
       end_badge : {
-        alignItems : 'center',
-        justifyContent : 'center',
-        flex : tablet ? 4 : 2
+        width : '40%',
+        aspectRatio : 1,
       },
         end_badge_image : {
-           flex : 1,
-           resizeMode : 'contain'
+          width : null,
+          height : null,
+          flex : 1,
+          resizeMode : 'contain',
         },
 
   float : {
