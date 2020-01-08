@@ -3,6 +3,9 @@ import {Animated, Easing, ScrollView, ImageBackground, Button, View, Text, Touch
 import Styles from '../assets/Styles';
 import Memory from '../assets/Memory';
 import Methods from '../assets/Lookup/Lookup_Architecture';
+const DeviceInfo = require('react-native-device-detection');
+
+tablet = DeviceInfo.isTablet;
 
 export default class Home extends React.Component {
     static navigationOptions = {
@@ -19,6 +22,9 @@ export default class Home extends React.Component {
       this.animate = new Animated.Value(0)
       this.state = {messenger : false, pan : new Animated.ValueXY()}
       this.panResponder = Methods.get_panResponder(this.state.pan);
+      const interval = setInterval(function(){
+        this.setState({});
+      }.bind(this), 1000)
     }
 
     componentDidMount(){
@@ -28,38 +34,61 @@ export default class Home extends React.Component {
     render() {
         const { navigate } = this.props.navigation;
 
-        var titles = [["News", "Messenger", "Blog", ""], ["", "", "", ""], ["", "", "", ""], ["", "", "", ""], ["", "", "", ""], ["", "", "", ""]];
-        var goto = [["News", "Messenger", "Blog", ""], ["", "", "", ""], ["", "", "", ""], ["", "", "", ""], ["", "", "", ""], ["", "", "", ""]];
-        var images = [[require("../assets/art/meta/news_icon.png"), require("../assets/art/meta/messenger.png"), require("../assets/art/meta/blog.png"), ""], ["", "", "", ""], ["", "", "", ""], ["", "", "", ""], ["", "", "", ""], ["", "", "", ""]];
+        var wid = 4;
+        var hei = 5;
+        var d = new Date();
+        var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+        var titles = ["News", "Messenger", "Blog", "Notes"];
+        var goto = ["News", "Messenger", "Blog", "Hub"];
+        var images = [require("../assets/art/meta/news_icon.png"), require("../assets/art/meta/messenger.png"), require("../assets/art/meta/blog.png"), require("../assets/art/meta/icon.png")];
         var key = 0;
 
         return (
-            <View style={{width : '100%', height : '100%', flexDirection : 'column', justifyContent : 'space-around', backgroundColor : '#a282a3'}}>
-              <View style = {{width : '100%', aspectRatio : 5, alignItems : 'flex-start', justifyContent : 'center', flexDirecton : 'column'}}>
-                <Text style = {{fontSize : 32}}> The Time </Text>
+          <View style = {{}}>
+            <View style = {Styles.hub_background}>
+              <Image style = {Styles.hub_background_image} source = {require("../assets/art/meta/background1.png")}/>
+            </View>
+            <View style={Styles.hub}>
+              <View style = {Styles.hub_header}>
+                <View style = {Styles.hub_header_time}>
+                  <Text style = {Styles.hub_header_time_text}> {d.getHours()%12}:{d.getMinutes() < 10 ? "0" + d.getMinutes() : d.getMinutes()} </Text>
+                  <View style = {Styles.hub_header_time_super}>
+                    <Text style = {Styles.hub_header_time_super_text}>{d.getHours() % 24 >= 12 ? "PM" : "AM"}</Text>
+                  </View>
+                </View>
+                <View style = {Styles.hub_header_date}>
+                  <Text style = {Styles.hub_header_date_text}> {days[d.getDay()]}, {months[d.getMonth()]} {d.getDate()} </Text>
+                </View>
               </View>
-                {[...Array(titles.length).keys()].map(function(i){
+              <View style = {Styles.hub_body}>
+                {[...Array(hei).keys()].map(function(i){
                   return(
-                    <View key = {key++} style = {{flexDirection : 'row', justifyContent : 'space-around', alignItems : 'center'}}>
-                        {[...Array(titles[i].length).keys()].map(function(j){
-                          var tap = titles[i][j];
-                          var img = images[i][j];
-                          if(tap == ""){
-                            return(<View key = {key++} style = {{width : '20%', aspectRatio : 1}}/>)
+                    <View key = {key++} style = {Styles.hub_body_interact}>
+                        {[...Array(wid).keys()].map(function(j){
+                          var index = i * wid + j;
+                          var tap = titles[index];
+                          var img = images[index];
+                          var targ = goto[index];
+                          if(tap == null){
+                            return(<View key = {key++} style = {Styles.hub_body_interact_icon}/>)
                           }
                           return(
-                            <View key = {key++} style = {{width : '20%', aspectRatio : 1, flexDirection : 'column', alignItems : 'center', justifyContent : 'space-between'}}>
-                              <TouchableOpacity style = {{backgroundColor : '#efefef', width : '100%', aspectRatio : 1, borderRadius : 15}} onPress = {function(){navigate(goto[i][j], {})}}>
-                                <Image style = {{flex : 1, width : null, height : null, resizeMode : 'cover'}} source = {img}/>
+                            <View key = {key++} style = {Styles.hub_body_interact_icon}>
+                              <TouchableOpacity style = {Styles.hub_body_interact_icon_press} onPress = {function(){navigate(targ, {})}}>
+                                <Image style = {Styles.hub_body_interact_icon_press_image} source = {img}/>
                               </TouchableOpacity>
-                              <Text style = {{}}>{tap}</Text>
+                              <Text style = {Styles.hub_body_interact_icon_title}>{tap}</Text>
                             </View>
                           )
                         })}
                     </View>
                   )
                 })}
+              </View>
             </View>
+          </View>
         );
     }
 }

@@ -379,6 +379,89 @@ export default StyleSheet.create({
             fontSize : tablet ? 22 : 16,
           },
 
+
+    hub: {
+      position : 'absolute',
+      width : '100%',
+      height : '100%',
+      flexDirection : 'column',
+    },
+      hub_header : {
+        width : '100%',
+        height : '20%',
+        alignItems : 'flex-start',
+        justifyContent : 'center',
+        flexDirection : 'column',
+      },
+        hub_header_time : {
+          flexDirection : 'row'
+        },
+          hub_header_time_text : {
+            fontSize : 44,
+            color : 'white'
+          },
+          hub_header_time_super : {
+            flexDirection : 'column',
+            justifyContent : 'flex-start'
+          },
+            hub_header_time_super_text : {
+              fontSize : 18,
+              color : 'white'
+            },
+        hub_header_date : {
+
+        },
+          hub_header_date_text : {
+            fontSize : 26,
+            color : 'white'
+          },
+      hub_body : {
+        flexDirection : 'column',
+        justifyContent : 'space-around',
+        width : '100%',
+        height : '80%',
+      },
+        hub_body_interact : {
+          flexDirection : 'row',
+          justifyContent : 'space-around',
+          alignItems : 'center'
+        },
+          hub_body_interact_icon : {
+            width : tablet ? '12%' : '20%',
+            aspectRatio : 1,
+            flexDirection : 'column',
+            alignItems : 'center',
+            justifyContent : 'space-between',
+          },
+            hub_body_interact_icon_press : {
+              backgroundColor : '#efefef',
+              width : '100%',
+              aspectRatio : 1,
+              borderRadius : 25,
+              borderWidth : 2,
+              overflow : 'hidden'
+            },
+              hub_body_interact_icon_press_image : {
+                flex : 1,
+                width : null,
+                height : null,
+                resizeMode : 'cover'
+              },
+                hub_body_interact_icon_title : {
+                  fontSize : tablet ? 18 : 12,
+                  color : 'white'
+                },
+      hub_background : {
+          width : '100%',
+          height : '100%',
+        },
+          hub_background_image : {
+            flex : 1,
+            width : null,
+            height : null,
+            resizeMode : 'cover'
+          },
+
     home: {
         flex: 1,
     },
