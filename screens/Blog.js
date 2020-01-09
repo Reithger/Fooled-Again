@@ -95,7 +95,7 @@ export default class Solve extends React.Component {
 
               <View pointerEvents="box-none" style = {Styles.float}>
                 <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.button)}>
-                    {Methods.app_link(function(){navigate('Hub', {})}, require('../assets/art/meta/news_icon.png'), Styles.button_news)}
+                    {Methods.app_link(function(){navigate('Hub', {})}, require('../assets/art/meta/home.png'), Styles.button_news)}
                 </Animated.View>
               </View>
 

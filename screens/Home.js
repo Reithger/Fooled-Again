@@ -17,18 +17,28 @@ export default class Home extends React.Component {
     constructor(props){
       super(props);
       this.animate = new Animated.Value(0)
-      this.state = {messenger : false, pan : new Animated.ValueXY()}
+      this.state = {messenger : false, pan : new Animated.ValueXY(), ready : false}
       this.panResponder = Methods.get_panResponder(this.state.pan);
     }
 
     componentDidMount(){
       Methods.spin(this.animate);
+      this.setState({ready : true})
     }
 
     render() {
         const { navigate } = this.props.navigation;
-
-        return (
+        if(!this.state.ready){
+          return (
+            <View>
+              <Text>
+                Loading
+              </Text>
+            </View>
+          )
+        }
+        else{
+          return (
             <View style={Styles.home}>
                 <View style = {Styles.home_title}>
                     <Image style = {Styles.home_title_image} source = {require("../assets/art/meta/title.jpg")}/>
@@ -40,5 +50,6 @@ export default class Home extends React.Component {
                 </View>
             </View>
         );
+      }
     }
 }

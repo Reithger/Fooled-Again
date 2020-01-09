@@ -50,7 +50,7 @@ export default class Intro extends React.Component {
               </ScrollView>
               <View pointerEvents="box-none" style = {Styles.float}>
                 <Animated.View {...this.panResponder.panHandlers} style = {this.state.messenger ? Object.assign({}, Styles.button, this.state.pan.getLayout(), {marginRight : '5%'}) : null}>
-                    {Methods.app_link_shake(this.animate, function(){navigate('Hub', {memory : memory})}, require('../assets/art/meta/messenger.png'), this.state.messenger ? Styles.button_messenger : null, true)}
+                    {Methods.app_link_shake(this.animate, function(){navigate('Hub', {memory : memory})}, require('../assets/art/meta/home.png'), this.state.messenger ? Styles.button_messenger : null, true)}
                 </Animated.View>
               </View>
             </View>

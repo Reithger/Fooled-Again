@@ -2,9 +2,9 @@ import { AsyncStorage } from "react-native";
 
 export default class Memory{
 
-    async storeData(field, key){
+    async storeData(field, value){
         try {
-            await AsyncStorage.setItem(field, key);
+            await AsyncStorage.setItem(field, JSON.stringify(value));
         }
         catch (error) {
             console.log(field + ":" + key);
@@ -15,7 +15,7 @@ export default class Memory{
     async retrieveData (field){
         try {
             const value = await AsyncStorage.getItem(field);
-            return value;
+            return JSON.parse(value);
         }
         catch (error) {
             console.log(field);

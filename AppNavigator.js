@@ -11,14 +11,15 @@ import Intro from './screens/Intro';
 const AppNavigator = createStackNavigator({
 
 
-    Hub : {
-      screen : Hub
-    },
+
     Home: {
         screen: Home
     },
     Intro: {
         screen: Intro
+    },
+    Hub : {
+      screen : Hub
     },
     News : {
       screen : News

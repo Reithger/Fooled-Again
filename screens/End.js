@@ -61,7 +61,7 @@ export default class Junction extends React.Component {
 
                 <View pointerEvents="box-none" style = {Styles.float}>
                   <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.button)}>
-                      {Methods.app_link_shake(this.animate, function(){navigate(!result ? 'Blog' : 'Home', {})}, !result ? require('../assets/art/meta/blog.png') : require('../assets/art/meta/title.png'), Styles.button_blog)}
+                      {Methods.app_link_shake(this.animate, function(){navigate(!result ? 'Blog' : 'Hub', {})}, !result ? require('../assets/art/meta/blog.png') : require('../assets/art/meta/title.png'), Styles.button_blog)}
                   </Animated.View>
                 </View>
 

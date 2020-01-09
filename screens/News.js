@@ -37,7 +37,7 @@ export default class Intro extends React.Component {
               {Methods.headline_page(Lookup_Intro.screen, navig)}
               <View pointerEvents="box-none" style = {Styles.float}>
                 <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.button)}>
-                    {Methods.app_link(function(){navigate('Hub', {memory : memory})}, require('../assets/art/meta/messenger.png'), Styles.button_messenger)}
+                    {Methods.app_link(function(){navigate('Hub', {memory : memory})}, require('../assets/art/meta/home.png'), Styles.button_messenger)}
                 </Animated.View>
               </View>
             </View>
