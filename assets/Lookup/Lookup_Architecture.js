@@ -7,10 +7,18 @@ module.exports = {
     get_panResponder : function(pan){
       return PanResponder.create({
           onStartShouldSetPanResponder : () => true,
-          onPanResponderMove           : Animated.event([null,{
-              dx : pan.x,
-              dy : pan.y
-          }]),
+          onPanResponderMove           : Animated.event(
+            [
+              null,
+              {
+                dx : pan.x,
+                dy : pan.y
+              }
+            ],
+            {
+              useNativeDriver : false,
+            }
+          ),
           onPanResponderRelease        : (e, gesture) => {},
           onPanResponderGrant          : (e, gesture) => {
             pan.setOffset(pan.__getValue())
@@ -166,7 +174,8 @@ module.exports = {
            {
                toValue: 1,
                duration: 4000,
-               easing: Easing.linear
+               easing: Easing.linear,
+               useNativeDriver : true,
            }
        ).start(() => module.exports.spin(animate))
      },

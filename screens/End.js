@@ -32,7 +32,7 @@ export default class Junction extends React.Component {
 
     render() {
         const { navigate } = this.props.navigation;
-        var response = this.props.navigation.getParam("response", [false, false, false, false, true, false, true, false]);
+        var response = this.props.navigation.getParam("response", [false, true, false, false, true, false, true, false]);
         var result = true;
         var i;
         for(i = 0; i < response.length; i++){
@@ -54,13 +54,13 @@ export default class Junction extends React.Component {
                 </ScrollView>
 
                 <View pointerEvents="box-none" style = {Object.assign({}, Styles.float, {justifyContent : 'flex-end'})}>
-                  <Animated.View {...this.panResponder2.panHandlers} style = {Object.assign({}, this.state.pan2.getLayout(), Styles.end_badge, {transform : [{scale : scale}]})}>
+                  <Animated.View {...this.panResponder2.panHandlers} style = {Object.assign({}, this.state.pan2.getTranslateTransform(), Styles.end_badge, {transform : [{scale : scale}]})}>
                       <Image style = {Styles.end_badge_image} source = {result ? LookupEnding.success.badge : LookupEnding.failure.badge}/>
                   </Animated.View>
                 </View>
 
                 <View pointerEvents="box-none" style = {Styles.float}>
-                  <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getLayout(), Styles.button)}>
+                  <Animated.View {...this.panResponder.panHandlers} style = {Object.assign({}, this.state.pan.getTranslateTransform(), Styles.button)}>
                       {Methods.app_link_shake(this.animate, function(){navigate(!result ? 'Blog' : 'Hub', {})}, !result ? require('../assets/art/meta/blog.png') : require('../assets/art/meta/title.png'), Styles.button_blog)}
                   </Animated.View>
                 </View>
